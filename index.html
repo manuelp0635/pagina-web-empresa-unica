@@ -37,7 +37,6 @@
         swiper-slide {
           text-align: center;
           font-size: 18px;
-          background: #fff;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -280,13 +279,14 @@
         <section class="clientes contenedor">
             <h2 class="titulo">Que dicen nuestros clientes</h2>
             <div class="cards">
-                <swiper-container class="mySwiper" navigation="true" space-between="30" loop="true">
-                    <swiper-slide><div class="card">
-                        <img src="img/Cliente 1.jpg">
-                        <div class="contenido-texto-card">
-                            <p>Tuve problemas con mi computadora y la lleve a <b>Innovent Desarrollo de Software</b> El servicio 
-                                fue excepcional.
-                            </p>
+                <swiper-container class="mySwiper" navigation="true" loop="true">
+                    <swiper-slide>
+                        <div class="card">
+                            <img src="img/Cliente 1.jpg">
+                            <div class="contenido-texto-card">
+                                <p>Tuve problemas con mi computadora y la lleve a <b>Innovent Desarrollo de Software</b> El servicio 
+                                    fue excepcional.
+                                </p>
                             </div>
                         </div>
                     </swiper-slide>
@@ -390,9 +390,9 @@
             <!--<div class="content-foo">
                 <h4>Correo</h4>
             </div>-->
-            <div class="content-foo">
+            <!--<div class="content-foo">
                 <h4>Cartagena</h4>
-            </div>
+            </div>-->
             <div class="content-foo">
                 <h4><a href="politicadeprivacidad.html"> Politicas de Privacidad</a></h4>
             </div>
@@ -406,6 +406,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="js/acordeon.js"></script>
+    <script src="js/jQuery.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
           slidesPerView: 1,
