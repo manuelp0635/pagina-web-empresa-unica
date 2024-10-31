@@ -11,6 +11,49 @@
     <link rel="stylesheet" href="css/estilos1.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        html,
+        body {
+          position: relative;
+          height: 100%;
+        }
+    
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #000;
+          margin: 0;
+          padding: 0;
+        }
+    
+        swiper-container {
+          width: 100%;
+          height: 100%;
+        }
+    
+        swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    
+        swiper-container {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      </style>
 </head>
 
 <body>
@@ -126,46 +169,46 @@
         </section>
 
 
-        <section class="portafolio" style="background-color: white">
+        <!--<section class="portafolio" style="background-color: white">
             <div class="contenedor">
                 <h2 class="titulo">Una metodologia eficaz para nuestros proyectos</h2>
                 <div class="galeria-port">
                     <div class="imagen-port">
                         <img src="img/104_17_03_ANALISIS-DE-REQUISITOS.jpg" alt="">
                         <div class="hover-galeria">
-                            <!--<img src="img/icono1.png" alt="">-->
+                            <img src="img/icono1.png" alt="">
                             <p style="text-align: center;">Definicion de requisitos</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/planificacion-del-proyecto.jpg" alt="">
                         <div class="hover-galeria">
-                            <!--<img src="img/icono1.png" alt="">-->
+                            <img src="img/icono1.png" alt="">
                             <p style="text-align: center;">Fase del desarrollo y pruebas</p>
                         </div>
                     </div>
-                    <!--<div class="imagen-port">
+                    <div class="imagen-port">
                         <img src="img/img3.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono1.png" alt="">
                             <p>Desarrollo de codigo seguro</p>
                         </div>
-                    </div>-->
+                    </div>
                     <div class="imagen-port">
                         <img src="img/aplicacion-prototipos-graficos-ux-desarrollo-disenador.jpg" alt="">
                         <div class="hover-galeria">
-                            <!--<img src="img/icono1.png" alt="">-->
+                            <img src="img/icono1.png" alt="">
                             <p style="text-align: center;">UX/UI y <br> desarrollo del proyecto</p>
                         </div>
                     </div>
                     <div class="imagen-port">
                         <img src="img/mantenimiento software.webp" alt="">
                         <div class="hover-galeria">
-                            <!--<img src="img/icono1.png" alt="">-->
+                            <img src="img/icono1.png" alt="">
                             <p style="text-align: center;">Operaciones y mantenimientos</p>
                         </div>
                     </div>
-                    <!--<div class="imagen-port">
+                    <div class="imagen-port">
                         <img src="img/img5.jpg" alt="">
                         <div class="hover-galeria">
                             <img src="img/icono1.png" alt="">
@@ -185,10 +228,10 @@
                             <img src="img/icono1.png" alt="">
                             <p>Nuestro trabajo</p>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
         <section class="portafolio" style="background-color: white">
             <div class="contenedor">
@@ -236,43 +279,45 @@
         <section class="clientes contenedor">
             <h2 class="titulo">Que dicen nuestros clientes</h2>
             <div class="cards">
-                <div class="card">
-                    <img src="img/Cliente 1.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Testimonio 1</h4>
-                        <p>Tuve problemas con mi computadora y la lleve a <b>Innovent Desarrollo de Software</b> El servicio 
-                            fue excepcional. La repararon rapidamente y ahora funciona como nueva. ¡Muy recomendados! <b>Valeria</b> Gracias 
-                            por confiar en nosotros.
-                        </p>
+                <swiper-container class="mySwiper" navigation="true" space-between="30" loop="true">
+                    <swiper-slide><div class="card">
+                        <img src="img/Cliente 1.jpg">
+                        <div class="contenido-texto-card">
+                            <p>Tuve problemas con mi computadora y la lleve a <b>Innovent Desarrollo de Software</b> El servicio 
+                                fue excepcional. La repararon rapidamente y ahora funciona como nueva. ¡Muy recomendados! <b>Valeria</b> Gracias 
+                                por confiar en nosotros.
+                            </p>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide><div class="card">
+                        <img src="img/Cliente 2.jpg">
+                        <div class="contenido-texto-card">
+                            <p>La experiencia con <b>Innovent</b> ha sido maravillosa. Me ayudaron a rediseñar mi sitio web y el resultado ha sido increible. Mi trafico ha aumentado y la usabilidad ha mejorado significativamente. ¡Definitivamente volvere a trabajar con ellos en el futuro!.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="img/Cliente 2.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Testimonio 2</h4>
-                        <p>La experiencia con <b>Innovent</b> ha sido maravillosa. Me ayudaron a rediseñar mi sitio web y el resultado ha sido increible. Mi trafico ha aumentado y la usabilidad ha mejorado significativamente. ¡Definitivamente volvere a trabajar con ellos en el futuro!.</p>
-                    </div>
-                </div>
+                    </swiper-slide>
+                </swiper-container>
             </div>
         </section>
         <section class="about-services">
             <div class="contenedor">
-                <h2 class="titulo">Nuestras tecnologias en desarrollo de software</h2>
+                <h2 class="titulo">Nuestros aliados</h2>
                 <div class="servicio-cont">
                     <div class="servicio-ind">
-                        <img src="" alt="">
-                        <h3>Front-end</h3>
-                        <p style="text-align: center;">Vue.js, React, Angular, Vuetify</p>
+                        <img src="img/aliado1.jpg">
+                        <!--<h3>Front-end</h3>
+                        <p style="text-align: center;">Vue.js, React, Angular, Vuetify</p>-->
                     </div>
                     <div class="servicio-ind">
-                        <img src="" alt="">
-                        <h3>Back-end y Datos</h3>
-                        <p style="text-align: center;">Php, Node.js, Laravel, Symfony, Javascript, Typescript, Firebase, MongoDB, PostgresSQL, MariaDB</p>
+                        <img src="img/aliado2.png">
+                        <!--<h3>Back-end y Datos</h3>
+                        <p style="text-align: center;">Php, Node.js, Laravel, Symfony, Javascript, Typescript, Firebase, MongoDB, PostgresSQL, MariaDB</p>-->
                     </div>
                     <div class="servicio-ind">
-                        <img src="" alt="">
-                        <h3>Movil</h3>
-                        <p style="text-align: center;">React native, Flutter</p>
+                        <img src="img/aliado3.png">
+                        <!--<h3>Movil</h3>
+                        <p style="text-align: center;">React native, Flutter</p>-->
                     </div>
                 </div>
             </div>
@@ -346,7 +391,23 @@
         <p class="titulo-final">&copy; Derechos Reservados | Innovent Desarrolo de Software S.A.S</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="js/acordeon.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
 </body>
 
 </html>
