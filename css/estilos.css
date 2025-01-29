@@ -4,6 +4,45 @@
     box-sizing: border-box;
 }
 
+/* Estilos generales para el mapa */
+.map-container {
+    width: 100%;
+    height: 400px; /* Tamaño predeterminado */
+  }
+  
+  /* Para pantallas grandes (laptops y desktops) */
+  @media (min-width: 1024px) {
+    .map-container {
+      height: 500px; /* Mayor altura en pantallas grandes */
+      max-width: 80%; /* Para evitar que ocupe todo el ancho */
+      margin: 0 auto; /* Centrar el mapa */
+    }
+  }
+  
+  /* Para tablets y pantallas medianas */
+  @media (max-width: 1023px) {
+    .map-container {
+      height: 400px;
+      width: 90%;
+    }
+  }
+  
+  /* Para móviles en orientación vertical */
+  @media (max-width: 768px) {
+    .map-container {
+      height: 300px; /* Reducir altura en móviles */
+      width: 100%;
+    }
+  }
+  
+  /* Para móviles pequeños */
+  @media (max-width: 480px) {
+    .map-container {
+      height: 250px; /* Más pequeño para pantallas reducidas */
+    }
+  }
+  
+
 body {
     font-family: 'open sans';
 }
