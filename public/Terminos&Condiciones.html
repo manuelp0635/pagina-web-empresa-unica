@@ -11,6 +11,66 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            ul {
+                flex-direction: column;
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            ul.active {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -21,18 +81,23 @@
         <div class="container__header">
             <div class="logo">
                 <a href="#">
-                    <img src="../assets/images/Logo/Logo.PNG">
+                    <img src="/assets/images/Logo/Logo.PNG">
                 </a>
             </div>
 
             <div class="menu">
                 <nav>
-                    <ul>
-                        <li><a href="/index.html">Inicio</a></li>
+                    <div class="menu-icon" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul id="menu">
+                        <li><a href="index.html">Inicio</a></li>
                         <!--<li><a href="#">Sobre</a></li>-->
-                        <li><a href="/public/servicios.html">Servicios</a></li>
-                        <li><a href="../public/politicas.html">Politicas</a></li>
-                        <li><a href="../public/contactos.html">Contactos</a></li>
+                        <li><a href="public/servicios.html">Servicios</a></li>
+                        <li><a href="public/politicas.html">Políticas</a></li>
+                        <!--<li><a href="public/contactos.html">Contactos</a></li>-->
                     </ul>
                 </nav>
 
@@ -69,33 +134,36 @@
 
                 <div class="container__card-service container__box-cardPrimary">
                     <div class="card__service box__card-primary">
-                        <h2>Propiedad Intelectual</h2>
-                        <p>El servicio y su contenido, caracteristicas y funcionalidad originales son y seguiran siendo
-                            propiedad exclusiva de Innovent Software, Inc. y sus licenciantes. El Servicio esta
-                            protegido por derechos de autor marcar comerciales y otras leyes tanto de Colombia como de
-                            paises extranjeros. Nuestras mas marcas comerciales no se pueden utilizar en relacion con
-                            ningun producto o servicio sin el consentimiento previo por escrito de Innovent Software,
-                            Inc.
+                        <h2>Confidencialidad y proteccion de datos</h2>
+                        <p> ✔️ Toda la informacion proporcionada por el cliente sera tratada con confidencialidad <br>
+                            
+                            ✔️ No compartimos datos del cliente con terceros sin autorizacion expresa
                         </p>
                     </div>
                     <div class="card__service box__card-primary">
                         <h2>Terminacion</h2>
-                        <p>Podemos cancelar o suspender su acceso al Servicio inmediatamente, sin previo aviso ni
-                            responsabilidad, bajo nuestro exclusivo criterio, por cualquier motivo y sin limitacion,
-                            incluido, entre otros, el incumplimiento de los Terminos.
+                        <p>🚫 Condiciones de cancelacion:
+
+                            ✔️ Si el cliente cancela antes de iniciar
+                            el servicio, se reembolsa el 75% del anticipo <br>
+                            
+                            ✔️ Si el trabajo ya inicio, no hay reembolsos <br>
+                            
+                            ✔️ En diseño web, si el cliente no
+                            proporciona informacion en 4 dias, el
+                            proyecto se considera inactivo sin derecho a reembolso
                         </p>
                     </div>
                     <div class="card__service box__card-primary">
                         <h2>Ley que rige</h2>
-                        <p>Estos Terminos se regiran e interpretaran de acuerdo con las leyes de Colombia,
-                            Telecomunicaciones, sin tener en cuenta sus disposiciones sobre conflicto de leyes.
-                            <br>Nuestra incapacidad para hacer cumplir cualquier derecho o disposicion de estos Terminos
-                            no se considerara una renuncia a esos derechos.
-                            Si un tribunal considera que alguna disposicion de estos Terminos es invalida o inaplicable,
-                            las disposiciones restantes de estos Terminos seguiran vigentes. Estos Terminos constituyen
-                            el acuerdo completo entre nosotros con respecto a nuestro Servicio y reemplazan y reemplazan
-                            cualquier acuerdo anterior que hayamos tenido entre nosotros con respecto al
-                            <b>Servicio</b>.
+                        <p>ISO/IEC 25000<br><br>
+
+                            <!--evaluar la calidad del producto software. <br><br>-->
+                            
+                            Ley 603 de 2000 <br>
+                            
+                            <!--Este precepto le exige a las empresas presentar el informe de gestión que “deberá contener una exposición 
+                            fiel sobre la evolución de los negocios y la situación económica, administrativa y jurídica de la sociedad.-->
                         </p>
                     </div>
                     <!--<div class="card__service box__card-primary">
@@ -130,7 +198,7 @@
         <div class="container__footer">
             <div class="box__footer">
                 <div class="logo">
-                    <img src="../assets/images/Logo/Logo.PNG">
+                    <img src="/assets/images/Logo/Logo.PNG">
                 </div>
                 <div class="terms">
                     <p>Pasos hacia la cima, Nuestra cultura se centra en procesos y metodologias agiles que nos permite
@@ -171,6 +239,23 @@
             <p>&copy; <b>Innovent</b> Todos los derechos reservados 2020-2023</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    
+        // Cierra el menú al hacer clic en un enlace (solo en pantallas pequeñas)
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.getElementById('menu');
+                if (window.innerWidth <= 768) {
+                    menu.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

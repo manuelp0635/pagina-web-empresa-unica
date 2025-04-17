@@ -11,6 +11,67 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            ul {
+                flex-direction: column;
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            ul.active {
+                display: flex;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -23,18 +84,23 @@
         <div class="container__header">
             <div class="logo">
                 <a href="#">
-                    <img src="../assets/images/Logo/Logo.PNG">
+                    <img src="/assets/images/Logo/Logo.PNG">
                 </a>
             </div>
 
             <div class="menu">
                 <nav>
-                    <ul>
-                        <li><a href="../index.html">Inicio</a></li>
+                    <div class="menu-icon" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul id="menu">
+                        <li><a href="index.html">Inicio</a></li>
                         <!--<li><a href="#">Sobre</a></li>-->
-                        <li><a href="../public/servicios.html">Servicios</a></li>
-                        <li><a href="../public/politicas.html">Politicas</a></li>
-                        <!--<li><a href="../public/contactos.html">Contactos</a></li>-->
+                        <li><a href="public/servicios.html">Servicios</a></li>
+                        <li><a href="public/politicas.html">Políticas</a></li>
+                        <!--<li><a href="public/contactos.html">Contactos</a></li>-->
                     </ul>
                 </nav>
 
@@ -104,7 +170,7 @@
         <div class="container__footer">
             <div class="box__footer">
                 <div class="logo">
-                    <img src="../assets/images/Logo/Logo.PNG">
+                    <img src="/assets/images/Logo/Logo.PNG">
                 </div>
                 <div class="terms">
                     <p>impulsando ideas, transformando el futuro con tecnología e innovación.</p>
@@ -144,6 +210,23 @@
             <p>&copy; <b>Innovent</b> Todos los derechos reservados 2025</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    
+        // Cierra el menú al hacer clic en un enlace (solo en pantallas pequeñas)
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.getElementById('menu');
+                if (window.innerWidth <= 768) {
+                    menu.classList.remove('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 
