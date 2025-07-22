@@ -1,14 +1,9 @@
 /* Estilos base */
 body {
   background-color: #1A1A1D;
-  margin: 0;
   color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+}
 
 a, .btn-primary {
   background-color: #C77DFF;
@@ -140,35 +135,11 @@ h1, h2, h3 {
 }
 
 /* Estilos para el logo de Innovent Software */
-
-
-.logo-header {
-  text-align: center;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-
-.logo-container img {
-  max-width: 200px;
-  height: auto;
-  transition: all 0.5s ease;
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.logo-text {
-  color: #ffffff;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-top: 10px;
-  font-size: 24px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+.logo {
+  max-width: 200px; /* Ajusta el tamaño máximo del logo */
+  height: auto; /* Mantiene la proporción del logo */
+  display: block; /* Asegura que el logo se comporte como bloque */
+  margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
 /* Inicio Dashboard */
@@ -279,25 +250,15 @@ h1, h2, h3 {
 
 /* Estilos logo */
 
-/* Responsive para tablet */
 @media (max-width: 768px) {
-  .logo-container img {
-    max-width: 150px;
-  }
-
-  .logo-text {
-    font-size: 20px;
+  .logo {
+    max-width: 150px; /* Tamaño para tablets */
   }
 }
 
-/* Responsive para móviles */
 @media (max-width: 480px) {
-  .logo-container img {
-    max-width: 120px;
-  }
-
-  .logo-text {
-    font-size: 18px;
+  .logo {
+    max-width: 120px; /* Tamaño para móviles */
   }
 }
 
