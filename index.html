@@ -4,28 +4,28 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Innovent Software | Diseño Web Profesional, Soporte Técnico y Desarrollo a Medida para potenciar tu presencia online. Soluciones estratégicas y acompañamiento constante." />
-  <meta name="keywords" content="Diseño Web, Soporte Técnico, Innovent Software, Desarrollo Web, Mantenimiento, Seguridad Digital, Estrategia Online" />
-  <meta name="author" content="Innovent Software" />
+  <meta name="description" content="Innovent Software | Diseño Web Profesional, Soporte Técnico y Desarrollo a Medida para potenciar tu presencia online. Soluciones estratégicas y acompañamiento constante.">
+  <meta name="keywords" content="Diseño Web, Soporte Técnico, Innovent Software, Desarrollo Web, Mantenimiento, Seguridad Digital, Estrategia Online">
+  <meta name="author" content="Innovent Software">
   <link rel="icon" href="images/logo.png" type="image/png">
   <title>Innovent Software | Diseño Web + Soporte Técnico + Estrategia Digital</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <script defer src="js/script.js"></script>
 </head>
+
 <body>
 
 <header class="encabezado">
   <div class="logo-container">
-      <img src="images/logo.png" alt="Logo Innovent Software" class="logo">
-    </div>
-    <div class="logo-text" id="logoText">
-      <!--INNOVENT SOFTWARE-->
-      <p>Experiencias digitales impactantes que conectan y convierten.</p>
-    </div>
+    <img src="images/logo.png" alt="Logo Innovent Software" class="logo" id="logo">
+  </div>
+  <div class="logo-text" id="logoText">
+    <p style="color: #7900f3;">Experiencias digitales impactantes que conectan y convierten.</p>
+  </div>
 </header>
 
 <main>
+
   <section class="servicios">
     <h2>¿Por qué Innovent Software?</h2>
     <div class="grid-servicios">
@@ -58,11 +58,11 @@
       <div class="card">
         <div class="icono">🎯</div>
         <h3>Adaptación al cambio</h3>
-        <p>Como líderes digitales, adaptamos nuestras estrategias y servicios al ritmo del mercado y las necesidades reales.</p>
+        <p>Adaptamos nuestras estrategias al ritmo del mercado y a las necesidades reales de cada cliente.</p>
       </div>
       <div class="card">
         <div class="icono">🤖</div>
-        <h3>Tecnología accesible para todos</h3>
+        <h3>Tecnología accesible</h3>
         <p>Democratizamos el acceso a herramientas digitales, llevando soluciones a empresas de cualquier tamaño.</p>
       </div>
     </div>
@@ -74,7 +74,7 @@
       <div class="carousel-track" id="carouselTrack">
         <div class="card">
           <h3>Marelis Pacheco</h3>
-          <p>Atención personalizada, solución efectiva y un equipo confiable. Innovent Software nos respalda siempre.</p>
+          <p>Atención personalizada, soluciones efectivas y un equipo confiable. Innovent Software nos respalda siempre.</p>
         </div>
         <div class="card">
           <h3>Carlos Gómez</h3>
@@ -96,7 +96,7 @@
         ¡Contáctanos por WhatsApp!
       </a>
     </div>
-  </section>
+  </section> <br><br> 
 
   <section class="dashboard-stats-vertical">
     <div class="stat-box">
@@ -116,6 +116,7 @@
       <p>Desarrollos personalizados</p>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -124,6 +125,7 @@
 </footer>
 
 <script>
+  // Carousel automático
   const track = document.getElementById("carouselTrack");
   const cards = document.querySelectorAll(".carousel-track .card");
   let index = 0;
@@ -133,6 +135,7 @@
   }
   setInterval(moveToNextCard, 5000);
 
+  // Contadores animados
   const counters = document.querySelectorAll('.counter');
   counters.forEach(counter => {
     const updateCount = () => {
@@ -148,23 +151,19 @@
     };
     updateCount();
   });
-</script>
 
-  <script>
-// Animación de entrada al cargar la página
-window.addEventListener('load', () => {
-  const logo = document.getElementById('logo');
-  const logoText = document.getElementById('logoText');
-
-  setTimeout(() => {
-    logo.style.opacity = 1;
-    logo.style.transform = 'scale(1)';
-  }, 300);
-
-  setTimeout(() => {
-    logoText.style.opacity = 1;
-  }, 800);
-});
+  // Animación de entrada del logo
+  window.addEventListener('load', () => {
+    const logo = document.getElementById('logo');
+    const logoText = document.getElementById('logoText');
+    setTimeout(() => {
+      logo.style.opacity = 1;
+      logo.style.transform = 'scale(1)';
+    }, 300);
+    setTimeout(() => {
+      logoText.style.opacity = 1;
+    }, 800);
+  });
 </script>
 
 </body>
