@@ -59,7 +59,7 @@ El diseño se adapta perfectamente a dispositivos móviles, tablets y escritorio
 
 🧠 Autor & Créditos
 Sitio desarrollado por el equipo de Innovent Software
-📧 innoventdesarrollodesoftware@gmail.com
+📧 https://wa.link/rc6map 
 📍 Cartagena, Colombia
 
 📄 Licencia
