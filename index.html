@@ -11,6 +11,8 @@
   <title>Innovent Software | Diseño Web + Soporte Técnico + Estrategia Digital</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -74,7 +76,8 @@
       <div class="carousel-track" id="carouselTrack">
         <div class="card">
           <h3>Marelis Pacheco</h3>
-          <p>Atención personalizada, soluciones efectivas y un equipo confiable. Innovent Software nos respalda siempre.</p>
+          <p>Para mi ha sido una experiencia muy positiva de utilizar los servicios de Innovent Software. Lo que mas valoro es la atencion personalizada, la disposicion para resolver cualquier inquietud y la eficiencia con la que han respondido a nuestras necesidades en sistemas. <br> 
+          Sin duda, son un equipo confiable y comprometido con brindar soluciones efectivas. <b>Gracias a ustedes por su apoyo constante</b></p>
         </div>
         <div class="card">
           <h3>Carlos Gómez</h3>
@@ -82,7 +85,7 @@
         </div>
         <div class="card">
           <h3>Laura Martínez</h3>
-          <p>Excelente servicio. Mejoraron mi web y reforzaron la seguridad. Los recomiendo totalmente.</p>
+          <p>Excelente servicio, mejoraron mi sitio web y implementaron buenas practicas basadas en la seguridad informatica <b>Los recomiendo totalmente</b>.</p>
         </div>
       </div>
     </div>
@@ -100,22 +103,28 @@
 
   <section class="dashboard-stats-vertical">
     <div class="stat-box">
-      <h2 class="counter" data-target="14000">+0</h2>
+      <h2 class="counter" data-target="15">+0</h2>
       <p>Proyectos entregados</p>
     </div>
     <div class="stat-box">
-      <h2 class="counter" data-target="16">+0</h2>
+      <h2 class="counter" data-target="7">+0</h2>
       <p>Países alcanzados</p>
     </div>
     <div class="stat-box">
-      <h2 class="counter" data-target="40">+0</h2>
+      <h2 class="counter" data-target="12">+0</h2>
       <p>Colaboradores</p>
     </div>
     <div class="stat-box">
-      <h2 class="counter" data-target="70">+0</h2>
+      <h2 class="counter" data-target="30">+0</h2>
       <p>Desarrollos personalizados</p>
     </div>
   </section>
+
+  <!-- Botón flotante con ícono de Boxicons -->
+<button id="scrollBtn" title="Ir arriba">
+  <i class='bx bx-arrow-to-top'></i>
+</button>
+
 
 </main>
 
@@ -165,6 +174,28 @@
     }, 800);
   });
 </script>
+
+<!-- Script buttom float -->
+
+<script>
+  const scrollBtn = document.getElementById("scrollBtn");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  };
+
+  scrollBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
 
 </body>
 </html>
