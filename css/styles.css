@@ -400,7 +400,7 @@ h1, h2, h3{
 
   .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1.6 m ease-in-out;
   }
 
 
@@ -415,4 +415,37 @@ h1, h2, h3{
 
   .card:hover {
   transform: scale(1.02);
+}
+
+/* Botton flotante */
+
+#scrollBtn {
+  position: fixed;
+  bottom: 80px; /* espacio para no tapar footer */
+  right: 20px;
+  z-index: 999;
+  background-color: #c77dff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#scrollBtn:hover {
+  background-color: #a855f7;
+}
+
+#scrollBtn.show {
+  opacity: 1;
+  visibility: visible;
 }
