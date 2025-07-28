@@ -34,6 +34,7 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
@@ -93,55 +94,60 @@
     </div>
   </section>
 
-<section class="servicios">
-  <h2 class="titulo-seccion">Testimonios</h2>
-    <div class="carousel-track" id="carouselTrack">
-        <div class="card">
+ <section class="questions container">
+            <h2 class="subtitle">Testimonios</h2>
+            <!--<p class="questions__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, porro
+                doloribus neque perspiciatis sapiente fuga.</p>-->
 
-          <div class="card-body">
-            <h5 class="card-title">Marelis Pacheco</h5>
-            <p class="card-text">Para mí ha sido una experiencia muy positiva utilizar los servicios de Innovent Software.
+            <section class="questions__container">
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">Marelis Pacheco
+                            <span class="questions__arrow">
+                                <!--<img src="./images/arrow.svg" class="questions__img">-->
+                            </span>
+                        </h3>
+
+                        <p class="questions__show">Para mí ha sido una experiencia muy positiva utilizar los servicios de Innovent Software.
           Lo que más valoro es la atención personalizada, la disposición para resolver cualquier inquietud
           y la eficiencia con la que han respondido a nuestras necesidades. <b>Gracias por su apoyo constante</b>.</p>
-          </div>
-        </div>
+                    </div>
+                </article>
 
-        <div class="card">
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Qué aprenderé en este curso?
+                            <span class="questions__arrow">
+                                <!--<img src="./images/arrow.svg" class="questions__img">-->
+                            </span>
+                        </h3>
 
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
+                        <p class="questions__show">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                            facere, quidem eum id excepturi assumenda explicabo nam accusamus veritatis voluptates
+                            eveniet adipisci, dicta nihil nemo modi possimus officiis quam atque? Lorem ipsum, dolor sit
+                            amet consectetur adipisicing elit. Quos facere, quidem eum id excepturi assumenda explicabo
+                            nam accusamus veritatis voluptates eveniet adipisci, dicta nihil nemo modi possimus officiis
+                            quam atque?</p>
+                    </div>
+                </article>
 
-        <div class="card">
+                <article class="questions__padding">
+                    <div class="questions__answer">
+                        <h3 class="questions__title">¿Qué es CSS GRID?
+                            <span class="questions__arrow">
+                                <!--<img src="./images/arrow.svg" class="questions__img">-->
+                            </span>
+                        </h3>
 
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-
-        <div class="card" aria-hidden="true">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
-          </div>
-      </div>
-    </div>
-</section>
+                        <p class="questions__show">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+                            facere, quidem eum id excepturi assumenda explicabo nam accusamus veritatis voluptates
+                            eveniet adipisci, dicta nihil nemo modi possimus officiis quam atque? Lorem ipsum, dolor sit
+                            amet consectetur adipisicing elit. Quos facere, quidem eum id excepturi assumenda explicabo
+                            nam accusamus veritatis voluptates eveniet adipisci, dicta nihil nemo modi possimus officiis
+                            quam atque?</p>
+                    </div>
+                </article>
+            </section>
 
 
 <!-- Fin seccion de testimonios -->
@@ -194,99 +200,19 @@
 </footer>
 <!-- Fin footer pagina -->
 
-<script>
-  // Carousel automático
-  const track = document.getElementById("carouselTrack");
-  const cards = document.querySelectorAll(".carousel-track .card");
-  let index = 0;
-  function moveToNextCard() {
-    index = (index + 1) % cards.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  }
-  setInterval(moveToNextCard, 5000);
 
-  // Contadores animados
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText.replace('+', '');
-      const increment = Math.ceil(target / 100);
-      if (count < target) {
-        counter.innerText = `+${count + increment}`;
-        setTimeout(updateCount, 20);
-      } else {
-        counter.innerText = `+${target.toLocaleString()}`;
-      }
-    };
-    updateCount();
-  });
 
-  // Animación de entrada del logo
-  window.addEventListener('load', () => {
-    const logo = document.getElementById('logo');
-    const logoText = document.getElementById('logoText');
-    setTimeout(() => {
-      logo.style.opacity = 1;
-      logo.style.transform = 'scale(1)';
-    }, 300);
-    setTimeout(() => {
-      logoText.style.opacity = 1;
-    }, 800);
-  });
-</script>
 
-<!-- Script buttom float -->
 
-<script>
-  const scrollBtn = document.getElementById("scrollBtn");
 
-  window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      scrollBtn.classList.add("show");
-    } else {
-      scrollBtn.classList.remove("show");
-    }
-  };
-
-  scrollBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-</script>
-
-<!-- Script seccion de testimonios -->
-  <script>
-      const track = document.getElementById('carouselTrack');
-      const items = track.querySelectorAll('.testimonial');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      let currentIndex = 0;
-
-      function updateCarousel() {
-        items.forEach((item, index) => {
-          item.classList.toggle('active', index === currentIndex);
-        });
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      }
-
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateCarousel();
-      });
-
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-      });
-
-      updateCarousel(); // inicializar
-</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script src="js/questions.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/botonflotante.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/scrolBtn.js"></script>
 
 </body>
 </html>
