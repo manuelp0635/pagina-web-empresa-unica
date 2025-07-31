@@ -567,7 +567,7 @@ h1, h2, h3{
   visibility: visible;
 }
 
-/* Questions */
+/* Questions seccion de testimonios */
 
 .questions{
     text-align: center;
@@ -638,3 +638,208 @@ h1, h2, h3{
     margin: 0 auto;
     margin-bottom: 30px;
 }
+
+.catalogo-productos {
+  padding: 3rem 1rem;
+  background-color: #fdfdfd;
+  text-align: center;
+}
+
+.catalogo-productos .titulo-seccion {
+  font-size: 2.3rem;
+  color: #c77dff;
+  margin-bottom: 2.5rem;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card.producto {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card.producto:hover {
+  transform: scale(1.03);
+}
+
+.card.producto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.card.producto h3 {
+  font-size: 1.2rem;
+  color: #1a1a1d;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.card.producto .precio {
+  display: block;
+  font-size: 1.1rem;
+  color: #a855f7;
+  margin-top: 0.25rem;
+}
+
+.card.producto p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .catalogo-productos .titulo-seccion {
+    font-size: 2rem;
+  }
+
+  .card.producto h3 {
+    font-size: 1.1rem;
+  }
+
+  .card.producto p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogo-productos {
+    padding: 2rem 0.5rem;
+  }
+
+  .card.producto {
+    padding: 1rem;
+  }
+
+  .card.producto h3 {
+    font-size: 1rem;
+  }
+
+  .card.producto p {
+    font-size: 0.85rem;
+  }
+}
+/* Fin de estilos catalogo productos */
+
+/* Inicio estilos sedes */
+
+.sedes-container {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+
+.titulo-sedes {
+  font-size: 2.5rem;
+  color: #a855f7;
+  margin-bottom: 2rem;
+}
+
+.sedes-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.sede {
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+.sede h3 {
+  font-size: 1.6rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.direccion {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-contacto {
+  background-color: #fff9c4;
+  border-radius: 8px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  text-align: left;
+}
+
+.card-contacto p {
+  font-size: 1rem;
+  color: #1a1a1d;
+  margin: 0;
+}
+
+.footer-sede {
+  margin-top: 3rem;
+}
+
+.footer-sede h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.logo-sede {
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo-sedes {
+    font-size: 2rem;
+  }
+
+  .card-contacto p {
+    font-size: 0.95rem;
+  }
+
+  .footer-sede h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sede h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-contacto {
+    padding: 0.8rem;
+  }
+
+  .card-contacto p {
+    font-size: 0.9rem;
+  }
+
+  .logo-sede {
+    width: 80px;
+  }
+}
+/* Fin estilos sedes */
