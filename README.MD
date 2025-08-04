@@ -67,3 +67,9 @@ Este proyecto está bajo licencia de uso interno. No se permite su distribución
 
 ¿Quieres colaborar o proponer mejoras?
 ¡Abrimos la conversación para crecer juntos! 💡
+
+<h1>Tareas pendientes </h1>
+
+1. Correcion en los estilos css de la seccion de sedes y productos ()OK
+2. Nueva implementacion de buenas practicas en general para transformar el diseño general del sitio web en desarrollo (OK)
+3. Nueva estructura del diseño planteado del sitio web en general para un impacto positivo y transformador en el receptor del mensaje que se desea compartir (OK)
