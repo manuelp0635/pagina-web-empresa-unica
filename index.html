@@ -32,7 +32,6 @@
   <!-- Boxicons CDN -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-
   <!-- Favicon -->
   <link rel="icon" href="images/logo.png" type="image/png">
 
@@ -74,6 +73,67 @@
         <h3>Soporte técnico y acompañamiento</h3>
         <p>Te apoyamos con mantenimiento, seguridad y actualización constante.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section class="portafolio">
+    <h2>Proyectos destacados</h2>
+    <div class="grid-portafolio">
+      <div class="portafolio-card">
+        <img src="images/proyecto1.jpg" alt="Proyecto 1">
+        <h3>Sitio Web Corporativo</h3>
+        <p>Diseño web moderno y responsivo para empresa en Cartagena.</p>
+      </div>
+      <div class="portafolio-card">
+        <img src="images/proyecto2.jpg" alt="Proyecto 2">
+        <h3>Tienda Online</h3>
+        <p>Implementación de e-commerce con pasarela de pago integrada.</p>
+      </div>
+      <div class="portafolio-card">
+        <img src="images/proyecto3.jpg" alt="Proyecto 3">
+        <h3>Soporte Técnico Empresarial</h3>
+        <p>Mantenimiento y seguridad informática para empresas locales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section class="equipo">
+    <h2>Conoce a nuestro equipo</h2>
+    <div class="grid-equipo">
+      <div class="equipo-card">
+        <img src="images/persona1.jpg" alt="Miembro del equipo">
+        <h3>Juan Pérez</h3>
+        <p>Desarrollador Web</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/persona2.jpg" alt="Miembro del equipo">
+        <h3>Ana Gómez</h3>
+        <p>Especialista en Marketing Digital</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/persona3.jpg" alt="Miembro del equipo">
+        <h3>Pedro Rodríguez</h3>
+        <p>Soporte Técnico</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <h3>¿Cuánto tiempo tarda un proyecto web?</h3>
+      <p>Depende de la complejidad, pero en promedio entre 2 y 6 semanas.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Dan soporte después de entregar el proyecto?</h3>
+      <p>Sí, ofrecemos mantenimiento y soporte continuo para garantizar que tu web funcione al 100%.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Puedo pagar en cuotas?</h3>
+      <p>Claro, manejamos planes flexibles según tu necesidad.</p>
     </div>
   </section>
 
@@ -159,26 +219,54 @@
 <script src="js/carousel.js"></script>
 <script src="js/scrolBtn.js"></script>
 
-<!-- Js de scroll reveal + delay escalonado -->
- <script>
+<!-- Js de scroll reveal + delay escalonado + contador -->
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const boxes = document.querySelectorAll(".stat-box");
+  const counters = document.querySelectorAll(".counter");
 
+  // Configuración del Observer
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target); // solo animar una vez
+        const box = entry.target;
+        box.classList.add("show");
+
+        // Animar contador dentro de cada stat-box
+        const counter = box.querySelector(".counter");
+        if (counter) {
+          animateCounter(counter);
+        }
+
+        observer.unobserve(box); // Solo animar una vez
       }
     });
   }, {
-    threshold: 0.2 // se activa cuando el 20% del elemento es visible
+    threshold: 0.2 // Visible al 20%
   });
 
   boxes.forEach(box => observer.observe(box));
+
+  // Función contador animado
+  function animateCounter(counter) {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+    const increment = Math.ceil(target / 100); // velocidad (ajustable)
+
+    const updateCounter = () => {
+      count += increment;
+      if (count > target) count = target;
+      counter.textContent = "+" + count;
+
+      if (count < target) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
+
+    updateCounter();
+  }
 });
 </script>
-
 
 </body>
 </html>
