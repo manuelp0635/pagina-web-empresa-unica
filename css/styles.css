@@ -52,13 +52,6 @@ a:hover, .btn:hover {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .logo { max-width: 150px; }
-}
-@media (max-width: 480px) {
-  .logo { max-width: 120px; }
-}
-
 /* ================================
    SECCIÓN SERVICIOS
 ================================ */
@@ -105,8 +98,161 @@ a:hover, .btn:hover {
 }
 
 /* ================================
-   TESTIMONIOS (Questions)
+   SECCIÓN PORTAFOLIO
 ================================ */
+.portafolio {
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.portafolio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid-portafolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.proyecto-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-6px);
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.proyecto-info {
+  padding: 1rem;
+  text-align: left;
+}
+
+.proyecto-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #c77dff;
+}
+
+.proyecto-info p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ================================
+   EQUIPO
+================================ */
+
+/* ================================
+   PREGUNTAS FRECUENTES (FAQ mejorado)
+================================ */
+
+/* ================================
+   PREGUNTAS FRECUENTES (FAQ)
+================================ */
+.faq {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #c77dff;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #333;
+  cursor: pointer;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ================================
+   MEDIA QUERIES - FAQ
+================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .faq {
+    padding: 40px 15px;
+  }
+
+  .faq h2 {
+    font-size: 1.6rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .faq {
+    padding: 30px 10px;
+  }
+
+  .faq h2 {
+    font-size: 1.4rem;
+  }
+
+  .faq-item {
+    padding: 15px;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+  }
+
+  .faq-item p {
+    font-size: 0.85rem;
+  }
+}
+
+
 .questions {
   text-align: center;
   padding: 20px 10px;
@@ -126,8 +272,8 @@ a:hover, .btn:hover {
 
 .questions__padding {
   padding: 8px 12px;
-  border: 1px solid #5454D4;
-  border-radius: 6px;
+  border: 1px solid #c77dff;
+  border-radius: 8px;
   background: #fafafa;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
@@ -138,14 +284,9 @@ a:hover, .btn:hover {
   padding-bottom: 20px;
 }
 
-.questions__answer {
-  padding: 0 10px;
-  text-align: left;
-}
-
 .questions__title {
   font-size: 1rem;
-  padding: 8px 0;
+  padding: 10px 0;
   cursor: pointer;
   color: #222;
   display: flex;
@@ -156,35 +297,39 @@ a:hover, .btn:hover {
   transition: color 0.3s ease;
 }
 
+.questions__title:hover {
+  color: #c77dff;
+}
+
+.questions__title:focus {
+  outline: 2px solid #c77dff;
+  outline-offset: 4px;
+}
+
+.questions__title i {
+  transition: transform 0.3s ease;
+}
+
+.questions__padding--add .questions__title i {
+  transform: rotate(180deg);
+}
+
 .questions__show {
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  line-height: 1.6;
   margin: 6px 0 8px;
   color: #444;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
 }
 
 .questions__padding--add .questions__show {
   opacity: 1;
   max-height: 500px;
-}
-
-.questions__arrow {
-  border-radius: 50%;
-  background-color: #5454D4;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-
-.questions__padding--add .questions__arrow {
-  transform: rotate(180deg);
+  padding: 0.5rem 0;
 }
 
 /* ================================
@@ -212,25 +357,7 @@ a:hover, .btn:hover {
 }
 
 #btnContacto:hover {
-  background-color: #aa5bff;
-}
-
-/* ================================
-   BOTÓN WHATSAPP
-================================ */
-.whatsapp-boton {
-  display: inline-block;
-  background-color: #25d366;
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 12px;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.whatsapp-boton:hover {
-  background-color: #1ebe5d;
+  background-color: #9e5ad9;
 }
 
 /* ================================
@@ -238,10 +365,10 @@ a:hover, .btn:hover {
 ================================ */
 .dashboard-stats-horizontal {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas en PC */
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   padding: 40px 20px;
-  justify-items: center; /* centra las cajas dentro de cada celda */
+  justify-items: center;
 }
 
 .stat-box {
@@ -253,24 +380,15 @@ a:hover, .btn:hover {
   max-width: 250px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-
-  /* Estado inicial (oculto) */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Estado visible (cuando entra en pantalla) */
 .stat-box.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Delay escalonado (se activa con JS) */
-.stat-box.show:nth-child(1) { transition-delay: 0.2s; }
-.stat-box.show:nth-child(2) { transition-delay: 0.4s; }
-.stat-box.show:nth-child(3) { transition-delay: 0.6s; }
-.stat-box.show:nth-child(4) { transition-delay: 0.8s; }
 
 .stat-box:hover {
   transform: scale(1.05);
@@ -291,37 +409,6 @@ a:hover, .btn:hover {
 }
 
 /* ================================
-   MEDIA QUERIES - Dashboard
-================================ */
-
-/* Tablets y pantallas medianas */
-@media (max-width: 1024px) {
-  .dashboard-stats-horizontal {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-  }
-}
-
-/* Móviles pequeños */
-@media (max-width: 480px) {
-  .dashboard-stats-horizontal {
-    grid-template-columns: 1fr; /* 1 columna */
-    gap: 15px;
-  }
-
-  .stat-box {
-    max-width: 100%;
-  }
-
-  .stat-box h2 {
-    font-size: 1.6rem;
-  }
-
-  .stat-box p {
-    font-size: 0.9rem;
-  }
-}
-
-/* ================================
    BOTÓN FLOTANTE (Scroll Up)
 ================================ */
 #scrollBtn {
@@ -329,7 +416,7 @@ a:hover, .btn:hover {
   bottom: 80px;
   right: 20px;
   z-index: 999;
-  background-color: #c77dff; /* morado en PC */
+  background-color: #c77dff;
   color: white;
   border: none;
   border-radius: 50%;
@@ -356,8 +443,8 @@ a:hover, .btn:hover {
 }
 
 #scrollBtn i {
-  font-size: 1.8rem;   /* tamaño del icono */
-  line-height: 1;      /* corrige alineación */
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 /* ================================
@@ -372,7 +459,7 @@ a:hover, .btn:hover {
 }
 
 .footer a {
-  color: #c77dff; /* morado en PC */
+  color: #c77dff;
   text-decoration: none;
   font-weight: 500;
 }
@@ -388,40 +475,69 @@ a:hover, .btn:hover {
 }
 
 /* ================================
-   MEDIA QUERIES (ocultar morado en móviles)
+   MEDIA QUERIES
 ================================ */
-@media (max-width: 768px) {
-  /* ScrollBtn en gris para móviles */
-  #scrollBtn {
-    background-color: #555; /* gris en móviles */
+@media (max-width: 1024px) {
+  .dashboard-stats-horizontal {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  /* Footer links en blanco para móviles */
-  .footer a {
-    color: #ffffff;
+  .grid-equipo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  /* FAQ */
+  .questions__title {
+    font-size: 0.95rem;
+  }
+  .questions__show {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 768px) {
+  .logo { max-width: 150px; }
   h1 { font-size: 2rem; }
   .encabezado p { font-size: 1rem; }
-  .servicios h2, .contacto h2 { font-size: 1.5rem; }
-  .grid-servicios { grid-template-columns: 1fr; }
-  .card { padding: 1rem; }
+  .servicios h2, .contacto h2, .portafolio h2, .equipo h2 { font-size: 1.5rem; }
+  .grid-servicios, .grid-portafolio { grid-template-columns: 1fr; }
+  .card, .proyecto-card { padding: 1rem; }
   #btnContacto { width: 100%; font-size: 1rem; }
   .stat-box h2 { font-size: 1.8rem; }
+  #scrollBtn { background-color: #555; }
+  .footer a { color: #ffffff; }
+  /* FAQ */
+  .questions {
+    padding: 15px 5px;
+  }
+  .questions__title {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+  .questions__show {
+    font-size: 0.88rem;
+  }
 }
 
 @media (max-width: 480px) {
   body { padding: 1rem; }
   h1 { font-size: 1.7rem; }
   .encabezado p { font-size: 0.95rem; }
-  .card { font-size: 0.95rem; }
+  .card, .proyecto-card { font-size: 0.95rem; }
   .stat-box h2 { font-size: 1.6rem; }
   .stat-box p { font-size: 0.9rem; }
   .footer { font-size: 0.85rem; padding: 25px 15px; }
-  .footer {
+  .dashboard-stats-horizontal { grid-template-columns: 1fr; gap: 15px; }
+  .grid-equipo { grid-template-columns: 1fr; }
+  .equipo-card { max-width: 100%; }
+  /* FAQ */
+  .questions {
+    padding: 10px 2px;
+  }
+  .questions__title {
     font-size: 0.85rem;
-    padding: 25px 15px;
+    padding: 6px 0;
+  }
+  .questions__show {
+    font-size: 0.85rem;
   }
 }
