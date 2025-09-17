@@ -152,17 +152,97 @@ a:hover, .btn:hover {
   color: #444;
 }
 
-/* ================================
-   EQUIPO
+/* ================================ 
+   SECCIÓN EQUIPO (Horizontal Compacta)
 ================================ */
+.equipo {
+  padding: 40px 10px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.equipo h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Contenedor horizontal */
+.grid-equipo {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* ahora permite ajustar en varias filas */
+  padding-bottom: 5px;
+}
+
+.equipo-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  width: 180px; /* tamaño uniforme */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.equipo-card:hover {
+  transform: translateY(-6px);
+}
+
+.equipo-card img {
+  width: 120px; /* tamaño uniforme */
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.equipo-card h3 {
+  font-size: 1.1rem;
+  margin: 5px 0 3px;
+  font-weight: bold;
+  color: #222;
+}
+
+.equipo-card p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 1024px) {
+  .equipo h2 { font-size: 1.8rem; margin-bottom: 25px; }
+  .grid-equipo { gap: 12px; }
+  .equipo-card { width: 150px; padding: 8px; }
+  .equipo-card img { width: 100px; height: 100px; }
+}
+
+@media (max-width: 768px) {
+  .equipo h2 { font-size: 1.6rem; margin-bottom: 20px; }
+  .equipo-card { width: 130px; padding: 6px; }
+  .equipo-card img { width: 90px; height: 90px; }
+  .equipo-card h3 { font-size: 1rem; }
+  .equipo-card p { font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .equipo h2 { font-size: 1.4rem; margin-bottom: 15px; }
+  .equipo-card { width: 110px; padding: 5px; }
+  .equipo-card img { width: 80px; height: 80px; }
+  .equipo-card h3 { font-size: 0.95rem; }
+  .equipo-card p { font-size: 0.75rem; }
+}
 
 /* ================================
    PREGUNTAS FRECUENTES (FAQ mejorado)
 ================================ */
 
-/* ================================
-   PREGUNTAS FRECUENTES (FAQ)
-================================ */
 .faq {
   padding: 60px 20px;
   max-width: 900px;
