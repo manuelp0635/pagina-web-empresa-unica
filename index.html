@@ -29,6 +29,10 @@
   <meta name="twitter:description" content="Impulsamos tu negocio con tecnología y estrategia digital. Atención personalizada y resultados reales.">
   <meta name="twitter:image" content="https://www.tusitio.com/images/logo.png">
 
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
   <!-- Favicon -->
   <link rel="icon" href="images/logo.png" type="image/png">
 
@@ -114,7 +118,7 @@
   </section>
 
   <!-- Dashboard -->
-  <section class="dashboard-stats-vertical">
+  <section class="dashboard-stats-horizontal">
     <div class="stat-box">
       <h2 class="counter" data-target="15">+0</h2>
       <p>Proyectos entregados</p>
@@ -154,6 +158,27 @@
 <script src="js/botonflotante.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/scrolBtn.js"></script>
+
+<!-- Js de scroll reveal + delay escalonado -->
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".stat-box");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // solo animar una vez
+      }
+    });
+  }, {
+    threshold: 0.2 // se activa cuando el 20% del elemento es visible
+  });
+
+  boxes.forEach(box => observer.observe(box));
+});
+</script>
+
 
 </body>
 </html>
