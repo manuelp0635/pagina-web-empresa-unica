@@ -221,6 +221,168 @@ a:hover, .btn:hover {
 .faq-item p { font-size: .95rem; color: #555; line-height: 1.5; margin: 0; }
 
 /* ================================
+   TESTIMONIOS
+================================ */
+.questions {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.questions .subtitle {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #c77dff;
+}
+
+.questions__container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.questions__padding {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 25px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.questions__padding:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.questions__answer h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.questions__answer p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ================================
+   SECCIÓN ALIADOS
+================================ */
+.aliados {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.aliados h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.grid-aliados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  align-items: center;
+  justify-items: center;
+}
+
+.aliado-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aliado-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.aliado-card img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(40%);
+  transition: filter 0.3s ease;
+}
+
+.aliado-card img:hover {
+  filter: grayscale(0%);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 1024px) {
+  .aliados h2 {
+    font-size: 1.8rem;
+  }
+  .grid-aliados {
+    gap: 20px;
+  }
+  .aliado-card {
+    max-width: 160px;
+    padding: 18px;
+  }
+  .aliado-card img {
+    max-height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aliados h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  .grid-aliados {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+  .aliado-card {
+    max-width: 140px;
+    padding: 15px;
+  }
+  .aliado-card img {
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aliados {
+    padding: 40px 15px;
+  }
+  .aliados h2 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  .grid-aliados {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .aliado-card {
+    max-width: 120px;
+    padding: 12px;
+  }
+  .aliado-card img {
+    max-height: 50px;
+  }
+}
+
+
+/* ================================
    CONTACTO
 ================================ */
 .contacto {
@@ -294,6 +456,76 @@ a:hover, .btn:hover {
 #scrollBtn.show { opacity: 1; visibility: visible; }
 #scrollBtn:hover { background-color: #a855f7; }
 #scrollBtn i { font-size: 1.8rem; line-height: 1; }
+
+/* ================================
+  PROMOCIONES DEL MES
+================================ */
+
+.promociones {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.promociones h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.grid-promociones {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.promo-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.promo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.promo-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #7900f3;
+}
+
+.promo-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.btn-promo {
+  display: inline-block;
+  background: #7900f3;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-promo:hover {
+  background: #5800b2;
+}
+
 
 /* ================================
    FOOTER
