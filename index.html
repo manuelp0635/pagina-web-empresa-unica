@@ -1,873 +1,431 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
-  <link rel="shortcut icon" href="assets/images/PLUS.png" type="image/x-icon">
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-
-    <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-      
-      <!-- Mobirise Icons y Otros Estilos -->
-      <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-      <link rel="stylesheet" href="assets/dropdown/css/style.css">
-      <link rel="stylesheet" href="assets/socicon/css/styles.css">
-      <link rel="stylesheet" href="assets/theme/css/style.css">
-      <link rel="stylesheet" href="css/styles.min.css">
-      <link rel="stylesheet" href="css/styles.css">
-      
-      <!-- Mobirise Additional Styles -->
-      <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-      <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-      <link rel="stylesheet" href="css/styles1.min.css">
-
-
-  <style>
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Arial", sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
-    min-height: 100vh;
-    margin: 0;
-  }
-
-  /* Header */
-  #header14-1j {
-    background: transparent;
-    color: #000;
-    padding: 3rem 0;
-  }
-
-  #header14-1j .lead {
-    text-align: justify;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  /* Navbar */
-  .navbar-nav .nav-link {
-    color: #222 !important;
-    font-weight: 500;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #007BFF !important;
-  }
-
-  .dropdown-menu {
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  
-  /* =========================
-   BOTÓN ASESOR + MENÚ SOCIAL
-========================= */
-.asesor-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999; /* siempre visible sobre todo */
-}
-
-/* Botón asesor */
-.asesor-btn {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.asesor-btn img {
-  width: 50px;
-  height: 50px;
-}
-
-.asesor-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* Redes sociales flotantes */
-.social-links {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: translateY(10px);
-  z-index: 10000; /* más alto que el botón */
-}
-
-.social-links a {
-  background: #fff;
-  padding: 10px 15px;
-  border-radius: 25px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 14px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: background 0.3s ease, transform 0.2s;
-}
-
-.social-links a:hover {
-  background: #2575fc;
-  color: #fff;
-  transform: translateX(-5px);
-}
-
-/* Mostrar menú activo */
-.asesor-container.active .social-links {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* =========================
-   MENSAJE FLOTANTE MÓVIL
-========================= */
-.mensaje-movil {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: #ffffff;
-  color: #333;
-  padding: 12px 18px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  font-size: 14px;
-  display: none;
-  align-items: center;
-  gap: 8px;
-  animation: slideUp 0.6s ease;
-  z-index: 10001; /* siempre sobre todo */
-}
-
-.mensaje-movil button {
-  background: transparent;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: #888;
-}
-
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Mostrar solo en móvil */
-@media (max-width: 768px) {
-  .mensaje-movil {
-    display: flex;
-  }
-}
-
-    /* Fin Asesor virtual */
-
-/* ============================
-   Sección Domicilio
-============================ */
-section.domicilio-section {
-  padding: 40px 20px;
-  width: 100%;
-  background: #ffffff; /* Fondo expandido */
-  display: flex;
-  justify-content: center;
-}
-
-.domicilio-content {
-  background: #ffffff; 
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  max-width: 900px;
-  width: 100%;
-  text-align: center;
-}
-
-.domicilio-content h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #16a085;
-}
-
-.domicilio-content p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.cta-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #16a085, #1abc9c); /* degradado llamativo */
-  color: #fff;
-  padding: 14px 26px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 14px rgba(22, 160, 133, 0.4);
-}
-
-.cta-btn:hover {
-  background: linear-gradient(135deg, #138d75, #17a589); /* tono más oscuro al hover */
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-}
-
-.cta-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-}
-
-
-/* ============================
-   Botón CTA (Agenda tu cita)
-============================ */
-.domicilio-btn {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.cta-btn {
-  display: inline-block;
-  background: #2c3e50;       /* color principal del botón */
-  color: #fff;               /* texto en blanco */
-  padding: 12px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.cta-btn:hover {
-  background: #1a252f;       /* tono más oscuro al hover */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-.cta-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-
-/* ============================
-   Promociones del Mes (limpio)
-============================ */
-.promociones-mes {
-  text-align: center;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  position: relative;
-  max-width: 400px;
-}
-
-.promociones-mes h3 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  color: #2c3e50;
-  font-weight: bold;
-}
-
-.promo-carrusel {
-  overflow: hidden;
-}
-
-.promo-slides {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.promo-img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: none; /* ocultar todas */
-}
-
-.promo-img.activa {
-  display: block; /* mostrar solo la activa */
-}
-
-/* Botones */
-.promo-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #2c3e50;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-}
-
-.promo-btn:hover {
-  background: #1a252f;
-}
-
-.promo-btn.prev {
-  left: -40px;
-}
-
-.promo-btn.next {
-  right: -40px;
-}
-
-/* ============================
-   Media Queries
-============================ */
-@media (max-width: 576px) {
-  .promociones-mes h3 {
-    font-size: 1.3rem;
-  }
-  .promociones-mes .promo-img {
-    max-width: 180px;
-  }
-}
-
-@media (min-width: 577px) and (max-width: 991px) {
-  .promociones-mes h3 {
-    font-size: 1.5rem;
-  }
-  .promociones-mes .promo-img {
-    max-width: 200px;
-  }
-}
-
-    /* Fin Servicio domicilio + promociones del mes */
-
-
-
-    /* Estilos sección ¿Por qué Plus? */
-
-    /* ===== Estilos Generales ===== */
-.porque-section {
-  background: #ffffff; /* Fondo blanco */
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.porque-content {
-  max-width: 800px;
-  text-align: center;
-  background: #ffffff; /* También blanco, para mantener coherencia */
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.porque-content:hover {
-  transform: translateY(-5px);
-}
-
-.porque-content h2 {
-  font-size: 2rem;
-  color: #0a3d62; /* Azul profesional */
-  margin-bottom: 20px;
-}
-
-.porque-content p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.7;
-  margin-bottom: 30px;
-}
-
-.porque-content strong {
-  color: #0c6efc; /* Azul llamativo */
-}
-
-/* ===== Botón CTA ===== */
-.porque-btn .cta-btn {
-  display: inline-block;
-  background: #0c6efc;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.porque-btn .cta-btn:hover {
-  background: #084bb5;
-  transform: scale(1.05);
-}
-
-/* ===== Media Queries ===== */
-
-/* Tablets */
-@media (max-width: 992px) {
-  .porque-content {
-    padding: 30px 20px;
-  }
-
-  .porque-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .porque-content p {
-    font-size: 1rem;
-  }
-}
-
-/* Móviles */
-@media (max-width: 600px) {
-  .porque-section {
-    padding: 40px 15px;
-  }
-
-  .porque-content {
-    padding: 25px 18px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* un poco más suave en móvil */
-  }
-
-  .porque-content h2 {
-    font-size: 1.5rem;
-  }
-
-  .porque-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .porque-btn .cta-btn {
-    font-size: 0.9rem;
-    padding: 12px 20px;
-  }
-}
-
-</style>
-
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO meta tags -->
+  <title>Innovent Software | Diseño Web + Soporte Técnico + Estrategia Digital</title>
+  <meta name="description" content="Creamos sitios web profesionales, brindamos soporte técnico, mantenimiento y seguridad informática. Innovent Software es tu aliado digital en Cartagena, Colombia.">
+  <meta name="keywords" content="Innovent Software, diseño web Cartagena, soporte técnico PC, mantenimiento, desarrollo web, seguridad informática, estrategia digital">
+  <meta name="author" content="Innovent Software">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.tusitio.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Innovent Software | Diseño Web y Soporte Técnico">
+  <meta property="og:description" content="Soluciones digitales que impulsan tu presencia online. Diseño, desarrollo y soporte desde Cartagena para el mundo.">
+  <meta property="og:image" content="https://www.tusitio.com/images/logo.png">
+  <meta property="og:url" content="https://www.tusitio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Innovent Software | Diseño Web y Soporte Técnico">
+  <meta name="twitter:description" content="Impulsamos tu negocio con tecnología y estrategia digital. Atención personalizada y resultados reales.">
+  <meta name="twitter:image" content="https://www.tusitio.com/images/logo.png">
+
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <section class="menu" id="menu2-23">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow-sm">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="assets/images/PLUS.png" alt="Logo Plus" style="height: 3rem;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <!-- Inicio -
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Inicio</a>
-            </li>-->
-            <!-- Para ti -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="paraTi" role="button" data-bs-toggle="dropdown">
-                Nosotros
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./quienessomos.html">Quienes somos</a></li>
-                <!--<li><a class="dropdown-item" href="./servicios.html">Servicios</a></li>-->
-                <li><a class="dropdown-item" href="./nosotros.html">Nosotros</a></li>
-                <li><a class="dropdown-item" href="./historia.html">Historia</a></li>
-                <!--<li><a class="dropdown-item" href="#">Pagos</a></li>
-                <li><a class="dropdown-item" href="#">Resultados en línea</a></li>-->
-              </ul>
-            </li>
-            <!-- Institucional -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="institucional" role="button" data-bs-toggle="dropdown">
-                Servicios y Transparencia
-              </a>
-              <ul class="dropdown-menu">
-                <!--<li><a class="dropdown-item" href="./laboratorioclinicoderefencia.html">Historia</a></li>-->
-                <li><a class="dropdown-item" href="./servicios.html">Servicios</a></li>
-                <li>
-                  <a class="dropdown-item" href="./assets/pdf/PORTAFOLIO 23.pdf" download="PORTAFOLIO_23.pdf">
-                    Portafolio </a>
-              </li>
-              </ul>
-            </li>
-            <!-- Empresarial -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="empresarial" role="button" data-bs-toggle="dropdown">
-                Preparación de muestras
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Toma de muestra en sangre</a></li>
-                <li><a class="dropdown-item" href="#">Toma de muestra fecal</a></li>
-                <li><a class="dropdown-item" href="#">Muestra de orina (Primera micción) </a></li>
-                <li><a class="dropdown-item" href="#">Muestra de saliva </a></li>
-                <li><a class="dropdown-item" href="#">Muestra MyBiome</a></li>
-                <li><a class="dropdown-item" href="#">Prueba de aliento </a></li>
+<header class="encabezado">
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Logo Innovent Software" class="logo" id="logo">
+  </div>
+  <div class="logo-text" id="logoText">
+    <p style="color:#7900f3;">Experiencias digitales impactantes que conectan y convierten.</p>
+  </div>
+</header>
 
-              </ul>
-            </li>
-            <!-- Pacientes -->
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="pacientes" role="button" data-bs-toggle="dropdown">
-                Portal Pacientes
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Resultados</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+<main>
 
-        <!-- Redes Sociales --
-        <div class="d-flex ms-3">
-          <a href="https://www.facebook.com/PlusLaboratorioClinico" target="_blank" class="me-2">
-            <span class="socicon-facebook"></span>
-          </a>
-          <a href="https://www.instagram.com/laboratorio_clinico_plus" target="_blank" class="me-2">
-            <span class="socicon-instagram"></span>
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=573113212221&text=Hola%20Bienvenido%20a%20Plus%20Laboratorio%20Clinico" target="_blank">
-            <span class="socicon-whatsapp"></span>
-          </a>
-        </div>-->
+  <!-- Sección servicios -->
+  <section class="servicios">
+    <h2>¿Por qué Innovent Software?</h2>
+    <div class="grid-servicios">
+      <div class="card">
+        <div class="icono">🚀</div>
+        <h3>Diseño web estratégico</h3>
+        <p>Webs modernas, funcionales y pensadas para el usuario, conectando desde el primer clic.</p>
       </div>
-    </nav>
-  </section>
-  <!-- Fin Navbar -->
-
-  <!-- Asesor virtual -->
-  <div class="asesor-container">
-    <div class="social-links" id="socialMenu">
-      <a href="https://www.facebook.com/PlusLaboratorioClinico" target="_blank"><img src="assets/images/facebook.png" alt=""></a>
-      <a href="https://www.instagram.com/laboratorio_clinico_plus" target="_blank"><img src="assets/images/instagram.png" alt=""></a>
-      <a href="https://api.whatsapp.com/send?phone=573113212221&text=Hola%20Bienvenido%20a%20Plus%20Laboratorio%20Clinico" target="_blank"><img src="assets/images/whatsapp.png" alt=""></a>
-    </div>
-
-    <div class="asesor-btn" id="asesorBtn">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Asesor Virtual">
-    </div>
-  </div>
-
-  <!-- Mensaje flotante solo para móviles -->
-  <div class="mensaje-movil" id="mensajeMovil">
-    👋 Hola, ¿necesitas ayuda?
-    <button class="cerrar-msg" id="cerrarMsg">✖</button>
-  </div>
-
-  <!-- Asesor virtual final-->
-
-  <!-- Header -->
-  <section id="header14-1j" class="header14">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-12 col-md-5 text-center mb-3">
-          <img src="./assets/images/about1.png" alt="Cambio imagen" class="img-fluid">
-        </div>
-        <div class="col-12 col-md text-center">
-          <h1 class="display-4 fw-bold"></h1>
-          <p class="lead text-justify">
-            INNOVACIÓN Y CIENCIA PARA TU SALUD  
-            OFRECEMOS RESULTADOS PRECISOS Y CONFIABLES CON TECNOLOGÍA AVANZADA Y ATENCIÓN PERSONALIZADA, GARANTIZANDO DIAGNÓSTICOS OPORTUNOS Y UN SERVICIO BASADO EN CONFIANZA Y CALIDAD.
-          </p>
-        </div>
+      <div class="card">
+        <div class="icono">🌐</div>
+        <h3>Visibilidad y presencia online</h3>
+        <p>Posicionamos tu marca donde debe estar: al alcance de tu audiencia en la web.</p>
+      </div>
+      <div class="card">
+        <div class="icono">🤝</div>
+        <h3>Soporte técnico y acompañamiento</h3>
+        <p>Te apoyamos con mantenimiento, seguridad y actualización constante.</p>
       </div>
     </div>
   </section>
 
-  <!-- Seccion porque C+ -->
+  <!-- Portafolio -->
+  <section class="portafolio">
+    <h2>Proyectos destacados</h2>
+    <div class="grid-portafolio">
+      <div class="portafolio-card">
+        <img src="images/mokapmoviltabletpctotalsafe.png" alt="Proyecto 1">
+        <h3>Sitio Web Corporativo</h3>
+        <p>Diseño web moderno y responsivo para empresa en Cartagena.</p>
+      </div>
+      <div class="portafolio-card">
+        <img src="images/trucchi-ecommerce.jpg" alt="Proyecto 2">
+        <h3>Tienda Online</h3>
+        <p>Implementación de e-commerce con pasarela de pago integrada.</p>
+      </div>
+      <div class="portafolio-card">
+        <img src="images/website-template-page-business-project-landing-web-page-technical-online-support-design-evolution-system-finance-service-blog-news-illustration-vector.jpg" alt="Proyecto 3">
+        <h3>Soporte Técnico Empresarial</h3>
+        <p>Mantenimiento y seguridad informática para empresas locales.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="porque-section"><br>
-  <div class="porque-content">
-    <h2>🔬 ¿Por qué Plus Laboratorio Clínico Cartagena?</h2>
-    <p>
-      Elegirnos, significa confiar tu salud en manos expertas: <br><br>
-      ✅ <strong>Calidad y precisión</strong> en cada examen. <br>
-      👩‍⚕️ <strong>Profesionales altamente capacitados</strong> y comprometidos contigo. <br>
-      🏥 <strong>Infraestructura moderna</strong> y tecnología de vanguardia. <br>
-      🤝 <strong>Atención humana y cercana</strong>, porque tu bienestar es nuestra prioridad. <br>
-      ⏱️ <strong>Resultados rápidos y confiables</strong>, siempre a tiempo.
-    </p>
-    <!--<div class="porque-btn">
-      <a href="./formulario.html" class="cta-btn">
-        🌟 Elige confianza, elige C+ Laboratorio Clínico Cartagena
+  <!-- Equipo -->
+  <section class="equipo">
+  <h2>Conoce a nuestro equipo</h2>
+  <div class="carrusel-container">
+    <div class="grid-equipo">
+      <!-- Equipo original -->
+      <div class="equipo-card">
+        <img src="images/5.jpg" alt="Juan Pérez">
+        <h3>Juan Pérez</h3>
+        <p>Desarrollador Web</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.1.jpg" alt="Monica Gómez">
+        <h3>Moníca Gómez</h3>
+        <p>Especialista en UX/UI</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/6.jpg" alt="Pedro Rodríguez">
+        <h3>Pedro Rodríguez</h3>
+        <p>Soporte Técnico</p>
+      </div>
+
+      <!-- Nuevos roles de la agencia -->
+      <div class="equipo-card">
+        <img src="images/ceo.jpg" alt="Isaias Gonzales">
+        <h3>Isaias Gonzales</h3>
+        <p>Director General (CEO)</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.jpg" alt="Carlos Ramírez">
+        <h3>Carlos Ramírez</h3>
+        <p>Director de Tecnología (CTO)</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/2.jpg" alt="María López">
+        <h3>María López</h3>
+        <p>Directora Financiera (CFO)</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.2.jpg" alt="Sofía Torres">
+        <h3>Sofía Torres</h3>
+        <p>Project Manager</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/7.jpg" alt="Luis Fernández">
+        <h3>Luis Fernández</h3>
+        <p>Diseñador UI/UX</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.5.jpg" alt="Valentina Cruz">
+        <h3>Valentina Cruz</h3>
+        <p>Ejecutiva de Ventas</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.4.jpg" alt="Ana Gómez">
+        <h3>Ana Gómez</h3>
+        <p>Especialista en Marketing Digital</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.3.jpg" alt="Camila Rodríguez">
+        <h3>Camila Rodríguez</h3>
+        <p>Especialista en Atención al Usuario</p>
+      </div>
+
+      <!-- Duplicado del bloque para scroll infinito -->
+      <div class="equipo-card">
+        <img src="images/5.jpg" alt="Juan Pérez">
+        <h3>Juan Pérez</h3>
+        <p>Desarrollador Web</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.1.jpg" alt="Monica Gómez">
+        <h3>Moníca Gómez</h3>
+        <p>Especialista en UX/UI</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/6.jpg" alt="Pedro Rodríguez">
+        <h3>Pedro Rodríguez</h3>
+        <p>Soporte Técnico</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/ceo.jpg" alt="Isaias Gonzales">
+        <h3>Isaias Gonzales</h3>
+        <p>Director General (CEO)</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.jpg" alt="Carlos Ramírez">
+        <h3>Carlos Ramírez</h3>
+        <p>Director de Tecnología (CTO)</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/2.jpg" alt="María López">
+        <h3>María López</h3>
+        <p>Directora Financiera (CFO)</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.2.jpg" alt="Sofía Torres">
+        <h3>Sofía Torres</h3>
+        <p>Project Manager</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/7.jpg" alt="Luis Fernández">
+        <h3>Luis Fernández</h3>
+        <p>Diseñador UI/UX</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.5.jpg" alt="Valentina Cruz">
+        <h3>Valentina Cruz</h3>
+        <p>Ejecutiva de Ventas</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.4.jpg" alt="Ana Gómez">
+        <h3>Ana Gómez</h3>
+        <p>Especialista en Marketing Digital</p>
+      </div>
+      <div class="equipo-card">
+        <img src="images/1.3.jpg" alt="Camila Rodríguez">
+        <h3>Camila Rodríguez</h3>
+        <p>Especialista en Atención al Usuario</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Fin equipo -->
+
+
+  <!-- Preguntas frecuentes -->
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <h3>¿Cuánto tiempo tarda un proyecto web?</h3>
+      <p>Depende de la complejidad, pero en promedio entre 2 y 6 semanas.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Dan soporte después de entregar el proyecto?</h3>
+      <p>Sí, ofrecemos mantenimiento y soporte continuo para garantizar que tu web funcione al 100%.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Puedo pagar en cuotas?</h3>
+      <p>Claro, manejamos planes flexibles según tu necesidad.</p>
+    </div>
+  </section>
+
+   <!-- Promociones del mes -->
+  <section class="promociones">
+    <h2>Promociones del mes</h2>
+    <div class="grid-promociones">
+      <div class="promo-card">
+        <img src="images/promociones/diseño web basico.jpg" alt="Promoción 1">
+        <h3>Diseño Web Básico</h3>
+        <p>Obtén tu página web profesional con 20% de descuento.</p>
+        <a href="https://wa.link/8bakqr" class="btn-promo" target="_blank">Solicítalo ahora</a>
+      </div>
+      <div class="promo-card">
+        <img src="images/promociones/soporte tecnico.jpg" alt="Promoción 2">
+        <h3>Soporte Técnico</h3>
+        <p>Planes de mantenimiento mensual desde $99.000 COP.</p>
+        <a href="https://wa.link/8bakqr" class="btn-promo" target="_blank">Más info</a>
+      </div>
+      <div class="promo-card">
+        <img src="images/promociones/estrategia digital.jpg" alt="Promoción 3">
+        <h3>Estrategia Digital</h3>
+        <p>Incluye redes sociales + SEO con bono del 15%.</p>
+        <a href="https://wa.link/8bakqr" class="btn-promo" target="_blank">Aprovecha la promo</a>
+      </div>
+    </div>
+  </section>
+  <!-- Fin promociones del mes -->
+
+    <!-- Aliados -->
+  <section class="aliados" id="aliados">
+    <h2>Aliados Estratégicos</h2>
+    <div class="grid-aliados">
+      <div class="aliado-card">
+        <img src="images/Aliados/1.jpg" alt="Logo Aliado 1">
+      </div>
+      <div class="aliado-card">
+        <img src="images/Aliados/2.jpg" alt="Logo Aliado 2">
+      </div>
+      <div class="aliado-card">
+        <img src="images/Aliados/3.jpg" alt="Logo Aliado 3">
+      </div>
+      <div class="aliado-card">
+        <img src="images/Aliados/4.jpg" alt="Logo Aliado 4">
+      </div>
+      <div class="aliado-card">
+        <img src="images/Aliados/5.jpg" alt="Logo Aliado 5">
+      </div>
+      <div class="aliado-card">
+        <img src="images/Aliados/6.jpg" alt="Logo Aliado 6">
+      </div>
+    </div>
+  </section>
+  <!-- Fin Aliados -->
+
+
+  <!-- Testimonios -->
+  <section class="questions container">
+    <h2 class="subtitle">Testimonios</h2>
+    <div class="questions__container">
+      <article class="questions__padding">
+        <div class="questions__answer">
+          <h3 class="questions__title">Marelis Pacheco</h3>
+          <p class="questions__show">Para mí ha sido una experiencia muy positiva utilizar los servicios de <b>Innovent Software</b>.  
+            Lo que más valoro es la <b>atención personalizada</b>, la disposición para resolver <b>cualquier inquietud</b> y la eficiencia con la que han respondido a <b>nuestras necesidades</b>.  
+            Gracias por su apoyo constante.</p>
+        </div>
+      </article>
+
+      <article class="questions__padding">
+        <div class="questions__answer">
+          <h3 class="questions__title">Lorem</h3>
+          <p class="questions__show">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa error, quia adipisci excepturi ut dolor temporibus minima unde magnam eveniet quaerat aliquam! Perspiciatis reprehenderit nisi adipisci a repellendus labore magnam!</p>
+        </div>
+      </article>
+
+      <article class="questions__padding">
+        <div class="questions__answer">
+          <h3 class="questions__title">Lorem</h3>
+          <p class="questions__show">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos facere, quidem eum id excepturi assumenda explicabo nam accusamus veritatis voluptates eveniet adipisci, dicta nihil nemo modi possimus officiis quam atque?</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- Fin testimonios -->
+
+  <!-- Call to action -->
+  <section class="contacto">
+    <div class="cta">
+      <h2>¿Listo para impulsar tu presencia online?</h2>
+      <a href="https://wa.link/8bakqr" class="whatsapp-boton" target="_blank" rel="noopener noreferrer">
+        ¡Contáctanos por WhatsApp!
       </a>
-    </div>-->
-  </div>
-</section>
-
-
-  <!-- Fin Seccion porque C+-->
-
-  <!-- Inicio carrusel de videos -->
-<section class="slider6 mbr-embla cid-u1POXRwmNA">
-    
-    
-    <div class="position-relative">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Recomendaciones</strong></h4>
-            <!--<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Nos mueve el deseo de servir.</h5>-->
-        </div>
-        <div class="embla mt-4">
-            <div class="embla__viewport container-fluid is-draggable">
-                <div class="embla__container">
-                        <div class="slider-container">
-                            <div class="slider">
-                                <video src="assets/videos/VID-20250116-WA0021.mp4" muted controls></video>
-                                <video src="assets/videos/VID-20250116-WA0022.mp4" muted></video>
-                                <video src="assets/videos/VID-20250116-WA0023.mp4" muted></video>
-                                <video src="assets/videos/VID-20250116-WA0024.mp4" muted></video>
-                                <video src="assets/videos/VID-20250116-WA0025.mp4" muted></video>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Fin carusel de videos -->
-
-
- <!-- Seccion servicio domicilio -->
-  <section class="domicilio-section">
-    <div class="domicilio-content">
-
-<!-- Promociones del mes -->
-<div class="promociones-mes">
-  <h3>🎉 Promociones de la semana</h3>
-
-  <div class="promo-carrusel">
-    <div class="promo-slides">
-      <img src="./assets/images/Promocion lunes.jpg" alt="Promoción lunes" class="promo-img" data-dia="1">
-      <img src="./assets/images/Promocion martes.jpg" alt="Promoción martes" class="promo-img" data-dia="2">
-      <img src="./assets/images/Promocion miercoles.jpg" alt="Promoción miércoles" class="promo-img" data-dia="3">
-      <img src="./assets/images/Promocion jueves.jpg" alt="Promoción jueves" class="promo-img" data-dia="4">
-      <img src="./assets/images/Promocion viernes.jpg" alt="Promoción viernes" class="promo-img" data-dia="5">
-      <img src="./assets/images/Promocion sabado.jpg" alt="Promoción sábado" class="promo-img" data-dia="6">
-      <img src="./assets/images/Promocion sabado1.jpg" alt="Promocion sabado" class="promo-img" data-dia="7">
-      <!--<img src="./assets/images/Examenes 1.jpg" alt="Promocion Examenes" class="promo-img" data-dia="8">
-      <img src="./assets/images/Examenes 2.jpg" alt="Promoción Examenes" class="promo-img" data-dia="9">-->
-      <img src="./assets/images/" alt="Promoción domingo" class="promo-img" data-dia="0">
-    </div>
-  </div>
-
-  <!-- Botones de navegación -->
-  <button class="promo-btn prev">⟨</button>
-  <button class="promo-btn next">⟩</button>
-</div>
-
-      <!-- Fin Promociones del mes -->
-
-      <h2>🧪 ¡Tu salud en casa!</h2>
-      <p>
-        Con nuestro <strong>Servicio a Domicilio</strong> llevamos los exámenes de laboratorio hasta tu puerta. <br><br>
-        📍 Rápido, seguro y sin filas. <br>
-        💉 Profesionales a tu servicio. <br>
-        ⏱️ Resultados confiables en el menor tiempo.
-      </p>
-      <div class="domicilio-btn">
-        <a href="./formulario.html" class="cta-btn">
-          👉 Cuida tu salud sin salir de casa. ¡Agenda tu cita hoy mismo!
-        </a>
-      </div>
     </div>
   </section>
-  <!-- Fin Seccion servicio domicilio -->
 
-
-  <!-- ubicacion -->
-<section data-bs-version="5.1" class="contacts4 cid-sFAyMcKwph mcb" id="contacts4-21">  
-
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="text-content col-12 col-md-6">
-                <h2 class="mbr-section-title mbr-fonts-style" style="font-size: 28px;">
-                  <strong>Visítanos en nuestra sede y recibe atención personalizada</strong>
-                </h2>
-                <p class="mbr-text mbr-fonts-style" style="font-size: 16px;">.</p>
-            </div>
-            <div class="icons d-flex align-items-center col-12 col-md-6 justify-content-end mt-md-0 mt-2 flex-wrap">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.2921330636327!2d-75.49837412586521!3d10.398356389728328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef625b88706e2b3%3A0xcdaaa4bbf49b9b47!2sCra.%2057%20%2330%20C%2C%20Escall%C3%B3n%20Villa%2C%20Cartagena%20de%20Indias%2C%20Provincia%20de%20Cartagena%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1736953342822!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
+  <!-- Dashboard -->
+  <section class="dashboard-stats-horizontal">
+    <div class="stat-box">
+      <h2 class="counter" data-target="15">+0</h2>
+      <p>Proyectos entregados</p>
     </div>
-</section>
+    <div class="stat-box">
+      <h2 class="counter" data-target="7">+0</h2>
+      <p>Países alcanzados</p>
+    </div>
+    <div class="stat-box">
+      <h2 class="counter" data-target="12">+0</h2>
+      <p>Colaboradores</p>
+    </div>
+    <div class="stat-box">
+      <h2 class="counter" data-target="30">+0</h2>
+      <p>Desarrollos personalizados</p>
+    </div>
+  </section>
+  <!-- Fin dashboard -->
+
+  <!-- Botón flotante -->
+  <button id="scrollBtn" title="Ir arriba">
+    <i class="bx bx-chevron-up"></i>
+  </button>
+</main>
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-container">
-
-    <!-- Logo + misión -->
-    <div class="footer-section">
-      <img src="assets/images/PLUS.png" alt="Logo" class="footer-logo">
-      <p class="footer-mission">
-        Nuestra mision es brindar servicios de análisis clínico accesibles, confiables con calidad profesional y humana.
-      </p>
-      <!--<p class="footer-social-title">Nuestras redes:</p>
-      <div class="footer-socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>-->
-    </div>
-
-    <!-- Participación social -->
-    <div class="footer-section">
-      <h3>Gestión de la Alianza de Usuarios</h3>
-      <!--<p>Informe de actividades</p>-->
-      <ul>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Informe 2021</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Informe 2022</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Informe 2023</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Informe 2024</a></li>
-      </ul>
-    </div>
-
-    <!-- Nosotros -->
-    <div class="footer-section">
-      <h3>Nosotros</h3>
-      <ul>
-        <!--<li><a href="./laboratorioclinicoderefencia.html"><i class='bx bx-chevrons-right'></i> Historia</a></li>-->
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Nuestra organizacion</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Informacion financiera</a></li>
-      </ul>
-    </div>
-
-    <!-- Políticas -->
-    <div class="footer-section">
-      <h3>Políticas</h3>
-      <ul>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Proveedores</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Humanización</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> PQRS</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Habeas Data</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Ética y Transparencia</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Derechos del Paciente</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Reclamos Proveedores</a></li>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Gestión Integral</a></li>
-      </ul>
-    </div>
-
-    <!-- PQRSF -->
-    <div class="footer-section">
-      <h3>PQRSF</h3>
-      <p>
-        Tu opinión es importante. Escríbenos a través de nuestros canales de atención.
-      </p>
-      <ul>
-        <li><a href="#"><i class='bx bx-chevrons-right'></i> Gestión de PQRSF</a></li>
-        <li><a href="mailto:pluslaboratorioclinicoctg@gmail.com"><i class='bx bx-chevrons-right'></i> Canales de Atención</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Línea inferior -->
-  <div class="footer-bottom">
-    © 2025 Plus Laboratorio Clinico Cartagena | <a href="#">Preferencias de cookies</a>
-  </div>
+  <p>&copy; 2024 Innovent Software. Todos los derechos reservados.</p>
+  <p>Diseñado por <a href="https://www.instagram.com/innovent_servicios_ti/" target="_blank" rel="noopener noreferrer">Innovent Software</a></p>
 </footer>
-<!-- Fin footer -->
 
-  <!-- Bootstrap JS -->
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script1.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    // Aquí puedes manejar extras JS
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("JS cargado correctamente ✅");
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/questions.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/botonflotante.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/scrolBtn.js"></script>
+<script src="js/imagenes.js"></script>
+
+<!-- Js de scroll reveal + delay escalonado + contador -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".stat-box");
+  const counters = document.querySelectorAll(".counter");
+
+  // Configuración del Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const box = entry.target;
+        box.classList.add("show");
+
+        // Animar contador dentro de cada stat-box
+        const counter = box.querySelector(".counter");
+        if (counter) {
+          animateCounter(counter);
+        }
+
+        observer.unobserve(box); // Solo animar una vez
+      }
     });
-  </script>
-  <!-- Asesor virtual-->
-    <script>
-    const asesorBtn = document.getElementById("asesorBtn");
-    const container = document.querySelector(".asesor-container");
-    const cerrarMsg = document.getElementById("cerrarMsg");
-    const mensajeMovil = document.getElementById("mensajeMovil");
+  }, {
+    threshold: 0.2 // Visible al 20%
+  });
 
-    asesorBtn.addEventListener("click", () => {
-      container.classList.toggle("active");
-    });
+  boxes.forEach(box => observer.observe(box));
 
-    cerrarMsg.addEventListener("click", () => {
-      mensajeMovil.style.display = "none";
-    });
-  </script>
-  <!-- Asesor virtual final -->
+  // Función contador animado
+  function animateCounter(counter) {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+    const increment = Math.ceil(target / 100); // velocidad (ajustable)
 
-  <!-- Promociones de la semana -->
+    const updateCounter = () => {
+      count += increment;
+      if (count > target) count = target;
+      counter.textContent = "+" + count;
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const imagenes = document.querySelectorAll(".promo-img");
+      if (count < target) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
 
-  // Obtenemos el día actual (0 = domingo, 1 = lunes, ..., 6 = sábado)
-  let diaHoy = new Date().getDay();
-
-  // Buscamos la imagen con el data-dia que coincide
-  let indiceActual = Array.from(imagenes).findIndex(
-    img => parseInt(img.dataset.dia) === diaHoy
-  );
-
-  // Si no hay coincidencia, por defecto mostramos la primera
-  if (indiceActual === -1) indiceActual = 0;
-
-  function mostrarImagen(index) {
-    imagenes.forEach(img => img.classList.remove("activa"));
-    imagenes[index].classList.add("activa");
+    updateCounter();
   }
-
-  // Mostrar automáticamente la promo del día al cargar
-  mostrarImagen(indiceActual);
-
-  // Navegación manual opcional
-  document.querySelector(".promo-btn.prev").addEventListener("click", () => {
-    indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-    mostrarImagen(indiceActual);
-  });
-
-  document.querySelector(".promo-btn.next").addEventListener("click", () => {
-    indiceActual = (indiceActual + 1) % imagenes.length;
-    mostrarImagen(indiceActual);
-  });
 });
-
 </script>
 
-  <!-- Promociones de la semana final -->
 </body>
 </html>
