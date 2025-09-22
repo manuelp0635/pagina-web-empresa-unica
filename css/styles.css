@@ -558,6 +558,16 @@ a:hover, .btn:hover {
   .stat-box h2 { font-size: 1.8rem; }
   #scrollBtn { background-color: #555; }
 }
+@media (max-width: 768px) {
+  .footer a.instagram-link {
+    color: #fff !important; /* o el color que quieras en móviles */
+  }
+  .footer a.instagram-link:hover {
+    color: #c77dff; /* opcional si quieres mantener hover */
+  }
+}
+
+
 @media (max-width: 480px) {
   body { padding: 1rem; }
   h1 { font-size: 1.7rem; }
