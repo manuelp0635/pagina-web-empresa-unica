@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const totalWidth = grid.scrollWidth;
       const singleBlockWidth = totalWidth / 2; // ancho del bloque original
       // Duración para desplazar singleBlockWidth a la velocidad definida
-      const durationSec = Math.max(8, Math.round(singleBlockWidth / PX_PER_SECOND));
+      const durationSec = Math.max(3, Math.round(singleBlockWidth / PX_PER_SECOND));
       // Aplica la duración a la animación CSS (usa variable CSS o estilo directo)
       grid.style.animationDuration = `${durationSec}s`;
       // Sugerencia de rendimiento
@@ -52,4 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.addEventListener('focusout', () => grid.style.animationPlayState = 'running');
   });
 });
+
 
