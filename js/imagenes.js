@@ -5,34 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!grid || !container) return;
 
   let position = 0;
-  const speed = 1.5; // píxeles por tick
-
-    setInterval(() => {
-    position -= speed;
-    const maxScroll = grid.scrollWidth - container.clientWidth;
-    if (Math.abs(position) >= maxScroll) position = 0;
-    grid.style.transform = `translateX(${position}px)`;
-  }, 16); // ~60fps
+  const speed = 1.5; // píxeles por frame
 
   function animate() {
     position -= speed;
 
+    // Última tarjeta totalmente visible
     const maxScroll = grid.scrollWidth - container.clientWidth;
 
     if (Math.abs(position) >= maxScroll) {
-      position = 0; // Reinicia limpio
+      position = 0; // Reinicia al inicio limpio
     }
 
     grid.style.transform = `translateX(${position}px)`;
     requestAnimationFrame(animate);
   }
 
-  // 🔹 Aseguramos que nunca se "congele" después de un click
+  // Asegura que no se congele tras clic
   grid.addEventListener('click', e => {
-    // Ejemplo: podrías abrir modal, redirigir, etc.
-    console.log("Click en:", e.target.alt || "Tarjeta");
-    // Reiniciamos la animación por seguridad
-    requestAnimationFrame(animate);
+    if (e.target.tagName === 'IMG') {
+      console.log("Click en:", e.target.alt || "Tarjeta");
+      requestAnimationFrame(animate);
+    }
   });
 
   animate();
