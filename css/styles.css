@@ -195,6 +195,102 @@ a:hover, .btn:hover {
   margin: 0;
 }
 
+/* ======= Estilos base ======= */
+.equipo {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.equipo h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.carrusel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.grid-equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.equipo-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  max-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.equipo-card:hover {
+  transform: translateY(-5px);
+}
+
+.equipo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  max-width: 160px;
+  margin-bottom: 15px;
+}
+
+.equipo-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.equipo-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ======= Media Queries ======= */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  .grid-equipo {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  .equipo h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Smartphones grandes */
+@media (max-width: 768px) {
+  .grid-equipo {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+  .equipo h2 {
+    font-size: 1.6rem;
+  }
+  .equipo-card {
+    max-width: 220px;
+  }
+}
+
+/* Smartphones pequeños */
+@media (max-width: 480px) {
+  .grid-equipo {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .equipo h2 {
+    font-size: 1.4rem;
+  }
+  .equipo-card {
+    max-width: 100%;
+  }
+}
+
 /* ================================
    FAQ
 ================================ */
@@ -578,3 +674,4 @@ a:hover, .btn:hover {
   .footer { font-size: .85rem; padding: 25px 15px; }
   .dashboard-stats-horizontal { grid-template-columns: 1fr; gap: 15px; }
 }
+
