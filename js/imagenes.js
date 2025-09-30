@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const PX_PER_SECOND = 120; // velocidad aproximada (ajusta a tu gusto: px/s)
+  const PX_PER_SECOND = 200; // más rápido
 
   document.querySelectorAll('.grid-equipo').forEach(grid => {
     if (!grid) return;
@@ -52,3 +52,4 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.addEventListener('focusout', () => grid.style.animationPlayState = 'running');
   });
 });
+
