@@ -1,56 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const PX_PER_SECOND = 200; // más rápido
+  const grid = document.querySelector('.grid-equipo');
+  const container = document.querySelector('.carrusel-container');
 
-  document.querySelectorAll('.grid-equipo').forEach(grid => {
-    if (!grid) return;
-    if (grid.dataset.duplicated === 'true') return; // ya procesado
+  if (!grid || !container) return;
 
-    // Clonar sólo el bloque actual (no usar innerHTML += innerHTML)
-    const items = Array.from(grid.children);
-    const frag = document.createDocumentFragment();
-    items.forEach(item => frag.appendChild(item.cloneNode(true)));
-    grid.appendChild(frag);
-    grid.dataset.duplicated = 'true';
+  let position = 0;
+  const speed = 1.5; // píxeles por tick
 
-    // Esperar a que todas las imágenes dentro del grid (originales + duplicadas) carguen
-    const imgs = Array.from(grid.querySelectorAll('img'));
-    const imgsLoaded = imgs.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(res => img.addEventListener('load', res, { once: true }));
-    });
+    setInterval(() => {
+    position -= speed;
+    const maxScroll = grid.scrollWidth - container.clientWidth;
+    if (Math.abs(position) >= maxScroll) position = 0;
+    grid.style.transform = `translateX(${position}px)`;
+  }, 16); // ~60fps
 
-    const setAnimationDuration = () => {
-      // scrollWidth ahora es (original + duplicado)
-      const totalWidth = grid.scrollWidth;
-      const singleBlockWidth = totalWidth / 2; // ancho del bloque original
-      // Duración para desplazar singleBlockWidth a la velocidad definida
-      const durationSec = Math.max(3, Math.round(singleBlockWidth / PX_PER_SECOND));
-      // Aplica la duración a la animación CSS (usa variable CSS o estilo directo)
-      grid.style.animationDuration = `${durationSec}s`;
-      // Sugerencia de rendimiento
-      grid.style.willChange = 'transform';
-    };
+  function animate() {
+    position -= speed;
 
-    Promise.all(imgsLoaded).then(setAnimationDuration);
+    const maxScroll = grid.scrollWidth - container.clientWidth;
 
-    // Recalcular si cambian tamaños (responsive)
-    if ('ResizeObserver' in window) {
-      const ro = new ResizeObserver(() => {
-        // recalcula tras un pequeño delay para evitar loop excesivo
-        setTimeout(setAnimationDuration, 50);
-      });
-      ro.observe(grid);
-    } else {
-      // fallback simple
-      window.addEventListener('resize', () => setTimeout(setAnimationDuration, 150));
+    if (Math.abs(position) >= maxScroll) {
+      position = 0; // Reinicia limpio
     }
 
-    // Pausar/play al pasar el mouse y al recibir foco (accesibilidad)
-    grid.addEventListener('mouseenter', () => grid.style.animationPlayState = 'paused');
-    grid.addEventListener('mouseleave', () => grid.style.animationPlayState = 'running');
-    grid.addEventListener('focusin', () => grid.style.animationPlayState = 'paused');
-    grid.addEventListener('focusout', () => grid.style.animationPlayState = 'running');
+    grid.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  // 🔹 Aseguramos que nunca se "congele" después de un click
+  grid.addEventListener('click', e => {
+    // Ejemplo: podrías abrir modal, redirigir, etc.
+    console.log("Click en:", e.target.alt || "Tarjeta");
+    // Reiniciamos la animación por seguridad
+    requestAnimationFrame(animate);
   });
+
+  animate();
 });
-
-
