@@ -424,13 +424,22 @@ a:hover, .btn:hover {
   text-align: center;
 }
 
-.dashboard-stats-horizontal h1 {
+.gradient-text {
   width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  color: #9e5ad9; /* mismo color que los números */
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #9e5ad9, #ff7fd1, #9e5ad9);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s infinite linear;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .stat-box {
@@ -447,7 +456,7 @@ a:hover, .btn:hover {
 }
 
 .stat-box h2 {
-  color: #9e5ad9; /* tono principal */
+  color: #9e5ad9;
   font-size: 2rem;
   margin: 0;
 }
@@ -455,10 +464,8 @@ a:hover, .btn:hover {
 .stat-box p {
   color: #333;
   font-size: 1rem;
-  margin: 0.5rem 0 0;
+  margin-top: 0.5rem;
 }
-
-
 
 /* ================================
    BOTÓN FLOTANTE
@@ -857,5 +864,44 @@ input:focus, textarea:focus {
 @keyframes gradienteMove {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
+}
+
+/* ================================
+   ANIMACIONES GENERALES DE LOS TITULOS
+================================ */
+
+/* ==== TÍTULOS CON DEGRADADO ANIMADO ==== */
+h1, h2, h3 {
+  font-weight: 700;
+  background: linear-gradient(90deg, #9e5ad9, #ff7fd1, #9e5ad9);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s infinite linear;
+  text-align: center;
+}
+
+/* Puedes ajustar el tamaño por tipo de título */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+/* Animación de movimiento del degradado */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
