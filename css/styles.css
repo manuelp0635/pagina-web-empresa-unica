@@ -829,6 +829,88 @@ input:focus, textarea:focus {
   }
 }
 
+/* ===============================
+   BOTÓN FLOTANTE DE WHATSAPP MOVIL
+=============================== */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+
+  /* Animaciones combinadas */
+  animation: cicloWhatsapp 10s infinite ease-in-out;
+}
+
+/* Efecto hover */
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  background-color: #20ba5a;
+}
+
+/* ===============================
+   ANIMACIONES KEYFRAMES
+=============================== */
+
+/* Ciclo: aparece → visible → desaparece → invisible */
+@keyframes cicloWhatsapp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===============================
+   ADAPTACIÓN RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 80px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    bottom: 100px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
 
     /* ================================
        FOOTER 
