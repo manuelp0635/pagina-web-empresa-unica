@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- SEO meta tags -->
-  <title>Innovent Software | Diseño Web + Soporte Técnico + Estrategia Digital</title>
+  <title>Innovent Servicios TI | Diseño Web + Soporte Técnico + Estrategia Digital</title>
   <meta name="description" content="Creamos sitios web profesionales, brindamos soporte técnico, mantenimiento y seguridad informática. Innovent Software es tu aliado digital en Cartagena, Colombia.">
   <meta name="keywords" content="Innovent Software, diseño web Cartagena, soporte técnico PC, mantenimiento, desarrollo web, seguridad informática, estrategia digital">
   <meta name="author" content="Innovent Software">
@@ -36,8 +35,8 @@
   <link rel="icon" href="images/logo.png" type="image/png">
 
   <!-- Estilos -->
+  <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'"> <!-- 🔹 carga diferida -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 
@@ -45,7 +44,7 @@
 
 <header class="encabezado">
   <div class="logo-container">
-    <img src="images/logo.png" alt="Logo Innovent Software" class="logo" id="logo">
+    <img src="images/logo.png" alt="Logo Innovent Software" class="logo" id="logo" loading="lazy">
   </div>
   <div class="logo-text" id="logoText">
     <p style="color:#7900f3;">Experiencias digitales impactantes que conectan y convierten.</p>
@@ -54,49 +53,27 @@
 
 <main>
 
-  <!-- Sección servicios -->
-  <section class="servicios">
-    <h2>¿Por qué Innovent Software?</h2>
-    <div class="grid-servicios">
-      <div class="card">
-        <div class="icono">🚀</div>
-        <h3>Diseño web estratégico</h3>
-        <p>Webs modernas, funcionales y pensadas para el usuario, conectando desde el primer clic.</p>
-      </div>
-      <div class="card">
-        <div class="icono">🌐</div>
-        <h3>Visibilidad y presencia online</h3>
-        <p>Posicionamos tu marca donde debe estar: al alcance de tu audiencia en la web.</p>
-      </div>
-      <div class="card">
-        <div class="icono">🤝</div>
-        <h3>Soporte técnico y acompañamiento</h3>
-        <p>Te apoyamos con mantenimiento, seguridad y actualización constante.</p>
-      </div>
+<!-- Ejemplo de lazy loading en todas las imágenes -->
+<section class="portafolio">
+  <h2>Nuestros Servicios</h2>
+  <div class="grid-portafolio">
+    <div class="portafolio-card">
+      <img src="images/mokapmoviltabletpctotalsafe.png" alt="Proyecto 1" loading="lazy">
+      <h3>Sitio Web Corporativo</h3>
+      <p>Diseño web moderno y responsivo para empresa en Cartagena.</p>
     </div>
-  </section>
-
-  <!-- Portafolio -->
-  <section class="portafolio">
-    <h2>Nuestros Servicios</h2>
-    <div class="grid-portafolio">
-      <div class="portafolio-card">
-        <img src="images/mokapmoviltabletpctotalsafe.png" alt="Proyecto 1">
-        <h3>Sitio Web Corporativo</h3>
-        <p>Diseño web moderno y responsivo para empresa en Cartagena.</p>
-      </div>
-      <div class="portafolio-card">
-        <img src="images/trucchi-ecommerce.jpg" alt="Proyecto 2">
-        <h3>Tienda Online</h3>
-        <p>Implementación de e-commerce con pasarela de pago integrada.</p>
-      </div>
-      <div class="portafolio-card">
-        <img src="images/website-template-page-business-project-landing-web-page-technical-online-support-design-evolution-system-finance-service-blog-news-illustration-vector.jpg" alt="Proyecto 3">
-        <h3>Soporte Técnico Empresarial</h3>
-        <p>Mantenimiento y seguridad informática para empresas locales.</p>
-      </div>
+    <div class="portafolio-card">
+      <img src="images/trucchi-ecommerce.jpg" alt="Proyecto 2" loading="lazy">
+      <h3>Tienda Online</h3>
+      <p>Implementación de e-commerce con pasarela de pago integrada.</p>
     </div>
-  </section>
+    <div class="portafolio-card">
+      <img src="images/website-template-page-business-project-landing-web-page-technical-online-support-design-evolution-system-finance-service-blog-news-illustration-vector.jpg" alt="Proyecto 3" loading="lazy">
+      <h3>Soporte Técnico Empresarial</h3>
+      <p>Mantenimiento y seguridad informática para empresas locales.</p>
+    </div>
+  </div>
+</section>
 
   <!-- Equipo -->
 <section class="equipo">
@@ -104,12 +81,12 @@
   <div class="carrusel-container">
     <div class="grid-equipo">
       <div class="equipo-card">
-        <img src="images/5.jpg" alt="Juan Pérez">
+        <img src="images/5.webp" alt="Juan Pérez">
         <h3>Juan Pérez</h3>
         <p>Desarrollador Web</p>
       </div>
       <div class="equipo-card">
-        <img src="images/1.1.jpg" alt="Monica Gómez">
+        <img src="images/1.1.webp" alt="Monica Gómez">
         <h3>Moníca Gómez</h3>
         <p>Especialista en UX/UI</p>
       </div>
@@ -124,7 +101,7 @@
         <p>Director General (CEO)</p>
       </div>
       <div class="equipo-card">
-        <img src="images/1.jpg" alt="Carlos Ramírez">
+        <img src="images/1.webp" alt="Carlos Ramírez">
         <h3>Carlos Ramírez</h3>
         <p>Director de Tecnología (CTO)</p>
       </div>
@@ -144,7 +121,7 @@
         <p>Diseñador UI/UX</p>
       </div>
       <div class="equipo-card">
-        <img src="images/1.5.jpg" alt="Valentina Cruz">
+        <img src="images/1.5.webp" alt="Valentina Cruz">
         <h3>Valentina Cruz</h3>
         <p>Ejecutiva de Ventas</p>
       </div>
@@ -240,7 +217,7 @@
       <article class="questions__padding">
         <div class="questions__answer">
           <h3 class="questions__title">Usuario Innovent</h3>
-          <p class="questions__show">Para mí ha sido una experiencia muy positiva utilizar los servicios de <b>Innovent Software</b>.  
+          <p class="questions__show">Para mí ha sido una experiencia muy positiva utilizar los servicios de <b>Innovent Servicios TI</b>.  
             Lo que más valoro es la <b>atención personalizada</b>, la disposición para resolver <b>cualquier inquietud</b> y la eficiencia con la que han respondido a <b>nuestras necesidades</b>.  
             Gracias por su apoyo constante.</p>
         </div>
@@ -302,8 +279,8 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2024 Innovent Software. Todos los derechos reservados.</p>
-  <p>Diseñado por <a href="https://www.instagram.com/innovent_servicios_ti/" class="instagram-link" target="_blank" rel="noopener noreferrer">Innovent Software</a></p>
+  <p>&copy; 2024 Innovent Servicios TI. Todos los derechos reservados.</p>
+  <p>Diseñado por <a href="https://www.instagram.com/innovent_servicios_ti/" class="instagram-link" target="_blank" rel="noopener noreferrer">Innovent Servicios TI</a></p>
 </footer>
 
 <!-- Scripts -->
