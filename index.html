@@ -40,7 +40,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<>
 
 <header class="encabezado">
   <div class="logo-container">
@@ -68,7 +68,7 @@
     <div class="portafolio-card">
       <img src="images/website-template-page-business-project-landing-web-page-technical-online-support-design-evolution-system-finance-service-blog-news-illustration-vector.jpg" alt="Proyecto 3" loading="lazy">
       <h3>Soporte Técnico Empresarial</h3>
-      <p>Mantenimiento y seguridad informática para empresas locales.</p>
+      <p>Mantenimiento y seguridad informática en sitio y virtual.</p>
     </div>
   </div>
 </section>
@@ -162,7 +162,7 @@
 <a href="https://wa.link/8bakqr" class="whatsapp-boton" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp">💬 ¡Contáctanos por WhatsApp!</a>
 
 <section class="dashboard-stats-horizontal">
-  <h1>Nuestros resultados</h1>
+  <h1 class="gradient-text">Nuestros resultados</h1>
 
   <div class="stat-box">
     <h2 class="counter" data-target="15">+0</h2>
@@ -181,7 +181,6 @@
     <p>Desarrollos personalizados</p>
   </div>
 </section>
-
 
 </main>
 
@@ -256,6 +255,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
+<!-- Script contador seccion nuestros resultados -->
+ <script>
+  const counters = document.querySelectorAll('.counter');
+
+  const startCounting = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / 100; // Ajusta la velocidad
+      let count = 0;
+
+      const updateCount = () => {
+        count += increment;
+        if (count < target) {
+          counter.textContent = "+" + Math.ceil(count);
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.textContent = "+" + target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  // Inicia la animación cuando la sección entra en el viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounting();
+        observer.disconnect();
+      }
+    });
+  });
+
+  observer.observe(document.querySelector('.dashboard-stats-horizontal'));
+</script>
+
 
 </body>
 </html>
