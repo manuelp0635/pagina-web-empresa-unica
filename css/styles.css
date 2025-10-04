@@ -770,58 +770,65 @@ input:focus, textarea:focus {
   box-shadow: 0 0 8px rgba(199,125,255,0.4);
 }
 
-    /* ================================ 
-       BOTÓN FLOTANTE DE WHATSAPP
-    ================================ */
-    .whatsapp-boton {
-      position: fixed;
-      bottom: 90px;
-      right: 25px;
-      background-color: #25D366;
-      color: white;
-      font-weight: 600;
-      font-size: 16px;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      animation: aparecer 1s ease forwards, hideWhatsApp 8s forwards;
-    }
+  /* ====== BOTÓN FLOTANTE DE WHATSAPP ====== */
+/* Estilos generales */
+.whatsapp-boton {
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
+  background-color: #25D366;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
 
-    .whatsapp-boton:hover {
-      background-color: #20ba5a;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    }
+/* Hover animado */
+.whatsapp-boton:hover {
+  background-color: #20b85b;
+  transform: scale(1.05);
+}
 
-    @keyframes aparecer {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* 💻 Versión de escritorio */
+.whatsapp-boton.desktop {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
 
-    /* 🔹 Desvanecer automáticamente después de 8 segundos */
-    @keyframes hideWhatsApp {
-      0%, 80% {
-        opacity: 1;
-        visibility: visible;
-      }
-      100% {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
+/* 📱 Versión móvil */
+.whatsapp-boton.mobile {
+  display: none;
+  font-size: 14px;
+  right: 15px;
+  bottom: 20px;
+  padding: 10px 14px;
+}
 
-    /* 🔹 Ocultar automáticamente en pantallas pequeñas */
-    @media (max-width: 480px) {
-      .whatsapp-boton {
-        display: none;
-      }
-    }
+/* Mostrar solo en móvil */
+@media (max-width: 768px) {
+  .whatsapp-boton.desktop {
+    display: none;
+  }
+  .whatsapp-boton.mobile {
+    display: flex;
+  }
+}
+
+/* Mostrar solo en pantallas grandes */
+@media (min-width: 769px) {
+  .whatsapp-boton.desktop {
+    display: flex;
+  }
+  .whatsapp-boton.mobile {
+    display: none;
+  }
+}
+
 
     /* ================================
        FOOTER 
