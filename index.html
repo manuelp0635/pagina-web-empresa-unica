@@ -157,22 +157,40 @@
   </div>
 </section>
 
-<!-- 🔹 BOTÓN WHATSAPP 
-<a href="https://wa.link/8bakqr" 
-   class="whatsapp-boton desktop"
-   target="_blank" 
-   rel="noopener noreferrer">
-   💬 ¡Contáctanos por WhatsApp!
-</a>-->
+<!-- ==========================
+     ASESOR VIRTUAL "TABOTI"
+     ========================== -->
 
-<!-- BOTÓN FLOTANTE DE WHATSAPP -->
-<a href="https://wa.link/8bakqr"
-   class="whatsapp-btn"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Chatear por WhatsApp">
-   <i class='bx bxl-whatsapp'></i>
-</a>
+<!-- 💬 BOTÓN FLOTANTE -->
+<div id="taboti-widget">
+  <div id="taboti-icon" title="Habla con Taboti 🤖">💬</div>
+
+  <!-- 🧠 CONTENEDOR DE CHAT -->
+  <div id="taboti-chat" class="hidden">
+    <div class="chat-header">
+      <img src="./images/ASESOR VIRTUAL.jpg" alt="Logo" class="chat-logo" />
+      <div>
+        <h4>Taboti</h4>
+        <span class="status">En línea</span>
+      </div>
+      <button id="closeChat">✕</button>
+    </div>
+
+    <div id="chat-body">
+      <div class="taboti-msg">👋 ¡Hola! Soy <b>Taboti</b>, tu asesor virtual tecnológico.<br>
+      ¿En qué puedo ayudarte hoy?</div>
+    </div>
+
+    <div id="typing" class="hidden">Taboti está escribiendo...</div>
+
+    <div class="chat-input">
+      <input id="userInput" type="text" placeholder="Escribe tu pregunta..." />
+      <button id="sendBtn">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Fin asesor virtual Taboti -->
 
 <section class="dashboard-stats-horizontal">
   <h1 class="gradient-text">Nuestros resultados</h1>
@@ -215,7 +233,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/questions.js"></script>
 <script src="js/slider.js"></script>
-<script src="js/botonflotante.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/scrolBtn.js"></script>
 <script src="js/imagenes.js"></script>
@@ -305,20 +322,91 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(document.querySelector('.dashboard-stats-horizontal'));
 </script>
 
-<!-- SCRIPT ANIMACION DE APARICION WHATSAPP -->
- <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const botones = document.querySelectorAll('.whatsapp-boton');
-  botones.forEach(btn => {
-    btn.style.opacity = '0';
-    btn.style.transform = 'translateY(20px)';
-    setTimeout(() => {
-      btn.style.transition = 'all 0.6s ease';
-      btn.style.opacity = '1';
-      btn.style.transform = 'translateY(0)';
-    }, 600);
+<!-- SCRIPT ANIMACION DE ASESOR VIRTUAL -->
+<script>
+  const tabotiIcon = document.getElementById('taboti-icon');
+  const tabotiChat = document.getElementById('taboti-chat');
+  const closeChat = document.getElementById('closeChat');
+  const sendBtn = document.getElementById('sendBtn');
+  const userInput = document.getElementById('userInput');
+  const chatBody = document.getElementById('chat-body');
+  const typing = document.getElementById('typing');
+
+  // 🟢 Mostrar/Ocultar con el botón flotante
+  tabotiIcon.addEventListener('click', () => {
+    tabotiChat.classList.toggle('visible');
   });
-});
+
+  // 🔴 Cerrar con el botón ✕
+  closeChat.addEventListener('click', () => {
+    tabotiChat.classList.remove('visible');
+  });
+
+  // 🧠 Respuestas predefinidas
+  const respuestas = {
+    informativas: [
+      { keyword: "inicio", respuesta: "En la sección Inicio verás una vista general de nuestras soluciones digitales 💡." },
+      { keyword: "servicios", respuesta: "Ofrecemos desarrollo web, software a medida y automatización de procesos 🚀." },
+      { keyword: "contacto", respuesta: "Puedes comunicarte con nosotros por WhatsApp o correo electrónico 📧." },
+      { keyword: "soporte", respuesta: "Contamos con soporte técnico continuo y mantenimiento remoto 🧰." },
+      { keyword: "precios", respuesta: "Nuestros planes son flexibles. ¿Quieres que te recomiende el ideal para ti?" }
+    ],
+    objeciones: [
+      { keyword: "caro", respuesta: "Nuestros precios reflejan calidad, soporte y resultados medibles 💼." },
+      { keyword: "descuento", respuesta: "A veces activamos promociones o beneficios por proyectos continuos 🎁." },
+      { keyword: "presupuesto", respuesta: "Podemos adaptar una propuesta según tu presupuesto actual 💡." },
+      { keyword: "tiempo", respuesta: "Nuestras soluciones te ahorran tiempo automatizando tareas ⏳." },
+      { keyword: "confianza", respuesta: "Contamos con experiencia y referencias verificables 🔒." },
+      { keyword: "funciona", respuesta: "Cada desarrollo es probado y ajustado a tus requerimientos ✅." },
+      { keyword: "sirve", respuesta: "Adaptamos la solución a tu necesidad específica 🔧." },
+      { keyword: "consultarlo", respuesta: "Puedo resumirte los puntos clave para facilitarte presentarlo a tu equipo 🗂️." },
+      { keyword: "dudar", respuesta: "Si deseas, puedo darte un resumen claro de los beneficios y resultados esperados 😊." }
+    ]
+  };
+
+  // ✉️ Enviar mensaje
+  sendBtn.addEventListener('click', enviarMensaje);
+  userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') enviarMensaje();
+  });
+
+  function enviarMensaje() {
+    const texto = userInput.value.trim();
+    if (!texto) return;
+    agregarMensaje(texto, 'user');
+    userInput.value = '';
+    mostrarEscribiendo();
+
+    setTimeout(() => {
+      const respuesta = obtenerRespuesta(texto.toLowerCase());
+      agregarMensaje(respuesta, 'taboti');
+      ocultarEscribiendo();
+    }, 1000);
+  }
+
+  function agregarMensaje(texto, tipo) {
+    const msg = document.createElement('div');
+    msg.className = tipo === 'taboti' ? 'taboti-msg' : 'user-msg';
+    msg.textContent = texto;
+    chatBody.appendChild(msg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function mostrarEscribiendo() {
+    typing.classList.remove('hidden');
+  }
+
+  function ocultarEscribiendo() {
+    typing.classList.add('hidden');
+  }
+
+  function obtenerRespuesta(texto) {
+    const todas = [...respuestas.informativas, ...respuestas.objeciones];
+    for (const r of todas) {
+      if (texto.includes(r.keyword)) return r.respuesta;
+    }
+    return "🤔 No tengo una respuesta específica para eso, pero puedo ayudarte con cualquier tema tecnológico o de desarrollo digital.";
+  }
 </script>
 
 
