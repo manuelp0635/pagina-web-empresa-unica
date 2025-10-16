@@ -45,14 +45,16 @@
 ================================ -->
 <header class="encabezado">
   <div class="logo-container">
-    <img src="images/logo.png" alt="Logo Innovent Software" class="logo" id="logo" loading="lazy">
+    <h4 class="logo" id="logo" role="img" aria-label="Innovent Servicios TI">
+      Innovent <span>Servicios TI</span>
+    </h4>
   </div>
 
   <!-- BOTÓN HAMBURGUESA -->
   <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
   </div>
 
   <!-- NAVEGACIÓN -->
@@ -74,8 +76,10 @@
 ================================ -->
 <section class="animated-text-section" id="animated-text-section">
   <h2 class="fade-in-text">
-    Combinamos <span>Diseño Web Profesional</span> y <span>Soporte Técnico Eficiente</span> 
-    para garantizar <b>experiencias digitales</b> que <span class="highlight">conectan y convierten.</span>
+    Combinamos <span>Diseño Web Profesional</span> y 
+    <span>Soporte Técnico Eficiente</span> 
+    para garantizar <b>experiencias digitales</b> que 
+    <span class="highlight">conectan y convierten.</span>
   </h2>
 </section>
 
@@ -335,7 +339,7 @@
   <!-- 🧠 CONTENEDOR DE CHAT -->
   <div id="taboti-chat" class="hidden">
     <div class="chat-header">
-      <img src="./images/ASESOR VIRTUAL.jpg" alt="Logo" class="chat-logo" />
+      <img src="./images/ASESOR VIRTUAL.webp" alt="Logo" class="chat-logo" />
       <div>
         <h4>Taboti</h4>
         <span class="status">En línea</span>
@@ -445,7 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (count > target) count = target;
       counter.textContent = "+" + count;
 
-      if (count < target) {
+      if (count <scri target) {
         requestAnimationFrame(updateCounter);
       }
     };
@@ -453,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCounter();
   }
 });
-</>
+</script>
 
 <!-- Script contador seccion nuestros resultados -->
  <script>
