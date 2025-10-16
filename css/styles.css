@@ -34,79 +34,77 @@ a:hover, .btn:hover {
 /* ================================
    HEADER
 ================================ */
-/* ---------- ESTILOS BASE ---------- */
+/* Estilos generales del header */
 .encabezado {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffffcc;
-  backdrop-filter: blur(10px);
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
-  transition: background 0.3s ease;
+  padding: 12px 20px;
+  z-index: 999;
 }
 
-.logo-container {
+/* Logo */
+.logo-container .logo {
+  height: 45px;
+  width: auto;
+}
+
+/* Navegación */
+.nav-menu {
   display: flex;
   align-items: center;
+  transition: all 0.4s ease;
 }
 
-.logo {
-  height: 55px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* ---------- NAVEGACIÓN ---------- */
 .nav-menu ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 25px;
 }
 
-.nav-menu a {
+.nav-menu ul li {
+  margin: 0 15px;
+}
+
+.nav-menu ul li a {
   text-decoration: none;
-  color: #222;
+  color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
-  color: #007bff;
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+  color: #7900f3;
 }
 
-/* ---------- MENÚ HAMBURGUESA ---------- */
+/* Botón Hamburguesa */
 .menu-toggle {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
-  height: 22px;
+  height: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.menu-toggle span {
-  display: block;
+.menu-toggle .bar {
   height: 3px;
   width: 100%;
-  background: #222;
-  border-radius: 5px;
-  transition: all 0.4s ease;
+  background-color: #333;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-/* ---------- MODO RESPONSIVE ---------- */
-@media (max-width: 850px) {
+/* 📱 Estilos Responsive */
+@media (max-width: 768px) {
   .menu-toggle {
     display: flex;
   }
@@ -117,39 +115,237 @@ a:hover, .btn:hover {
     right: -100%;
     width: 75%;
     height: 100vh;
-    background: #fff;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    display: flex;
+    background-color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.15);
     transition: right 0.4s ease;
   }
 
-  .nav-menu.open {
+  .nav-menu.active {
     right: 0;
   }
 
   .nav-menu ul {
     flex-direction: column;
-    gap: 30px;
   }
 
-  .nav-menu a {
-    font-size: 1.2rem;
+  .nav-menu ul li {
+    margin: 15px 0;
   }
 
-  /* ANIMACIÓN ICONO X */
-  .menu-toggle.open span:nth-child(1) {
-    transform: rotate(45deg) translateY(9px);
+  /* Animación de la X */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
   }
-  .menu-toggle.open span:nth-child(2) {
+
+  .menu-toggle.active .bar:nth-child(2) {
     opacity: 0;
   }
-  .menu-toggle.open span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-9px);
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
   }
 }
+
+/* ===============================
+   ADICIONAL CABECERA PAGIGA
+================================ */
+
+/* ==========================
+   CONTENEDOR DEL LOGO
+========================== */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+}
+
+/* ==========================
+   LOGO TIPOGRÁFICO
+========================== */
+.logo {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.1;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+
+  /* Gradiente animado */
+  background: linear-gradient(90deg, #7900f3, #00b4d8, #f72585, #7900f3);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 🔥 Aparición/desaparición cíclica */
+  animation: fadeInOut 6s ease-in-out infinite, desireFlow 8s linear infinite;
+
+  font-size: clamp(1rem, 3vw, 2.2rem);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.logo span {
+  font-weight: 700;
+  background: linear-gradient(90deg, #00b4d8, #f72585, #7900f3, #00b4d8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accentFlow 8s ease-in-out infinite;
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: scale(0.98); filter: blur(2px); }
+  25%, 75% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes desireFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes accentFlow {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInOnce {
+  from { opacity: 0; transform: scale(0.9) translateY(-10px); filter: blur(2px); }
+  to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .logo {
+    font-size: clamp(1rem, 4.5vw, 1.6rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: clamp(0.9rem, 6vw, 1.3rem);
+  }
+}
+
+/* ================================
+   SECCIÓN DESCRIPCION + ANIMADA (AIDA SUAVE)
+================================ */
+.animated-text-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify; /* ✅ Texto ocupa todo el ancho sin afectar legibilidad */
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #1e293b; /* Gris azulado suave */
+  overflow: hidden;
+}
+
+/* ==========================
+   TEXTO PRINCIPAL
+========================== */
+.fade-in-text {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInSoft 2s ease forwards;
+}
+
+/* ==========================
+   ANIMACIONES SUAVES Y COLOR AIDA
+========================== */
+.fade-in-text span {
+  background: linear-gradient(90deg,
+    #246BFD, /* Confianza (Azul profundo) */
+    #3BAFDA, /* Atención suave (Celeste) */
+    #A78BFA, /* Deseo (Lavanda) */
+    #10B981  /* Acción positiva (Verde menta) */
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s ease-in-out infinite;
+  font-weight: 700;
+}
+
+.fade-in-text b {
+  color: #0f172a; /* Contraste legible */
+  font-weight: 700;
+}
+
+.fade-in-text .highlight {
+  background: linear-gradient(90deg,
+    #3BAFDA,
+    #10B981,
+    #A78BFA
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: softHighlight 10s ease-in-out infinite;
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+@keyframes fadeInSoft {
+  from { opacity: 0; transform: translateY(15px); filter: blur(3px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes softHighlight {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ==========================
+   RESPONSIVE (UX/UI)
+========================== */
+@media (max-width: 768px) {
+  .animated-text-section {
+    padding: 3rem 1rem;
+  }
+
+  .fade-in-text {
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    text-align: left; /* mejor legibilidad móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .fade-in-text {
+    font-size: clamp(0.95rem, 5vw, 1.2rem);
+    line-height: 1.4;
+  }
+}
+
+
 
 /* ================================
    SECCIÓN SERVICIOS
