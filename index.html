@@ -40,33 +40,154 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 
+<!-- ================================
+     HEADER CON MENÚ HAMBURGUESA
+================================ -->
 <header class="encabezado">
   <div class="logo-container">
     <img src="images/logo.png" alt="Logo Innovent Software" class="logo" id="logo" loading="lazy">
   </div>
-  <div class="logo-text" id="logoText">
-    <p style="color:#7900f3;">Experiencias digitales impactantes que conectan y convierten.</p>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="#animated-text-section" class="active">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
-<section class="portafolio">
-  <h2>Nuestros Servicios</h2>
-  <div class="grid-portafolio">
-    <div class="portafolio-card">
-      <img src="images/mokapmoviltabletpctotalsafe.webp" alt="Proyecto 1" loading="lazy">
-      <h3>Sitio Web Corporativo</h3>
-      <p>Diseño web moderno y responsivo para empresa en Cartagena.</p>
+
+  <!-- ================================
+     TEXTO CON ANIMACIÓN
+================================ -->
+<section class="animated-text-section" id="animated-text-section">
+  <h2 class="fade-in-text">
+    Combinamos <span>Diseño Web Profesional</span> y <span>Soporte Técnico Eficiente</span> 
+    para garantizar <b>experiencias digitales</b> que <span class="highlight">conectan y convierten.</span>
+  </h2>
+</section>
+
+  <!-- Seccion ¿nosotros - que hacemos? -->
+
+  <!-- ================================
+     SECCIÓN NOSOTROS
+================================ -->
+<section class="about-section" id="nosotros">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" alt="Equipo de Innovent Servicios TI">
     </div>
-    <div class="portafolio-card">
-      <img src="images/trucchi-ecommerce.webp" alt="Proyecto 2" loading="lazy">
-      <h3>Tienda Online</h3>
-      <p>Implementación de e-commerce con pasarela de pago integrada.</p>
+
+    <div class="about-text">
+      <h2>Sobre <span>Nosotros</span></h2>
+      <p>
+        En <strong>Innovent Servicios TI</strong> somos apasionados por la tecnología y el diseño. 
+        Combinamos creatividad, estrategia y soporte técnico especializado para ofrecer soluciones 
+        digitales que mejoran la presencia online de tu negocio y optimizan el rendimiento de tus sistemas.
+      </p>
+      <p>
+        Nuestro equipo está conformado por profesionales en <b>diseño web, desarrollo, mantenimiento y soporte técnico</b>, 
+        comprometidos con brindar una experiencia digital confiable, moderna y adaptada a tus necesidades.
+      </p>
+
+      <div class="about-stats">
+        <div class="stat">
+          <h3>+5 Años</h3>
+          <p>de experiencia</p>
+        </div>
+        <div class="stat">
+          <h3>+100</h3>
+          <p>proyectos completados</p>
+        </div>
+        <div class="stat">
+          <h3>24/7</h3>
+          <p>soporte disponible</p>
+        </div>
+      </div>
     </div>
-    <div class="portafolio-card">
-      <img src="images/Servicios empresariales.webp" alt="Proyecto 3" loading="lazy">
-      <h3>Soporte Técnico Empresarial</h3>
-      <p>Mantenimiento y seguridad informática en sitio y virtual.</p>
+  </div>
+</section>
+
+
+  <!-- Fin seccion ¿nosotros - que hacemos' -->
+
+<!-- ================================
+     SECCIÓN NUESTROS SERVICIOS (OPTIMIZADA)
+================================ -->
+<section class="services-section" id="servicios">
+  <div class="services-container">
+    <h2 class="services-title">Nuestros <span>Servicios</span></h2>
+    <p class="services-subtitle">Soluciones digitales que impulsan tu marca y optimizan tu entorno tecnológico.</p>
+
+    <div class="services-grid">
+      <!-- Servicio 1 -->
+      <article class="service-card">
+        <div class="service-image">
+          <img src="images/mokapmoviltabletpctotalsafe.webp" alt="Diseño de sitio web corporativo" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Sitio Web Corporativo</h3>
+          <p>Diseño web moderno, adaptable y optimizado para empresas que buscan una presencia digital profesional en Cartagena y más allá.</p>
+          <a href="#contacto" class="service-btn">Más información</a>
+        </div>
+      </article>
+
+      <!-- Servicio 2 -->
+      <article class="service-card">
+        <div class="service-image">
+          <img src="images/trucchi-ecommerce.webp" alt="Tienda online ecommerce" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Tienda Online</h3>
+          <p>Desarrollo de e-commerce seguro, con pasarelas de pago integradas y una experiencia de compra fluida para tus clientes.</p>
+          <a href="#contacto" class="service-btn">Ver detalles</a>
+        </div>
+      </article>
+
+      <!-- Servicio 3 -->
+      <article class="service-card">
+        <div class="service-image">
+          <img src="images/Servicios empresariales.webp" alt="Soporte técnico empresarial" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Soporte Técnico Empresarial</h3>
+          <p>Mantenimiento, optimización y seguridad informática para equipos y redes. Atención en sitio y asistencia remota.</p>
+          <a href="#contacto" class="service-btn">Contáctanos</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     SECCIÓN POR QUÉ INNOVENT SERVICIOS TI
+================================ -->
+<section class="why-innovent" id="porque-innovent">
+  <div class="why-container">
+    <div class="why-text">
+      <h2>¿Por qué <span>Innovent Servicios TI</span>?</h2>
+      <p>Porque transformamos la tecnología en soluciones reales. En Innovent, combinamos innovación, velocidad y excelencia técnica para impulsar el crecimiento digital de tu empresa.</p>
+      <ul>
+        <li>🚀 Desarrollo ágil y personalizado</li>
+        <li>🔒 Seguridad y confianza en cada proyecto</li>
+        <li>🤝 Soporte humano y técnico 24/7</li>
+        <li>💡 Enfoque en resultados y escalabilidad</li>
+      </ul>
+    </div>
+    <div class="why-image">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=60" alt="Equipo Innovent TI">
     </div>
   </div>
 </section>
@@ -77,15 +198,61 @@
     <div class="grid-equipo">
       <div class="equipo-card"><img src="images/5.webp" alt="Juan Pérez"><h3>Juan Pérez</h3><p>Desarrollador Web</p></div>
       <div class="equipo-card"><img src="images/1.1.webp" alt="Monica Gómez"><h3>Moníca Gómez</h3><p>Especialista en UX/UI</p></div>
-      <div class="equipo-card"><img src="images/6.webp" alt="Pedro Rodríguez"><h3>Pedro Rodríguez</h3><p>Soporte Técnico</p></div>
       <div class="equipo-card"><img src="images/ceo.webp" alt="Isaias Gonzales"><h3>Isaias Gonzales</h3><p>Director General (CEO)</p></div>
-      <div class="equipo-card"><img src="images/1.webp" alt="Carlos Ramírez"><h3>Carlos Ramírez</h3><p>Director de Tecnología (CTO)</p></div>
       <div class="equipo-card"><img src="images/2.jpg" alt="María López"><h3>María López</h3><p>Directora Financiera (CFO)</p></div>
-      <div class="equipo-card"><img src="images/1.2.jpg" alt="Sofía Torres"><h3>Julian Gomez</h3><p>Project Manager</p></div>
       <div class="equipo-card"><img src="images/7.webp" alt="Luis Fernández"><h3>Luis Fernández</h3><p>Diseñador UI/UX</p></div>
       <div class="equipo-card"><img src="images/1.5.webp" alt="Valentina Cruz"><h3>Valentina Cruz</h3><p>Ejecutiva de Ventas</p></div>
       <div class="equipo-card"><img src="images/1.4.webp" alt="Ana Gómez"><h3>Ana Gómez</h3><p>Especialista en Marketing Digital</p></div>
       <div class="equipo-card"><img src="images/1.3.webp" alt="Camila Rodríguez"><h3>Camila Rodríguez</h3><p>Especialista en Atención al Usuario</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+     SECCIÓN PLANES DE SUSCRIPCIÓN
+     Integrada con PayPal
+================================ -->
+<section class="pricing-section" id="planes">
+  <h2 class="pricing-title">Elige tu plan ideal</h2>
+  <p class="pricing-subtitle">Planes flexibles para cada necesidad</p>
+
+  <div class="pricing-container">
+    <!-- Plan Gratis -->
+    <div class="plan-card">
+      <h3>Gratis</h3>
+      <p class="price">$0<span>/mes</span></p>
+      <ul>
+        <li>✔ Acceso básico</li>
+        <li>✔ Soporte limitado</li>
+        <li>✔ 1 usuario</li>
+      </ul>
+      <button class="btn">Comenzar Gratis</button>
+    </div>
+
+    <!-- Plan Estándar -->
+    <div class="plan-card featured">
+      <h3>Estándar</h3>
+      <p class="price">$9.99<span>/mes</span></p>
+      <ul>
+        <li>✔ Acceso completo</li>
+        <li>✔ Soporte prioritario</li>
+        <li>✔ Hasta 5 usuarios</li>
+      </ul>
+      <div id="paypal-standard"></div>
+      <div class="badge">50% OFF</div>
+    </div>
+
+    <!-- Plan Premium -->
+    <div class="plan-card premium">
+      <h3>Premium</h3>
+      <p class="price">$19.99<span>/mes</span></p>
+      <ul>
+        <li>✔ Todas las funciones</li>
+        <li>✔ Soporte 24/7</li>
+        <li>✔ Usuarios ilimitados</li>
+        <li>✔ Acceso anticipado a novedades</li>
+      </ul>
+      <div id="paypal-premium"></div>
     </div>
   </div>
 </section>
@@ -101,19 +268,19 @@
   <h2>Promociones del mes</h2>
   <div class="grid-promociones">
     <div class="promo-card">
-      <img src="images/promociones/diseño web basico.jpg" alt="Promoción 1">
+      <img src="images/promociones/diseño web basico.webp" alt="Promoción 1">
       <h3>Diseño Web Básico</h3>
       <p>Obtén tu página web profesional con 20% de descuento.</p>
       <a href="https://wa.link/8bakqr" class="btn-promo" target="_blank">Solicítalo ahora</a>
     </div>
     <div class="promo-card">
-      <img src="images/promociones/soporte tecnico.jpg" alt="Promoción 2">
+      <img src="images/promociones/soporte tecnico.webp" alt="Promoción 2">
       <h3>Soporte Técnico</h3>
       <p>Planes de mantenimiento mensual desde $99.000 COP.</p>
       <a href="https://wa.link/8bakqr" class="btn-promo" target="_blank">Más info</a>
     </div>
     <div class="promo-card">
-      <img src="images/promociones/estrategia digital.jpg" alt="Promoción 3">
+      <img src="images/promociones/estrategia digital.webp" alt="Promoción 3">
       <h3>Estrategia Digital</h3>
       <p>Incluye redes sociales + SEO con bono del 15%.</p>
       <a href="https://wa.link/8bakqr" class="btn-promo" target="_blank">Aprovecha la promo</a>
@@ -124,12 +291,12 @@
 <section class="aliados" id="aliados">
   <h2>Aliados Estratégicos</h2>
   <div class="grid-aliados">
-    <div class="aliado-card"><img src="images/Aliados/1.jpg" alt="Logo Aliado 1"></div>
-    <div class="aliado-card"><img src="images/Aliados/2.jpg" alt="Logo Aliado 2"></div>
+    <div class="aliado-card"><img src="images/Aliados/1.webp" alt="Logo Aliado 1"></div>
+    <div class="aliado-card"><img src="images/Aliados/2.webp" alt="Logo Aliado 2"></div>
     <div class="aliado-card"><img src="images/Aliados/3.webp" alt="Logo Aliado 3"></div>
     <div class="aliado-card"><img src="images/Aliados/4.webp" alt="Logo Aliado 4"></div>
     <div class="aliado-card"><img src="images/Aliados/5.webp" alt="Logo Aliado 5"></div>
-    <div class="aliado-card"><img src="images/Aliados/6.jpg" alt="Logo Aliado 6"></div>
+    <div class="aliado-card"><img src="images/Aliados/6.webp" alt="Logo Aliado 6"></div>
   </div>
 </section>
 
@@ -190,7 +357,7 @@
   </div>
 </div>
 
-<!-- Fin asesor virtual Taboti -->
+<!-- Fin asesor virtual Taboti -
 
 <section class="dashboard-stats-horizontal">
   <h1 class="gradient-text">Nuestros resultados</h1>
@@ -200,7 +367,7 @@
     <p>Proyectos entregados</p>
   </div>
   <div class="stat-box">
-    <h2 class="counter" data-target="7">+0</h2>
+    <h2 class="counter" data-target="8">+0</h2>
     <p>Países alcanzados</p>
   </div>
   <div class="stat-box">
@@ -211,7 +378,7 @@
     <h2 class="counter" data-target="30">+0</h2>
     <p>Desarrollos personalizados</p>
   </div>
-</section>
+</section>-->
 
 </main>
 
@@ -236,6 +403,8 @@
 <script src="js/carousel.js"></script>
 <script src="js/scrolBtn.js"></script>
 <script src="js/imagenes.js"></script>
+<script src="js/header.js"></script>
+<script src="js/menu.js"></script>
 
 <!-- Js de scroll reveal + delay escalonado + contador -->
 <script>
@@ -284,7 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCounter();
   }
 });
-</script>
+</>
 
 <!-- Script contador seccion nuestros resultados -->
  <script>
@@ -407,6 +576,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return "🤔 No tengo una respuesta específica para eso, pero puedo ayudarte con cualquier tema tecnológico o de desarrollo digital.";
   }
+</script>
+
+<!-- SCRIPT PAYPAL -->
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+<script>
+  paypal.Buttons({
+    style: { color: 'blue', shape: 'pill', label: 'subscribe' },
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{ amount: { value: '9.99' } }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('¡Gracias ' + details.payer.name.given_name + '! Has adquirido el plan Estándar.');
+      });
+    }
+  }).render('#paypal-standard');
+
+  paypal.Buttons({
+    style: { color: 'gold', shape: 'pill', label: 'subscribe' },
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{ amount: { value: '19.99' } }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('¡Gracias ' + details.payer.name.given_name + '! Has adquirido el plan Premium.');
+      });
+    }
+  }).render('#paypal-premium');
 </script>
 
 
