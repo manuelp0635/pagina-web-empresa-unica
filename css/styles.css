@@ -49,10 +49,70 @@ a:hover, .btn:hover {
 }
 
 /* Logo */
-.logo-container .logo {
-  height: 45px;
-  width: auto;
+
+/* CONTENEDOR DEL LOGO */
+.logo-container {
+  display: flex;
+  justify-content: center;     /* centrado horizontal */
+  align-items: center;         /* centrado vertical */
+  width: 100%;
+  height: 90px;                /* altura más reducida */
+  padding: 5px 0;              /* espacio vertical mínimo */
+  background-color: transparent;
+  overflow: hidden;
+  box-sizing: border-box;
 }
+
+/* LOGO PRINCIPAL */
+.logo {
+  width: auto;                 /* el ancho se adapta a la altura */
+  height: 100%;                /* ocupa todo el alto del contenedor */
+  max-height: 80px;            /* altura máxima real del logo */
+  object-fit: contain;         /* mantiene proporción sin deformar */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.logo:hover {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+/* ---------------------------------
+   MEDIA QUERIES (RESPONSIVE)
+---------------------------------- */
+
+/* Tablets horizontales */
+@media (max-width: 1024px) {
+  .logo-container {
+    height: 80px;
+  }
+  .logo {
+    max-height: 70px;
+  }
+}
+
+/* Tablets verticales / Celulares grandes */
+@media (max-width: 768px) {
+  .logo-container {
+    height: 70px;
+  }
+  .logo {
+    max-height: 60px;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .logo-container {
+    height: 60px;
+  }
+  .logo {
+    max-height: 50px;
+  }
+}
+
+
 
 /* Navegación */
 .nav-menu {
@@ -247,104 +307,72 @@ a:hover, .btn:hover {
 ================================ */
 .animated-text-section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: justify; /* ✅ Texto ocupa todo el ancho sin afectar legibilidad */
-  padding: 4rem 1.5rem;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-  color: #1e293b; /* Gris azulado suave */
+  align-items: center;
+  min-height: 60vh;
+  background: radial-gradient(circle at center, #f5f5f5, #eaeaea); /* fondo claro neutro */
+  padding: 60px 20px;
+  text-align: center;
   overflow: hidden;
 }
 
-/* ==========================
-   TEXTO PRINCIPAL
-========================== */
 .fade-in-text {
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-size: 2rem;
   line-height: 1.5;
   max-width: 900px;
-  margin: 0 auto;
+  color: #fff;
   opacity: 0;
-  animation: fadeInSoft 2s ease forwards;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease-out forwards;
 }
 
-/* ==========================
-   ANIMACIONES SUAVES Y COLOR AIDA
-========================== */
-.fade-in-text span {
-  background: linear-gradient(90deg,
-    #246BFD, /* Confianza (Azul profundo) */
-    #3BAFDA, /* Atención suave (Celeste) */
-    #A78BFA, /* Deseo (Lavanda) */
-    #10B981  /* Acción positiva (Verde menta) */
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientFlow 8s ease-in-out infinite;
+/* Texto oscuro */
+.dark-text {
+  color: #111; /* negro suave */
+  font-weight: 600;
+}
+
+/* Texto principal blanco */
+.main-text {
+  color: #000;
   font-weight: 700;
 }
 
-.fade-in-text b {
-  color: #0f172a; /* Contraste legible */
-  font-weight: 700;
+/* Resaltado con tono suave */
+.highlight-soft {
+  color: #6a6aff; /* lavanda suave */
+  font-weight: 600;
 }
 
-.fade-in-text .highlight {
-  background: linear-gradient(90deg,
-    #3BAFDA,
-    #10B981,
-    #A78BFA
-  );
-  background-size: 300% 300%;
+/* Resaltado principal con brillo tenue */
+.highlight {
+  background: linear-gradient(90deg, #7d7dff, #a9baff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: softHighlight 10s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(180, 180, 255, 0.4);
 }
 
-/* ==========================
-   ANIMACIONES
-========================== */
-@keyframes fadeInSoft {
-  from { opacity: 0; transform: translateY(15px); filter: blur(3px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes softHighlight {
-  0% { background-position: 100% 50%; }
-  50% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-/* ==========================
-   RESPONSIVE (UX/UI)
-========================== */
-@media (max-width: 768px) {
-  .animated-text-section {
-    padding: 3rem 1rem;
+/* Animación */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
+/* Responsivo */
+@media (max-width: 768px) {
   .fade-in-text {
-    font-size: clamp(1rem, 4vw, 1.4rem);
-    text-align: left; /* mejor legibilidad móvil */
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .fade-in-text {
-    font-size: clamp(0.95rem, 5vw, 1.2rem);
-    line-height: 1.4;
+    font-size: 1.2rem;
   }
 }
-
 
 
 /* ================================
@@ -872,125 +900,472 @@ a:hover, .btn:hover {
 #scrollBtn i { font-size: 1.8rem; line-height: 1; }
 
 /* ================================
-  PROMOCIONES DEL MES
+  PROYECTOS
 ================================ */
 
-.promociones {
+/* ===== SECCIÓN PROYECTOS ===== */
+.proyectos {
+  background-color: #fff;
   padding: 60px 20px;
-  background: #f8f9fa;
   text-align: center;
 }
 
-.promociones h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #333;
+.titulo-proyectos {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 40px;
 }
 
-.grid-promociones {
+/* GRID DE PROYECTOS */
+.grid-proyectos {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.promo-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 20px;
-  transition: transform 0.3s ease;
+/* TARJETAS DE PROYECTOS */
+.proyecto-card {
+  background: #f9f9f9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-.promo-card:hover {
-  transform: translateY(-5px);
-}
-
-.promo-card img {
+.proyecto-card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
 }
 
-.promo-card h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #7900f3;
+.proyecto-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111;
+  margin: 15px 0 8px;
 }
 
-.promo-card p {
+.proyecto-card p {
   font-size: 0.95rem;
-  margin-bottom: 15px;
-  color: #555;
+  color: #444;
+  padding: 0 15px 15px;
+  line-height: 1.5;
 }
 
-.btn-promo {
+/* BOTÓN */
+.btn-proyecto {
   display: inline-block;
-  background: #7900f3;
+  background-color: #7900f3;
   color: #fff;
   padding: 10px 18px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 18px;
 }
 
-.btn-promo:hover {
-  background: #5800b2;
+.btn-proyecto:hover {
+  background-color: #5a00b9;
+  transform: translateY(-3px);
 }
 
-
-/* ================================
-   FOOTER
-================================ */
-.footer {
-  background-color: #1A1A1D;
-  color: #FFF;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: .95rem;
+/* EFECTO HOVER EN TARJETA */
+.proyecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.footer a { color: #c77dff; text-decoration: none; font-weight: 500; }
-.footer a:hover { color: #fff; text-decoration: underline; }
-.footer p { margin: 8px 0; line-height: 1.6; }
 
-/* ================================
-   MEDIA QUERIES
-================================ */
-@media (max-width: 1024px) {
-  .dashboard-stats-horizontal { grid-template-columns: repeat(2, 1fr); }
-}
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .logo { max-width: 150px; }
-  h1 { font-size: 2rem; }
-  .encabezado p { font-size: 1rem; }
-  .servicios h2, .contacto h2, .portafolio h2, .equipo h2 { font-size: 1.5rem; }
-  .grid-servicios, .grid-portafolio { grid-template-columns: 1fr; }
-  .card, .proyecto-card { padding: 1rem; }
-  #btnContacto { width: 100%; font-size: 1rem; }
-  .stat-box h2 { font-size: 1.8rem; }
-  #scrollBtn { background-color: #555; }
-}
-@media (max-width: 768px) {
-  .footer a.instagram-link {
-    color: #fff !important; /* o el color que quieras en móviles */
+  .titulo-proyectos {
+    font-size: 1.8rem;
   }
-  .footer a.instagram-link:hover {
-    color: #c77dff; /* opcional si quieres mantener hover */
+  .proyecto-card img {
+    height: 200px;
   }
 }
-
 
 @media (max-width: 480px) {
-  body { padding: 1rem; }
-  h1 { font-size: 1.7rem; }
-  .encabezado p { font-size: .95rem; }
-  .card, .proyecto-card { font-size: .95rem; }
-  .stat-box h2 { font-size: 1.6rem; }
-  .stat-box p { font-size: .9rem; }
-  .footer { font-size: .85rem; padding: 25px 15px; }
-  .dashboard-stats-horizontal { grid-template-columns: 1fr; gap: 15px; }
+  .titulo-proyectos {
+    font-size: 1.6rem;
+  }
+  .proyecto-card p {
+    font-size: 0.9rem;
+  }
+}
+
+.benefits-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* título arriba, contenido abajo */
+  min-height: 100vh;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+.benefits-hero h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
+  margin: 0;
+  padding-top: 20px;
+}
+
+/* =========================================
+   CONTENEDOR DE BENEFICIOS
+========================================= */
+.benefits-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* =========================================
+   TARJETAS DE BENEFICIOS
+========================================= */
+.benefit-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.benefit-item h3 {
+  font-size: 1.5rem;
+  color: #7900f3;
+  margin-bottom: 15px;
+}
+
+.benefit-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefit-item ul li {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.benefit-item ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #7900f3;
+  font-weight: bold;
+}
+
+/* =========================================
+   MEDIA QUERIES
+========================================= */
+@media (min-width: 768px) {
+  .benefits-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .benefits-hero h2 {
+    font-size: 2rem;
+  }
+  .benefit-item h3 {
+    font-size: 1.3rem;
+  }
+  .benefit-item ul li {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================
+   SECCIÓN CTA "DA EL PRIMER PASO"
+========================================= */
+.cta {
+  padding: 60px 20px;
+  background: #f4f4f9;
+  font-family: 'Arial', sans-serif;
+}
+
+.cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.8rem;
+  color: #7900f3;
+  margin-bottom: 20px;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   INFO DESTACADA
+========================================= */
+.cta-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.info-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 250px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.info-item h3 {
+  color: #7900f3;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.info-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.sub-info {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* =========================================
+   FORMULARIO
+========================================= */
+.cta-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.cta-form h3 {
+  text-align: center;
+  color: #7900f3;
+  margin-bottom: 20px;
+}
+
+.cta-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cta-form input,
+.cta-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.cta-form textarea {
+  min-height: 120px;
+}
+
+.cta-form button {
+  background: #7900f3;
+  color: #fff;
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-form button:hover {
+  background: #5e00c0;
+}
+
+/* =========================================
+   MEDIA QUERIES RESPONSIVE
+========================================= */
+@media (max-width: 1024px) {
+  .cta-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .cta h2 {
+    font-size: 2rem;
+  }
+  .cta-text {
+    font-size: 1rem;
+  }
+  .cta-form button {
+    font-size: 1rem;
+  }
+}
+
+
+/* ================================
+   FOOTER CONTACTO
+================================ */
+/* ===== FOOTER CONTACTO ===== */
+.contact-footer {
+  background-color: #ffffff;
+  color: #111;
+  text-align: center;
+  padding: 50px 20px 30px;
+  border-top: 2px solid #eee;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* ===== ICONOS SOCIALES ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px; /* más espacio entre íconos */
+  margin-bottom: 25px;
+}
+
+.social-icon {
+  width: 68px;   /* antes 48px */
+  height: 68px;  /* antes 48px */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon img {
+  width: 34px;   /* antes 24px */
+  height: 34px;  /* antes 24px */
+  filter: brightness(0) invert(1);
+}
+
+/* COLORES POR RED SOCIAL */
+.social-icon:nth-child(1) { background-color: #25d366; } /* WhatsApp */
+.social-icon:nth-child(2) { background-color: #0077b5; } /* LinkedIn */
+.social-icon:nth-child(3) {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.social-icon:nth-child(4) { background-color: #24292e; } /* GitHub */
+
+/* EFECTO HOVER */
+.social-icon:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .footer-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+  }
+
+  .social-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .social-icon img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-title {
+    font-size: 1.3rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .social-icons {
+    gap: 22px;
+  }
+
+  .social-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .social-icon img {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 /* ================================
