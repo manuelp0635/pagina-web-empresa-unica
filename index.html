@@ -28,6 +28,9 @@
   <meta name="twitter:description" content="Impulsamos tu negocio con tecnología y estrategia digital. Atención personalizada y resultados reales.">
   <meta name="twitter:image" content="https://www.tusitio.com/images/logo.png">
 
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="TU_CODIGO_VERIFICACION_GOOGLE">
+
   <!-- Boxicons CDN -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -35,9 +38,25 @@
   <link rel="icon" href="images/logo.png" type="image/png">
 
   <!-- Estilos -->
-  <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'"> <!-- 🔹 carga diferida -->
+  <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Certificado SSL - Indicación visual -->
+  <link rel="icon" href="images/SSL.png" type="image/png" title="Sitio seguro SSL"/>
+
+  <!-- Google Analytics Básico (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX'); // Reemplaza con tu ID de GA4
+  </script>
 </head>
 
 <!-- ================================
@@ -187,7 +206,6 @@
       <ul>
         <li>🚀 Desarrollo ágil y personalizado</li>
         <li>🔒 Seguridad y confianza en cada proyecto</li>
-        <li>🤝 Soporte humano y técnico 24/7</li>
         <li>💡 Enfoque en resultados y escalabilidad</li>
       </ul>
     </div>
@@ -215,111 +233,98 @@
 
 <!-- ================================
      SECCIÓN PLANES DE SUSCRIPCIÓN
-     Integrada con PayPal
 ================================ -->
-<section class="pricing-section" id="planes">
-  <h2 class="pricing-title">Planes y tarifas</h2>
-  <p class="pricing-subtitle">Elige el plan que mejor se adapte para tu negocio.</p>
+<!-- Sección Planes y Tarifas Actualizada -->
+<section class="plans-section">
+  <div class="container">
+    <h2>Planes y tarifas</h2>
+    <p>Elige el plan que mejor se adapte para tu negocio.</p>
 
-  <div class="pricing-container">
-    <!-- Plan Gratis -->
-    <div class="plan-card">
-      <h3>BASICO</h3>
-      <p class="price">$400.000<span> COP</span></p>
-      <ul>
-        <li>✔ Pagina web sencilla (1-3 secciones)</li>
-        <li>✔ Diseño responsive basico</li>
-        <li>✔ Entrega rapida (7 dias)</li>
-      </ul>
-      <button class="btn">Comenzar Gratis</button>
-    </div>
+    <div class="plans-grid">
 
-    <!-- Plan Iasad -->
-    <div class="plan-card">
-      <h3>MARCA DIGITAL</h3>
-      <p class="price">$800.000<span>COP</span></p>
-      <ul>
-        <li>✔ Pagina con hasta 5 secciones</li>
-        <li>✔ Formulario de contacto avanzado</li>
-        <li>✔ Diseño personalizado</li>
-        <li>✔ Google Analytics básico</li>
-      </ul>
-      <button class="btn">Comenzar Gratis</button>
-    </div>
+      <!-- BASICO -->
+      <div class="plan-card" data-plan="basico">
+        <h3>BÁSICO</h3>
+        <p class="price">$400.000 COP</p>
+        <ul>
+          <li><span>🖥️</span>Pagina web sencilla (1-3 secciones)</li>
+          <li><span>📱</span>Diseño responsive básico</li>
+          <li><span>⏱️</span>Entrega rápida (7 días)</li>
+          <li><span>🔍</span>Optimización básica SEO</li>
+          <li><span>🛠️</span>Soporte técnico inicial</li>
+          <li><span>⚡</span>Velocidad de carga optimizada</li>
+          <li><span>✏️</span>Actualizaciones sencillas</li>
+        </ul>
+        <div class="btn-container">
+          <a href="#cta" class="btn-plan">Comenzar Gratis</a>
+        </div>
+      </div>
 
-    <!-- Plan Estándar -->
-    <div class="plan-card featured">
-      <h3>INTELIGENTE</h3>
-      <p class="price">$1'500.000<span>COP</span></p>
-      <ul>
-        <li>✔ Sitio completo (hasta 8 secciones)</li>
-        <li>✔ Integracion redes sociales</li>
-        <li>✔ SEO optimizado + Google Search Console</li>
-        <li>✔ Galeria de imagenes optimizada</li>
-        <li>✔ 3 meses soporte tecnico</li>
-      </ul>
-      <div class="badge">MAS POPULAR</div>
-      <button class="btn">Comenzar Gratis</button>
-    </div>
+      <!-- MARCA DIGITAL -->
+      <div class="plan-card" data-plan="marca-digital">
+        <h3>MARCA DIGITAL</h3>
+        <p class="price">$800.000 COP</p>
+        <ul>
+          <li><span>🖥️</span>Página con hasta 5 secciones</li>
+          <li><span>📩</span>Formulario de contacto avanzado</li>
+          <li><span>🎨</span>Diseño personalizado</li>
+          <li><span>📊</span>Google Analytics básico</li>
+          <li><span>📝</span>Estrategia inicial de contenido</li>
+          <li><span>💼</span>Asesoría de Branding</li>
+          <li><span>📖</span>Manual básico de marca</li>
+          <li><span>🔗</span>Integración con herramientas de contacto</li>
+          <li><span>🛠️</span>Soporte inicial</li>
+        </ul>
+        <div class="btn-container">
+          <a href="#cta" class="btn-plan">Comenzar Gratis</a>
+        </div>
+      </div>
 
-    <!-- Plan Premium -->
-    <div class="plan-card premium">
-      <h3>PREMIUM</h3>
-      <p class="price">$3'450.000<span>COP</span></p>
-      <ul>
-        <li>✔ Tienda virtual completa</li>
-        <li>✔ Multiples pasarelas de pago</li>
-        <li>✔ Gestion completa de inventario</li>
-        <li>✔ Sistmema de envios integrados</li>
-        <li>✔ Cupones y promociones</li>
-        <li>✔ Panel de reportes y analytics</li>
-        <li>✔ 6 meses soporte prioritario</li>
-      </ul>
-      <button class="btn">Comenzar Gratis</button>
+      <!-- INTELIGENTE -->
+      <div class="plan-card popular" data-plan="inteligente">
+        <span class="popular-badge">MÁS POPULAR</span>
+        <h3>INTELIGENTE</h3>
+        <p class="price">$1'500.000 COP</p>
+        <ul>
+          <li><span>🖥️</span>Sitio completo (hasta 8 secciones)</li>
+          <li><span>🔗</span>Integración redes sociales</li>
+          <li><span>🔍</span>SEO optimizado + Google Search Console</li>
+          <li><span>🖼️</span>Galería de imágenes optimizada</li>
+          <li><span>🛠️</span>3 meses soporte técnico</li>
+          <li><span>⚡</span>Estabilidad del proyecto</li>
+          <li><span>🤖</span>Automatización de contactos</li>
+          <li><span>💻</span>Desarrollo web avanzado</li>
+        </ul>
+        <div class="btn-container">
+          <a href="#cta" class="btn-plan">Comenzar Gratis</a>
+        </div>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan-card" data-plan="premium">
+        <h3>PREMIUM</h3>
+        <p class="price">$3'450.000 COP</p>
+        <ul>
+          <li><span>🛒</span>Tienda virtual completa</li>
+          <li><span>📦</span>Catálogo de productos ilimitado</li>
+          <li><span>💳</span>Carrito de compras y pago seguro</li>
+          <li><span>📋</span>Gestión de inventario y pedidos</li>
+          <li><span>🔍</span>SEO avanzado para E-commerce</li>
+          <li><span>🤖</span>Automatización de marketing</li>
+          <li><span>🔗</span>Integración con redes sociales y marketplace</li>
+          <li><span>📈</span>Análisis y reportes de ventas</li>
+          <li><span>🛡️</span>Seguridad y backups completos</li>
+          <li><span>🛠️</span>Soporte premium y mantenimiento continuo</li>
+        </ul>
+        <div class="btn-container">
+          <a href="#cta" class="btn-plan">Comenzar Gratis</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ===========================================
-      SECCIÓN BENEFICIOS INCLUIDOS EN TODOS LOS PLANES
-==============================================-->
-<section class="benefits-hero">
-  <h2>Todo lo que necesitas para vender online</h2>
-  
-  <div class="benefits-container">
-    <div class="benefit-item">
-      <h3>Diseño responsive</h3>
-      <ul>
-        <li>Se adapta a celular, tablet y computadora</li>
-        <li>Tu sitio se ve perfecto en cualquier pantalla</li>
-      </ul>
-    </div>
-    
-    <div class="benefit-item">
-      <h3>Optimizado para Google</h3>
-      <ul>
-        <li>SEO incluido desde el día uno</li>
-        <li>Tu negocio aparecerá cuando te busquen</li>
-      </ul>
-    </div>
-    
-    <div class="benefit-item">
-      <h3>Botón de WhatsApp integrado</h3>
-      <ul>
-        <li>Clientes te contactan con un clic</li>
-        <li>Sin fricciones ni barreras</li>
-      </ul>
-    </div>
-    
-    <div class="benefit-item">
-      <h3>Soporte post-entrega</h3>
-      <ul>
-        <li>Actualizaciones y ajustes incluidos</li>
-        <li>No te dejo solo después del lanzamiento</li>
-      </ul>
-    </div>
-  </div>
-</section>
 <!-- ================================
      SECCIÓN PROYECTOS DESTACADOS
 ================================ -->
@@ -389,8 +394,8 @@
   <div class="cta-content">
     <h2>DA EL PRIMER PASO</h2>
     <p class="cta-text">
-      ¿Listo para tener una página web que genere más clientes?<br>
-      Tu competencia ya está online captando clientes. No te quedes atrás. Obtén una página web profesional que trabaje 24/7 para hacer crecer tu negocio y aumentar tus ventas.
+      ¿Listo para impulsar tu negocio online?<br>
+      Mientras tu competencia ya atrae clientes en internet, tú también puedes destacar. Obtén un sitio web profesional que trabaje 24/7 para generar clientes y aumentar tus ventas.
     </p>
 
     <div class="cta-info">
@@ -402,7 +407,7 @@
       <div class="info-item">
         <h3>Modalidad de trabajo</h3>
         <p>100% remoto | Clientes en toda Colombia</p>
-        <p class="sub-info">Base en Cartagena, Bolivar</p>
+        <p class="sub-info">Sede en Cartagena, Bolívar</p>
       </div>
       <div class="info-item">
         <h3>Consulta gratuita</h3>
@@ -490,7 +495,6 @@
 <footer class="contact-footer" id="contacto">
   <div class="footer-content">
     <h3 class="footer-title">Contáctanos</h3>
-    <p>Cartagena - Bolivar</p>
     <p class="footer-text">
       Conectemos en nuestras redes y hablemos sobre tu próximo proyecto digital.
     </p>
@@ -517,7 +521,7 @@
   </div>
 </footer>
 
-<!-- Scripts -->
+<!-- ================================ SCRIPTS ================================ -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/questions.js"></script>
 <script src="js/slider.js"></script>
@@ -526,6 +530,18 @@
 <script src="js/imagenes.js"></script>
 <script src="js/header.js"></script>
 <script src="js/menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+
+  // Menú hamburguesa
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+  });
+</script>
 
 <!-- Js de scroll reveal + delay escalonado + contador -->
 <script>
@@ -576,40 +592,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- Script contador seccion nuestros resultados -->
- <script>
-  const counters = document.querySelectorAll('.counter');
-
-  const startCounting = () => {
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const increment = target / 100; // Ajusta la velocidad
-      let count = 0;
-
-      const updateCount = () => {
-        count += increment;
-        if (count < target) {
-          counter.textContent = "+" + Math.ceil(count);
-          requestAnimationFrame(updateCount);
-        } else {
-          counter.textContent = "+" + target;
-        }
-      };
-      updateCount();
-    });
-  };
-
-  // Inicia la animación cuando la sección entra en el viewport
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        startCounting();
-        observer.disconnect();
-      }
-    });
-  });
-
-  observer.observe(document.querySelector('.dashboard-stats-horizontal'));
+<!-- Seccion planes y tarifas -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
 </script>
 
 <!-- SCRIPT ANIMACION DE ASESOR VIRTUAL -->
@@ -698,39 +684,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return "🤔 No tengo una respuesta específica para eso, pero puedo ayudarte con cualquier tema tecnológico o de desarrollo digital.";
   }
 </script>
-
-<!-- SCRIPT PAYPAL -->
-<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-<script>
-  paypal.Buttons({
-    style: { color: 'blue', shape: 'pill', label: 'subscribe' },
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{ amount: { value: '9.99' } }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('¡Gracias ' + details.payer.name.given_name + '! Has adquirido el plan Estándar.');
-      });
-    }
-  }).render('#paypal-standard');
-
-  paypal.Buttons({
-    style: { color: 'gold', shape: 'pill', label: 'subscribe' },
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{ amount: { value: '19.99' } }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('¡Gracias ' + details.payer.name.given_name + '! Has adquirido el plan Premium.');
-      });
-    }
-  }).render('#paypal-premium');
-</script>
-
 
 </body>
 </html>
