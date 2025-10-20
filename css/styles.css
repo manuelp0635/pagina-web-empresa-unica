@@ -2177,3 +2177,227 @@ h3 {
   100% { background-position: 0% 50%; }
 }
 
+/* ==========================================
+      CSS: Planes y Tarifas 
+============================================*/
+
+
+.plans-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.plans-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.plans-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* Grid */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Card */
+.plan-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.plan-card h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.plan-card .price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Listado con iconos */
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.plan-card ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+}
+
+.plan-card ul li span {
+  display: inline-block;
+  width: 1.8rem;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+
+/* Botón */
+.plan-card button {
+  background-color: #7c3aed;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.plan-card button:hover {
+  background-color: #6d28d9;
+}
+
+/* Plan más popular */
+.popular-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #facc15;
+  color: #000;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* Animación simple */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries */
+/* Tablets */
+@media (min-width: 640px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .plans-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Móvil */
+@media (max-width: 639px) {
+  .plans-section h2 {
+    font-size: 2rem;
+  }
+  .plan-card h3 {
+    font-size: 1.5rem;
+  }
+  .plan-card .price {
+    font-size: 1.1rem;
+  }
+  .plan-card button {
+    width: 100%;
+  }
+}
+
+/* Contenedor de botón */
+.btn-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Botón */
+.btn-plan {
+  display: inline-block;
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.btn-plan:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+}
+
+/* Mantener estilos existentes de plan-card, listas y animaciones */
+.plan-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.8s ease forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Mantener botón abajo */
+}
+
+.plan-card ul li span {
+  display: inline-block;
+  width: 1.8rem;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+
+/* Badge plan popular */
+.popular-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #facc15;
+  color: #000;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid responsive */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .plans-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .plans-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
