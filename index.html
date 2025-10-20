@@ -39,6 +39,7 @@
 
   <!-- Estilos -->
   <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="css/styles-innovent.css" as="style" onload="this.rel='stylesheet'">
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
@@ -59,29 +60,32 @@
   </script>
 </head>
 
-<!-- ================================
-     HEADER CON MENÚ HAMBURGUESA
-================================ -->
-<header class="encabezado">
+<!-- ======= HEADER INNOVENT ======= -->
+<header class="encabezado" role="banner">
   <div class="logo-container">
-  <img src="images/logo.webp" 
-       alt="Innovent Servicios TI" 
-       class="logo" 
-       id="logo" 
-       loading="lazy">
-</div>
-
-  <!-- BOTÓN HAMBURGUESA -->
-  <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+    <a href="#inicio" aria-label="Inicio - Innovent Servicios TI">
+      <img src="images/logo.webp" 
+           alt="Innovent Servicios TI" 
+           class="logo" 
+           id="logo" 
+           loading="lazy" 
+           decoding="async">
+    </a>
   </div>
 
-  <!-- NAVEGACIÓN -->
-  <nav class="nav-menu" id="navMenu">
+    <!--<div class="toast-css">Usuario Innovent acaba de adquirir Plan Premium</div>-->
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="navMenu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="nav-menu" id="navMenu" role="navigation">
     <ul>
-      <li><a href="#animated-text-section" class="active">Inicio</a></li>
+      <li><a href="#animated-text-section" class="active" aria-current="page">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -89,22 +93,22 @@
   </nav>
 </header>
 
-<main>
+<main><br><br><br>
 
   <!-- ================================
      TEXTO CON ANIMACIÓN
 ================================ -->
-<!--<section class="animated-text-section" id="animated-text-section">
+<section class="animated-text-section" id="animated-text-section">
   <div class="text-content">
     <h2 class="fade-in-text">
-      <span class="dark-text">Impulsamos tu negocio con</span>
-      <span class="highlight-text">tecnología y diseño inteligente</span>
+      <span class="dark-text">Soy Innovent, tu aliado digital</span>
+      <!--<span class="highlight-text">tecnología y diseño inteligente</span>-->
     </h2>
     <p class="subtext">
-      Diseño y tecnología que impulsan tu negocio. Creamos experiencias digitales confiables con soporte y resultados reales.
+      Transformamos ideas en soluciones tecnológicas que impulsan el crecimiento de tu negocio. Desde la creación de páginas web profesionales hasta estrategias digitales inteligentes, trabajamos contigo para optimizar procesos, fortalecer tu presencia online y alcanzar resultados reales. Juntos llevamos tu marca al siguiente nivel.
     </p>
   </div>
-</section>-->
+</section>
 
   <!-- Seccion ¿nosotros - que hacemos? -->
 
@@ -150,7 +154,7 @@
 <section class="services-section" id="servicios">
   <div class="services-container">
     <h2 class="services-title">Soluciones <span> Tecnológicas</span></h2>
-    <p class="services-subtitle">Elige la página web ideal para tu negocio</p>
+    <p class="services-subtitle">Esto hacemos para tu negocio</p>
 
     <div class="services-grid">
       <!-- Servicio 1 -->
@@ -320,10 +324,13 @@
           <a href="#cta" class="btn-plan">Comenzar Gratis</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
+
+<!-- ================================
+      SECCION NOTIFICACIONES
+================================== -->
 
 <!-- ================================
      SECCIÓN PROYECTOS DESTACADOS
@@ -392,11 +399,22 @@
 <!-- Seccion CTA -->
 <section class="cta" id="cta">
   <div class="cta-content">
-    <h2>DA EL PRIMER PASO</h2>
-    <p class="cta-text">
-      ¿Listo para impulsar tu negocio online?<br>
-      Mientras tu competencia ya atrae clientes en internet, tú también puedes destacar. Obtén un sitio web profesional que trabaje 24/7 para generar clientes y aumentar tus ventas.
+    <h2>TE AYUDAMOS A DAR EL PRIMER PASO</h2>
+      <p>
+      <!--<strong>A — Atención:</strong>--> Cada día, más empresas están ganando clientes en internet... ¿y la tuya?
     </p>
+    <p>
+      <!--<strong>I — Interés:</strong>--> Mientras tu competencia ya atrae clientes en internet, tú también puedes destacar. 
+      Obtén un sitio web profesional que trabaje 24/7 para generar clientes y aumentar tus ventas.
+    </p>
+    <p>
+      <!--<strong>D — Deseo:</strong>--> Imagina recibir mensajes de nuevos clientes incluso mientras duermes. 
+      Con una presencia web optimizada, eso es posible.
+    </p>
+    <p>
+      <!--<strong>A — Acción:</strong>--> No esperes más para llevar tu negocio al siguiente nivel. 
+      Convierte tu presencia digital en resultados reales.
+    </p><br>
 
     <div class="cta-info">
       <div class="info-item">
@@ -683,6 +701,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return "🤔 No tengo una respuesta específica para eso, pero puedo ayudarte con cualquier tema tecnológico o de desarrollo digital.";
   }
+</script>
+
+<!-- ======= SCRIPT HEADER ======= -->
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", !expanded);
+  });
+
+  // Cambiar fondo al hacer scroll
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector(".encabezado");
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  });
 </script>
 
 </body>
