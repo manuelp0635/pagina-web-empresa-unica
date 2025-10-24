@@ -42,6 +42,8 @@
   <link rel="stylesheet" href="css/styles-innovent.css" as="style" onload="this.rel='stylesheet'">
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <!-- Link iconos seccion planes mensuaales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- AOS Animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -63,7 +65,7 @@
 <!-- ======= HEADER INNOVENT ======= -->
 <header class="encabezado" role="banner">
   <div class="logo-container">
-    <a href="#inicio" aria-label="Inicio - Innovent Servicios TI">
+    <a href="#" aria-label="Innovent Servicios TI">
       <img src="images/logo.webp" 
            alt="Innovent Servicios TI" 
            class="logo" 
@@ -72,8 +74,6 @@
            decoding="async">
     </a>
   </div>
-
-    <!--<div class="toast-css">Usuario Innovent acaba de adquirir Plan Premium</div>-->
 
   <!-- Botón hamburguesa -->
   <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="navMenu">
@@ -129,11 +129,17 @@
 
       <div class="about-stats">
         <div class="stat">
+          <h3>+3 Años de Experiencia</h3>
+        </div>
+        <div class="stat">
+          <h3>+15 Proyectos Completados</h3>
+        </div>
+        <div class="stat">
           <h3>Plazos claros, resultados puntuales.</h3>
           <p>Tú apruebas, nosotros ejecutamos con precisión.</p>
         </div>
         <div class="stat">
-          <h3>Precio claro desde el primer día.</h3>
+          <h3>Precios claro desde el primer día.</h3>
           <p>Transparencia total, sin sorpresas ni costos ocultos.</p>
         </div>
         <div class="stat">
@@ -153,7 +159,7 @@
 ================================ -->
 <section class="services-section" id="servicios">
   <div class="services-container">
-    <h2 class="services-title">Soluciones <span> Tecnológicas</span></h2>
+    <h2 class="services-title">Soluciones <span>Tecnológicas</span></h2>
     <p class="services-subtitle">Esto hacemos para tu negocio</p>
 
     <div class="services-grid">
@@ -173,12 +179,12 @@
       <!-- Servicio 2 -->
       <article class="service-card">
         <div class="service-image">
-          <img src="images/promociones/cableado estructurado.webp" alt="Tienda online ecommerce" loading="lazy">
+          <img src="images/promociones/cableado estructurado.webp" alt="Cableado estructurado" loading="lazy">
         </div>
         <div class="service-content">
           <h3>Cableado Estructurado</h3>
           <p>Cableado estructurado que impulsa tu red.
-            iseñamos e instalamos infraestructura confiable, ordenada y preparada para el crecimiento de tu empresa.</p>
+            Diseñamos e instalamos infraestructura confiable, ordenada y preparada para el crecimiento de tu empresa.</p>
           <a href="#contacto" class="service-btn">Ver detalles</a>
         </div>
       </article>
@@ -189,32 +195,12 @@
           <img src="images/promociones/Servicios empresariales.webp" alt="Soporte técnico empresarial" loading="lazy">
         </div>
         <div class="service-content">
-          <h3>Soporte Tecnico Presencia y Remoto</h3>
+          <h3>Soporte Técnico Presencial y Remoto</h3>
           <p>Soporte técnico donde lo necesites.
               Solucionamos fallas en sitio o de forma remota con atención rápida, profesional y enfocada en la continuidad de tu negocio.</p>
           <a href="#contacto" class="service-btn">Contáctanos</a>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================================
-     SECCIÓN POR QUÉ INNOVENT SERVICIOS TI
-================================ -->
-<section class="why-innovent" id="porque-innovent">
-  <div class="why-container">
-    <div class="why-text">
-      <h2>¿Por qué <span>Innovent Servicios TI</span>?</h2>
-      <p>Porque transformamos la tecnología en soluciones reales. En Innovent, combinamos innovación, velocidad y excelencia técnica para impulsar el crecimiento digital de tu empresa.</p>
-       <ul class="why-list">
-    <li class="why-item">🚀 Desarrollo ágil y personalizado</li>
-    <li class="why-item">🔒 Seguridad y confianza en cada proyecto</li>
-    <li class="why-item">💡 Enfoque en resultados y escalabilidad</li>
-  </ul>
-    </div>
-    <div class="why-image">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=60" alt="Equipo Innovent TI">
     </div>
   </div>
 </section>
@@ -240,76 +226,82 @@
 ================================ -->
 <section class="plans-section" id="planes">
   <div class="container">
-    <h2 data-aos="fade-up">💼 Planes y Tarifas</h2>
+    <h2 data-aos="fade-up"><i class="fa-solid fa-briefcase"></i> Planes y Tarifas</h2>
     <p data-aos="fade-up" data-aos-delay="100">
       Elige el plan que mejor se adapte a tu negocio y empieza a crecer digitalmente.
     </p>
 
     <div class="plans-grid">
+      
+      <!-- PLAN BÁSICO -->
       <div class="plan-card" data-aos="fade-up" data-aos-delay="150">
-        <h3>BÁSICO</h3>
+        <h3><i class="fa-solid fa-laptop-code"></i> BÁSICO</h3>
         <p class="price">$400.000 COP</p>
         <ul>
-          <li>🖥️ Página web sencilla (1-3 secciones)</li>
-          <li>📱 Diseño responsive básico</li>
-          <li>⏱️ Entrega rápida (7 días)</li>
-          <li>🔍 Optimización básica SEO</li>
-          <li>🛠️ 1 semana soporte técnico</li>
+          <li><i class="fa-solid fa-desktop"></i> Página web sencilla (1-3 secciones)</li>
+          <li><i class="fa-solid fa-mobile-screen"></i> Diseño responsive básico</li>
+          <li><i class="fa-regular fa-clock"></i> Entrega rápida (7 días)</li>
+          <li><i class="fa-solid fa-magnifying-glass"></i> Optimización básica SEO</li>
+          <li><i class="fa-solid fa-screwdriver-wrench"></i> 1 semana soporte técnico</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="BÁSICO">Comenzar Gratis</button>
         </div>
       </div>
 
+      <!-- PLAN MARCA DIGITAL -->
       <div class="plan-card" data-aos="fade-up" data-aos-delay="250">
-        <h3>MARCA DIGITAL</h3>
+        <h3><i class="fa-solid fa-paintbrush"></i> MARCA DIGITAL</h3>
         <p class="price">$800.000 COP</p>
         <ul>
-          <li>Pagina con hasta (5 secciones)</li>
-          <li>🎨 Diseño personalizado</li>
-          <li>Google Analytics basico</li>
-          <li>1 mes de soporte tecnico</li>
-          <li>💼 Asesoría en branding</li>
+          <li><i class="fa-solid fa-layer-group"></i> Página con hasta 5 secciones</li>
+          <li><i class="fa-solid fa-palette"></i> Diseño personalizado</li>
+          <li><i class="fa-brands fa-google"></i> Google Analytics básico</li>
+          <li><i class="fa-solid fa-headset"></i> 1 mes de soporte técnico</li>
+          <li><i class="fa-solid fa-briefcase"></i> Asesoría en branding</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="MARCA DIGITAL">Comenzar Gratis</button>
         </div>
       </div>
 
+      <!-- PLAN INTELIGENTE -->
       <div class="plan-card popular" data-aos="fade-up" data-aos-delay="350">
-        <span class="popular-badge">⭐ MÁS POPULAR</span>
-        <h3>INTELIGENTE</h3>
+        <span class="popular-badge"><i class="fa-solid fa-star"></i> MÁS POPULAR</span>
+        <h3><i class="fa-solid fa-brain"></i> INTELIGENTE</h3>
         <p class="price">$1'500.000 COP</p>
         <ul>
-          <li>Sitio completo (hasta 8 secciones)</li>
-          <li>Integracion de redes sociales</li>
-          <li>🤖 Automatización de contactos</li>
-          <li>💻 Desarrollo avanzado</li>
-          <li>🔍 SEO optimizado + Google search console</li>
-          <li>🛠️ 3 meses soporte tecnico</li>
+          <li><i class="fa-solid fa-globe"></i> Sitio completo (hasta 8 secciones)</li>
+          <li><i class="fa-brands fa-instagram"></i> Integración de redes sociales</li>
+          <li><i class="fa-solid fa-robot"></i> Automatización de contactos</li>
+          <li><i class="fa-solid fa-laptop-code"></i> Desarrollo avanzado</li>
+          <li><i class="fa-solid fa-chart-line"></i> SEO optimizado + Google Search Console</li>
+          <li><i class="fa-solid fa-screwdriver-wrench"></i> 3 meses soporte técnico</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="INTELIGENTE">Comenzar Gratis</button>
         </div>
       </div>
 
+      <!-- PLAN PREMIUM -->
       <div class="plan-card" data-aos="fade-up" data-aos-delay="450">
-        <h3>PREMIUM</h3>
+        <h3><i class="fa-solid fa-crown"></i> PREMIUM</h3>
         <p class="price">$3'450.000 COP</p>
         <ul>
-          <li>🛒 Tienda virtual completa</li>
-          <li>📈 Reportes de ventas</li>
-          <li>🔒 Seguridad avanzada</li>
-          <li>💳 Multiples pasarelas de pago</li>
-          <li>Gestion completa de inventario</li>
-          <li>sistema de envios integrado</li>
-          <li>Panel de reportes y analytics</li>
-          <li> 6 meses soporte prioritario</li>
+          <li><i class="fa-solid fa-store"></i> Tienda virtual completa</li>
+          <li><i class="fa-solid fa-chart-bar"></i> Reportes de ventas</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Seguridad avanzada</li>
+          <li><i class="fa-solid fa-credit-card"></i> Múltiples pasarelas de pago</li>
+          <li><i class="fa-solid fa-boxes-stacked"></i> Gestión completa de inventario</li>
+          <li><i class="fa-solid fa-truck"></i> Sistema de envíos integrado</li>
+          <li><i class="fa-solid fa-chart-pie"></i> Panel de reportes y analytics</li>
+          <li><i class="fa-solid fa-headset"></i> 6 meses soporte prioritario</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="PREMIUM">Comenzar Gratis</button>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -322,22 +314,14 @@
 ================================ -->
 <section class="proyectos" id="proyectos">
   <h2 class="titulo-proyectos">Nuestros Proyectos</h2>
+  <p>
   <div class="grid-proyectos">
-
-    <div class="proyecto-card">
-      <img src="images/PLUS.png" alt="Proyecto Plus Laboratorio Clínico">
-      <h3>Plus Laboratorio Clínico</h3>
-      <p>Plataforma digital para agendamiento y gestión de resultados médicos en línea.</p>
-      <a href="#" class="btn-proyecto" target="_blank">Ver proyecto</a>
+    <div class="proyecto-card"><br>
+      <p>Nuestros proyectos hablan por sí solos.
+    Cada sitio web refleja la visión, estrategia y crecimiento de las marcas con las que colaboramos.
+    💡 Descubre cómo podemos crear el próximo proyecto contigo — cupos limitados este mes.</p>
+      <a href="#" class="btn-proyecto" target="_blank">Proximamente</a>
     </div>
-
-    <div class="proyecto-card">
-      <img src="images/cap.jpg" alt="Proyecto CAP Fruto de Vida">
-      <h3>CAP Fruto de Vida</h3>
-      <p>Sitio web institucional para una organización cristiana con transmisión en vivo y blog integrado.</p>
-      <a href="#" class="btn-proyecto" target="_blank">Ver proyecto</a>
-    </div>
-
   </div>
 </section>
 
