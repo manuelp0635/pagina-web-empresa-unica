@@ -254,7 +254,7 @@
           <li>📱 Diseño responsive básico</li>
           <li>⏱️ Entrega rápida (7 días)</li>
           <li>🔍 Optimización básica SEO</li>
-          <li>🛠️ Soporte técnico inicial</li>
+          <li>🛠️ 1 semana soporte técnico</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="BÁSICO">Comenzar Gratis</button>
@@ -265,10 +265,11 @@
         <h3>MARCA DIGITAL</h3>
         <p class="price">$800.000 COP</p>
         <ul>
+          <li>Pagina con hasta (5 secciones)</li>
           <li>🎨 Diseño personalizado</li>
-          <li>📩 Formulario avanzado</li>
+          <li>Google Analytics basico</li>
+          <li>1 mes de soporte tecnico</li>
           <li>💼 Asesoría en branding</li>
-          <li>🔗 Integraciones profesionales</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="MARCA DIGITAL">Comenzar Gratis</button>
@@ -280,10 +281,12 @@
         <h3>INTELIGENTE</h3>
         <p class="price">$1'500.000 COP</p>
         <ul>
+          <li>Sitio completo (hasta 8 secciones)</li>
+          <li>Integracion de redes sociales</li>
           <li>🤖 Automatización de contactos</li>
           <li>💻 Desarrollo avanzado</li>
-          <li>🔍 SEO optimizado</li>
-          <li>🛠️ Soporte extendido</li>
+          <li>🔍 SEO optimizado + Google search console</li>
+          <li>🛠️ 3 meses soporte tecnico</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="INTELIGENTE">Comenzar Gratis</button>
@@ -297,7 +300,11 @@
           <li>🛒 Tienda virtual completa</li>
           <li>📈 Reportes de ventas</li>
           <li>🔒 Seguridad avanzada</li>
-          <li>💳 Pago en línea seguro</li>
+          <li>💳 Multiples pasarelas de pago</li>
+          <li>Gestion completa de inventario</li>
+          <li>sistema de envios integrado</li>
+          <li>Panel de reportes y analytics</li>
+          <li> 6 meses soporte prioritario</li>
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="PREMIUM">Comenzar Gratis</button>
@@ -313,9 +320,6 @@
 <!-- ================================
      SECCIÓN PROYECTOS DESTACADOS
 ================================ -->
-
-
-<!-- Seccion proyectos -->
 <section class="proyectos" id="proyectos">
   <h2 class="titulo-proyectos">Nuestros Proyectos</h2>
   <div class="grid-proyectos">
@@ -439,7 +443,6 @@
 <!-- ==========================
      ASESOR VIRTUAL "TABOTI"
      ========================== -->
-<!-- 🤖 ASESOR VIRTUAL TABOTI -->
 <div id="taboti-widget">
   <!-- Botón flotante -->
   <button id="taboti-icon" title="Habla con Taboti 🤖">
@@ -614,17 +617,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const chat = document.getElementById("taboti-chat");
   const chatBody = document.getElementById("chat-body");
   const typing = document.getElementById("typing");
-
-  const whatsappURL = "https://wa.me/573012041255?text=Hola%20Taboti,%20quiero%20más%20información%20sobre sus servicios.";
-
-  // Mostrar/Ocultar chat al hacer click en el icono
   const icon = document.getElementById("taboti-icon");
   const closeChat = document.getElementById("closeChat");
 
-  icon.addEventListener("click", () => chat.classList.toggle("hidden"));
-  closeChat.addEventListener("click", () => chat.classList.add("hidden"));
+  const whatsappURL = "https://wa.me/573012041255?text=Hola%20Taboti,%20quiero%20más%20información%20sobre%20sus%20servicios.";
 
-  // Inicializar conversación con mensaje de bienvenida
+  /* 🔹 ABRIR / CERRAR CHAT CON ANIMACIÓN */
+  icon.addEventListener("click", () => {
+    chat.classList.toggle("active");   // ✅ Cambia el estado del chat
+  });
+
+  closeChat.addEventListener("click", () => {
+    chat.classList.remove("active");   // ✅ Lo cierra sin conflicto
+  });
+
+  /* --- RESTO DE TU CÓDIGO --- */
+
   function initChat() {
     chatBody.innerHTML = `
       <div class="taboti-msg">👋 ¡Hola! Soy <b>Taboti</b>, tu asesor virtual tecnológico.<br>
@@ -637,14 +645,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>`;
   }
 
-  // Ejecutar inicialización
   initChat();
 
-  // Manejar clic en botones de planes
+  /* 💬 Lógica de interacción */
   planButtons.forEach(button => {
     button.addEventListener("click", () => {
       const planName = button.dataset.plan;
-      chat.classList.remove("hidden");
+      chat.classList.add("active"); // ✅ Muestra el chat al seleccionar un plan
 
       appendMessage("user", `👤 Me interesa el plan *${planName}*`);
       typing.classList.remove("hidden");
@@ -653,31 +660,19 @@ document.addEventListener("DOMContentLoaded", () => {
         typing.classList.add("hidden");
         appendMessage("bot", `🚀 ¡Excelente elección! Nuestro plan *${planName}* está diseñado para impulsar tu negocio digital. ¿Quieres que te envíe más información o una cotización por WhatsApp?`);
 
-        // Mostrar botón de contacto WhatsApp
         const btn = document.createElement("button");
         btn.textContent = "Contactar por WhatsApp 💬";
-        btn.style.cssText = `
-          background:#22c55e;
-          color:white;
-          border:none;
-          padding:10px 15px;
-          border-radius:8px;
-          cursor:pointer;
-          margin-top:10px;
-          font-weight:600;
-        `;
+        btn.className = "whatsapp-btn";
         btn.onclick = () => {
           window.open(whatsappURL, "_blank");
           resetChat();
         };
         chatBody.appendChild(btn);
         chatBody.scrollTop = chatBody.scrollHeight;
-
       }, 1000);
     });
   });
 
-  // Función para mostrar mensajes
   function appendMessage(sender, text) {
     const msg = document.createElement("div");
     msg.className = sender === "bot" ? "taboti-msg" : "user-msg";
@@ -686,12 +681,10 @@ document.addEventListener("DOMContentLoaded", () => {
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  // Reiniciar conversación
   function resetChat() {
     setTimeout(() => initChat(), 2500);
   }
 
-  // Lógica para opciones predefinidas
   window.selectOption = function(option) {
     const responses = {
       1: "🚀 En *Desarrollo Web* creamos páginas modernas y optimizadas. ¿Quieres ver ejemplos o cotización?",
@@ -718,16 +711,7 @@ document.addEventListener("DOMContentLoaded", () => {
         appendMessage("bot", objeciones[Math.floor(Math.random() * objeciones.length)]);
         const btn = document.createElement("button");
         btn.textContent = "Contactar por WhatsApp 💬";
-        btn.style.cssText = `
-          background:#22c55e;
-          color:white;
-          border:none;
-          padding:10px 15px;
-          border-radius:8px;
-          cursor:pointer;
-          margin-top:10px;
-          font-weight:600;
-        `;
+        btn.className = "whatsapp-btn";
         btn.onclick = () => {
           window.open(whatsappURL, "_blank");
           resetChat();
@@ -739,6 +723,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
 
 <!-- ======= Header Interactivo con Menú Responsive ======= -->
 <script>
