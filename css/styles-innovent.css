@@ -213,3 +213,127 @@ img {
     align-items: center;
   }
 }
+
+/* ==============================
+   CENTRAR TODOS LOS P (RESPONSIVE)
+============================== */
+p {
+  text-align: center;       /* Centra el texto */
+  margin-left: auto;        /* Centrado horizontal del contenedor */
+  margin-right: auto;       /* Centrado horizontal del contenedor */
+  max-width: 90%;           /* No ocupe todo el ancho, margen responsive */
+  line-height: 1.6;         /* Mejora la legibilidad */
+  word-wrap: break-word;    /* Evita que palabras largas rompan el layout */
+  font-size: 1rem;          /* Tamaño base */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  p {
+    font-size: 0.95rem;     /* Texto más pequeño en móviles */
+    max-width: 95%;         /* Más ancho para móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 0.9rem;      /* Ajuste adicional para smartphones */
+    max-width: 100%;
+  }
+}
+
+/* ================================
+      BTN FORMULARIO COTIZACIÓN
+================================ */
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366;  /* Color WhatsApp */
+  color: white;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe57; /* Hover más oscuro */
+}
+
+/* ================================
+      SECCIÓN PORQUE INNOVENT
+================================ */
+.why-text {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.why-list {
+  list-style: none; /* elimina los bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.why-list li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.why-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.why-title span {
+  color: #25D366; /* resalta el nombre de la empresa */
+}
+
+.why-description {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.why-item {
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .why-title {
+    font-size: 1.8rem;
+  }
+
+  .why-description,
+  .why-item {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-title {
+    font-size: 1.5rem;
+  }
+
+  .why-description,
+  .why-item {
+    font-size: 0.9rem;
+  }
+}
+
+
