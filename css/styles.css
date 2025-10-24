@@ -1509,238 +1509,265 @@ input:focus, textarea:focus {
 
   /* ====== BOTÓN FLOTANTE DE ASESOR VIRTUAL  ====== */
 
-/* --- ESTILO GENERAL --- */
-  #taboti-widget {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    font-family: 'Poppins', sans-serif;
-    z-index: 9999;
-  }
+#taboti-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 9999;
+}
 
-  /* --- ICONO FLOTANTE PRINCIPAL --- */
-  #taboti-icon {
-    background: linear-gradient(135deg, #0078FF, #00D4FF);
-    color: white;
-    font-size: 26px;
-    padding: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: vibrate 2s infinite;
-    transition: transform 0.3s ease;
-  }
+/* 🤖 BOTÓN FLOTANTE */
+#taboti-icon {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, background 0.3s;
+}
+#taboti-icon:hover {
+  transform: scale(1.1);
+  background-color: #1d4ed8;
+}
 
-  #taboti-icon:hover {
-    transform: scale(1.1);
-  }
+/* 💬 CHAT */
+#taboti-chat {
+  width: 360px;
+  height: 480px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  animation: fadeIn 0.4s ease;
+}
+.hidden {
+  display: none;
+}
 
-  @keyframes vibrate {
-    0%, 100% { transform: translate(0); }
-    25% { transform: translateX(-2px); }
-    50% { transform: translateX(2px); }
-    75% { transform: translateX(-1px); }
-  }
+/* ENCABEZADO */
+.chat-header {
+  background: #2563eb;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.chat-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.status {
+  font-size: 12px;
+  opacity: 0.9;
+}
+#closeChat {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: auto;
+}
 
-  /* --- CUADRO DE CHAT --- */
+/* CUERPO DEL CHAT */
+#chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+.taboti-msg, .user-msg {
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin: 6px 0;
+  max-width: 80%;
+}
+.taboti-msg {
+  background: #2563eb;
+  color: white;
+  align-self: flex-start;
+}
+.user-msg {
+  background: #d1d5db;
+  align-self: flex-end;
+}
+
+/* OPCIONES UX/UI */
+.options {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.options li {
+  background: #2563eb;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.options li:hover {
+  background: #1d4ed8;
+}
+
+/* INPUT */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #e5e7eb;
+}
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+  font-size: 14px;
+}
+.chat-input button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
   #taboti-chat {
-    width: 320px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: absolute;
-    bottom: 70px;
-    right: 0;
-    transform-origin: bottom right;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.35s ease;
+    width: 90%;
+    right: 5%;
+    bottom: 90px;
   }
-
-  /* --- CLASES DE ANIMACIÓN --- */
-  #taboti-chat.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* --- CABECERA DEL CHAT --- */
-  .chat-header {
-    background: linear-gradient(135deg, #0078FF, #00D4FF);
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .chat-logo {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-
-  .chat-header h4 {
-    margin: 0;
-    font-size: 16px;
-  }
-
-  .status {
-    font-size: 12px;
-    color: #e0f7ff;
-  }
-
-  #closeChat {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 18px;
-    margin-left: auto;
-    cursor: pointer;
-  }
-
-  /* --- MENSAJES --- */
-  #chat-body {
-    height: 280px;
-    overflow-y: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .taboti-msg, .user-msg {
-    margin: 6px 0;
-    padding: 10px 14px;
-    border-radius: 12px;
-    max-width: 80%;
-    line-height: 1.4;
-    font-size: 14px;
-  }
-
-  .taboti-msg {
-    background: #f1f8ff;
-    color: #003366;
-    align-self: flex-start;
-  }
-
-  .user-msg {
-    background: #0078ff;
-    color: #fff;
-    align-self: flex-end;
-  }
-
-  /* --- EFECTO "ESCRIBIENDO..." --- */
-  #typing {
-    font-size: 12px;
-    color: #666;
-    margin: 5px 12px;
-    font-style: italic;
-  }
-
-  /* --- INPUT --- */
-  .chat-input {
-    display: flex;
-    border-top: 1px solid #ddd;
-  }
-
-  .chat-input input {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    outline: none;
-    font-size: 14px;
-  }
-
-  .chat-input button {
-    background: #0078ff;
-    border: none;
-    color: white;
-    padding: 10px 14px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .chat-input button:hover {
-    background: #005fcc;
-  }
-
-  /* --- ICONO INFERIOR DEL CHAT --- */
-  .chat-footer-icon {
-    position: absolute;
-    bottom: 8px;
-    right: 10px;
-    opacity: 0.6;
-    transition: all 0.3s ease;
-  }
-
-  .chat-footer-icon img {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    animation: floatIcon 3s ease-in-out infinite;
-  }
-
-  .chat-footer-icon:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  @keyframes floatIcon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-  }
-
-/* ===============================
-   ANIMACIONES KEYFRAMES
-=============================== */
-
-/* Ciclo: aparece → visible → desaparece → invisible */
-@keyframes cicloWhatsapp {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  90% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/* ===============================
-   ADAPTACIÓN RESPONSIVE
-=============================== */
-@media (max-width: 768px) {
-  .whatsapp-btn {
-    bottom: 80px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .whatsapp-btn {
-    bottom: 100px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
+  #taboti-icon {
+    width: 60px;
+    height: 60px;
     font-size: 28px;
   }
 }
+
+#taboti-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #22c55e;
+  color: white;
+  font-size: 28px;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+#taboti-icon:hover {
+  transform: scale(1.1);
+  background: #16a34a;
+}
+
+#taboti-chat {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 340px;
+  max-height: 450px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10000;
+  transition: all 0.4s ease;
+}
+
+#taboti-chat.active {
+  display: flex;
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-header {
+  background: #22c55e;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.chat-header h4 { margin: 0; font-size: 16px; }
+.chat-header .status { font-size: 12px; opacity: 0.9; }
+
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+.taboti-msg {
+  background: #0b49a5;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 6px 0;
+  width: fit-content;
+  max-width: 80%;
+}
+.user-msg {
+  background: #437c58;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 6px 0 6px auto;
+  width: fit-content;
+  max-width: 80%;
+}
+.whatsapp-btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.whatsapp-btn:hover { background: #16a34a; }
+
 
 /* ================================
     PLANES DE MENSUALES 
