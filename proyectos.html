@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Innovent Servicios TI | Diseño Web + Soporte Técnico + Estrategia Digital</title>
+  <meta name="description" content="Creamos sitios web profesionales, brindamos soporte técnico, mantenimiento y seguridad informática. Innovent Software es tu aliado digital en Cartagena, Colombia.">
+  <meta name="keywords" content="Innovent Software, diseño web Cartagena, soporte técnico PC, mantenimiento, desarrollo web, seguridad informática, estrategia digital">
+  <meta name="author" content="Innovent Software">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.tusitio.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Innovent Software | Diseño Web y Soporte Técnico">
+  <meta property="og:description" content="Soluciones digitales que impulsan tu presencia online. Diseño, desarrollo y soporte desde Cartagena para el mundo.">
+  <meta property="og:image" content="https://www.tusitio.com/images/logo.png">
+  <meta property="og:url" content="https://www.tusitio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Innovent Software | Diseño Web y Soporte Técnico">
+  <meta name="twitter:description" content="Impulsamos tu negocio con tecnología y estrategia digital. Atención personalizada y resultados reales.">
+  <meta name="twitter:image" content="https://www.tusitio.com/images/logo.png">
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="TU_CODIGO_VERIFICACION_GOOGLE">
+
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+
+  <!-- Estilos -->
+  <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="css/styles-innovent.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <!-- Link iconos seccion planes mensuaales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Certificado SSL - Indicación visual -->
+  <link rel="icon" href="images/SSL.png" type="image/png" title="Sitio seguro SSL"/>
+
+  <!-- Google Analytics Básico (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX'); // Reemplaza con tu ID de GA4
+  </script>
+</head>
+<body>
+
+    <!-- ======= HEADER INNOVENT ======= -->
+<header class="encabezado" role="banner">
+  <div class="logo-container">
+    <a href="#" aria-label="Innovent Servicios TI">
+      <img src="images/logo.webp" 
+           alt="Innovent Servicios TI" 
+           class="logo" 
+           id="logo" 
+           loading="lazy" 
+           decoding="async">
+    </a>
+  </div>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="navMenu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Navegación -->
+  <nav class="nav-menu" id="navMenu" role="navigation">
+    <ul>
+      <li><a href="/index.html" class="active" aria-current="page">Inicio</a></li>
+      <!--<li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>-->
+    </ul>
+  </nav>
+</header>
+    
+<section class="proyectos" id="proyectos">
+  <h2 class="titulo-proyectos">Nuestros Proyectos</h2>
+  <p>
+    Así podrás visualizar tu negocio en línea.  
+    Proyectos diseñados para mostrarte el potencial que podemos alcanzar juntos.  
+    Además, así podría verse tu negocio en internet — ¡Descubre lo que podemos lograr juntos!
+  </p>
+
+  <!-- 🔹 Filtros de categoría -->
+  <div class="filtros-proyectos">
+    <button class="btn-filtro active" data-categoria="todos">Todos</button>
+    <button class="btn-filtro" data-categoria="eventos">Eventos y Bodas</button>
+    <button class="btn-filtro" data-categoria="salud">Fitness / Salud</button>
+    <button class="btn-filtro" data-categoria="comercio">Comercio / Tiendas</button>
+    <button class="btn-filtro" data-categoria="gastronomia">Gastronomía</button>
+    <button class="btn-filtro" data-categoria="educacion">Educación</button>
+    <button class="btn-filtro" data-categoria="corporativo">Corporativo</button>
+  </div>
+
+  <!-- 🔹 Carrusel de proyectos -->
+  <div class="carrusel-proyectos">
+    <!-- EVENTOS -->
+    <div class="proyecto-card" data-categoria="eventos">
+      <img src="https://via.placeholder.com/400x250?text=Eventos+Bodas" alt="Eventos Bodas" />
+      <p>Diseño web elegante y emocional para eventos y bodas.</p>
+    </div>
+
+    <!-- SALUD -->
+    <div class="proyecto-card" data-categoria="salud">
+      <img src="https://via.placeholder.com/400x250?text=Gym+Fitness+Center" alt="Gym Fitness" />
+      <p>Plataforma fitness con reservas y comunidad activa.</p>
+    </div>
+
+    <!-- COMERCIO -->
+    <div class="proyecto-card" data-categoria="comercio">
+      <img src="https://via.placeholder.com/400x250?text=Shakers+Store" alt="Shakers Store" />
+      <p>E-commerce vibrante para productos saludables y deportivos.</p>
+    </div>
+
+    <!-- GASTRONOMÍA -->
+    <div class="proyecto-card" data-categoria="gastronomia">
+      <img src="https://via.placeholder.com/400x250?text=Burger+Express" alt="Burger Express" />
+      <p>Landing page rápida para restaurantes con pedidos online.</p>
+    </div>
+
+    <!-- TURISMO -->
+    <div class="proyecto-card" data-categoria="comercio">
+      <img src="https://via.placeholder.com/400x250?text=Turismo+Hospedaje" alt="Turismo Hospedaje" />
+      <p>Sitio visual para turismo y reservas de hospedaje.</p>
+    </div>
+
+    <!-- EDUCACIÓN -->
+    <div class="proyecto-card" data-categoria="educacion">
+      <img src="https://via.placeholder.com/400x250?text=E-learning+Educacion" alt="E-learning" />
+      <p>Plataforma moderna para educación y cursos online.</p>
+    </div>
+
+    <!-- PORTAFOLIO -->
+    <div class="proyecto-card" data-categoria="corporativo">
+      <img src="https://via.placeholder.com/400x250?text=Portafolio+Fotografia" alt="Portafolio Fotografía" />
+      <p>Portafolio profesional para fotógrafos y creativos.</p>
+    </div>
+
+    <!-- CORPORATIVO -->
+    <div class="proyecto-card" data-categoria="corporativo">
+      <img src="https://via.placeholder.com/400x250?text=Corporativo+Empresarial" alt="Corporativo Empresarial" />
+      <p>Diseño corporativo profesional para empresas modernas.</p>
+    </div>
+
+    <!-- ECOMMERCE -->
+    <div class="proyecto-card" data-categoria="comercio">
+      <img src="https://via.placeholder.com/400x250?text=Ecommerce+Moda" alt="Ecommerce Moda" />
+      <p>Tienda online elegante para marcas de moda y estilo.</p>
+    </div>
+  </div>
+
+  <a href="#" class="btn-ver-proyectos">Ver todos mis proyectos</a>
+</section>
+
+<!-- FOOTER CONTACTO -->
+<footer class="contact-footer" id="contacto">
+  <div class="footer-content">
+    <h3 class="footer-title">Contáctanos</h3>
+    <p class="footer-text">
+      Conectemos en nuestras redes y hablemos sobre tu próximo proyecto digital.
+    </p>
+
+    <div class="social-icons">
+      <a href="https://api.whatsapp.com/send?phone=573012041255&text=Hola%20Bienvenido%20a%20Innovent%20Servicios%20TI" target="_blank" aria-label="WhatsApp" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+      </a>
+
+      <a href="https://www.linkedin.com/in/manuel-perez-511b91334/" target="_blank" aria-label="LinkedIn" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+
+      <a href="https://www.instagram.com/innovent_servicios_ti/" target="_blank" aria-label="Instagram" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+      </a>
+
+      <a href="https://github.com/manuelp0635" target="_blank" aria-label="GitHub" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+      </a>
+    </div>
+
+    <p class="footer-copy">© 2025 Innovent Servicios TI. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ==========================
+     ASESOR VIRTUAL "TABOTI"
+     ========================== -->
+<div id="taboti-widget">
+  <!-- Botón flotante -->
+  <button id="taboti-icon" title="Habla con Taboti 🤖">
+    <span class="robot-face">🤖</span>
+  </button>
+
+  <!-- Ventana del chat -->
+  <div id="taboti-chat" class="hidden">
+    <div class="chat-header">
+      <img src="./images/ASESOR VIRTUAL.webp" alt="Logo" class="chat-logo" />
+      <div>
+        <h4>Taboti</h4>
+        <span class="status">En línea</span>
+      </div>
+      <button id="closeChat">✕</button>
+    </div>
+
+    <div id="chat-body">
+      <div class="taboti-msg">👋 ¡Hola! Soy <b>Taboti</b>, tu asesor virtual tecnológico.<br>
+      ¿En qué puedo ayudarte hoy?</div>
+      <ul class="options">
+        <li onclick="selectOption(1)">💻 Desarrollo web</li>
+        <li onclick="selectOption(2)">⚙️ Soporte técnico</li>
+        <li onclick="selectOption(3)">🔐 Ciberseguridad</li>
+        <li onclick="selectOption(4)">🤝 Consultoría TI</li>
+      </ul>
+    </div>
+
+    <div id="typing" class="hidden">Taboti está escribiendo...</div>
+
+    <div class="chat-input">
+      <input id="userInput" type="text" placeholder="Escribe tu mensaje..." />
+      <button id="sendBtn">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- Fin asesor virtual Taboti -->
+
+<!-- SCRIPT ANIMACION DE ASESOR VIRTUAL + 🧩 LÓGICA DEL CHAT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const planButtons = document.querySelectorAll(".btn-plan");
+  const chat = document.getElementById("taboti-chat");
+  const chatBody = document.getElementById("chat-body");
+  const typing = document.getElementById("typing");
+  const icon = document.getElementById("taboti-icon");
+  const closeChat = document.getElementById("closeChat");
+
+  const whatsappURL = "https://wa.me/573012041255?text=Hola%20Taboti,%20quiero%20más%20información%20sobre%20sus%20servicios.";
+
+  /* 🔹 ABRIR / CERRAR CHAT CON ANIMACIÓN */
+  icon.addEventListener("click", () => {
+    chat.classList.toggle("active");   // ✅ Cambia el estado del chat
+  });
+
+  closeChat.addEventListener("click", () => {
+    chat.classList.remove("active");   // ✅ Lo cierra sin conflicto
+  });
+
+  /* --- RESTO DE TU CÓDIGO --- */
+
+  function initChat() {
+    chatBody.innerHTML = `
+      <div class="taboti-msg">👋 ¡Hola! Soy <b>Taboti</b>, tu asesor virtual tecnológico.<br>
+      ¿En qué puedo ayudarte hoy?</div>
+      <ul class="options">
+        <li onclick="selectOption(1)">💻 Desarrollo web</li>
+        <li onclick="selectOption(2)">⚙️ Soporte técnico</li>
+        <li onclick="selectOption(3)">🔐 Ciberseguridad</li>
+        <li onclick="selectOption(4)">🤝 Consultoría TI</li>
+      </ul>`;
+  }
+
+  initChat();
+
+  /* 💬 Lógica de interacción */
+  planButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const planName = button.dataset.plan;
+      chat.classList.add("active"); // ✅ Muestra el chat al seleccionar un plan
+
+      appendMessage("user", `👤 Me interesa el plan *${planName}*`);
+      typing.classList.remove("hidden");
+
+      setTimeout(() => {
+        typing.classList.add("hidden");
+        appendMessage("bot", `🚀 ¡Excelente elección! Nuestro plan *${planName}* está diseñado para impulsar tu negocio digital. ¿Quieres que te envíe más información o una cotización por WhatsApp?`);
+
+        const btn = document.createElement("button");
+        btn.textContent = "Contactar por WhatsApp 💬";
+        btn.className = "whatsapp-btn";
+        btn.onclick = () => {
+          window.open(whatsappURL, "_blank");
+          resetChat();
+        };
+        chatBody.appendChild(btn);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1000);
+    });
+  });
+
+  function appendMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.className = sender === "bot" ? "taboti-msg" : "user-msg";
+    msg.innerHTML = text;
+    chatBody.appendChild(msg);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function resetChat() {
+    setTimeout(() => initChat(), 2500);
+  }
+
+  window.selectOption = function(option) {
+    const responses = {
+      1: "🚀 En *Desarrollo Web* creamos páginas modernas y optimizadas. ¿Quieres ver ejemplos o cotización?",
+      2: "⚙️ En *Soporte Técnico* ofrecemos mantenimiento, diagnóstico y asistencia remota o presencial. ¿Prefieres soporte inmediato o agendar una revisión?",
+      3: "🔐 En *Ciberseguridad* protegemos tus sistemas y datos. ¿Deseas una auditoría o asesoría gratuita?",
+      4: "🤝 En *Consultoría TI* analizamos tus procesos para implementar soluciones inteligentes. ¿Quieres que preparemos una propuesta sin costo?"
+    };
+
+    const objeciones = [
+      "Entiendo que estés evaluando opciones, nuestra primera asesoría es gratuita 😉.",
+      "Si quieres, podemos enviarte la info por WhatsApp y resolver todas tus dudas sin compromiso.",
+      "Nuestro equipo está listo para mejorar tu presencia digital y seguridad tecnológica 💪."
+    ];
+
+    const userText = document.querySelectorAll(".options li")[option - 1].textContent;
+    appendMessage("user", userText);
+
+    typing.classList.remove("hidden");
+    setTimeout(() => {
+      typing.classList.add("hidden");
+      appendMessage("bot", responses[option]);
+
+      setTimeout(() => {
+        appendMessage("bot", objeciones[Math.floor(Math.random() * objeciones.length)]);
+        const btn = document.createElement("button");
+        btn.textContent = "Contactar por WhatsApp 💬";
+        btn.className = "whatsapp-btn";
+        btn.onclick = () => {
+          window.open(whatsappURL, "_blank");
+          resetChat();
+        };
+        chatBody.appendChild(btn);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 1200);
+    }, 1000);
+  }
+});
+</script>
+
+<script>
+  const botones = document.querySelectorAll('.btn-filtro');
+  const proyectos = document.querySelectorAll('.proyecto-card');
+
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      // Cambiar botón activo
+      botones.forEach(btn => btn.classList.remove('active'));
+      boton.classList.add('active');
+
+      const categoria = boton.dataset.categoria;
+
+      proyectos.forEach(proyecto => {
+        proyecto.style.display =
+          categoria === 'todos' || proyecto.dataset.categoria === categoria
+            ? 'block'
+            : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
