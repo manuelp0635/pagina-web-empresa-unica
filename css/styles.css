@@ -646,52 +646,152 @@ a:hover, .btn:hover {
 /* ================================
    TESTIMONIOS
 ================================ */
-.questions {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: 0 auto 5rem;
+
+/* --- SECCIÓN TESTIMONIOS (independiente del body) --- */
+.testimonials {
   text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #001f33, #004080);
+  border-radius: 25px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  color: #e6e6e6;
+  overflow: hidden;
 }
 
-.questions .subtitle {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #c77dff;
+.testimonials h2 {
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  color: #00c4ff;
+  text-shadow: 0 0 10px rgba(0, 196, 255, 0.4);
 }
 
-.questions__container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* --- Slider --- */
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
-.questions__padding {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 25px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 18s infinite;
 }
 
-.questions__padding:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+.slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.questions__answer h3 {
-  font-size: 1.2rem;
+/* --- Tarjetas tipo glass --- */
+.card {
+  width: 80%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border-radius: 20px;
+  padding: 35px 25px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 196, 255, 0.4);
+}
+
+/* --- Imagen y texto --- */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #00c4ff;
+  box-shadow: 0 0 10px rgba(0, 196, 255, 0.4);
+}
+
+h3 {
+  margin: 10px 0 5px;
+  font-size: 1.3rem;
+  color: #003366;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
   color: #333;
-  margin-bottom: 12px;
-  font-weight: bold;
 }
 
-.questions__answer p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
+/* --- Calificaciones animadas --- */
+.rating {
+  margin: 8px 0 15px;
 }
+
+.rating span {
+  font-size: 1.3rem;
+  color: #ffc107;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.star-animate {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(1.2); opacity: 1; }
+}
+
+/* --- Dots --- */
+.dots {
+  margin-top: 25px;
+}
+
+.dots label {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  background: #999;
+  margin: 0 6px;
+  display: inline-block;
+  border-radius: 50%;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#t-1:checked ~ .slides { margin-left: 0%; }
+#t-2:checked ~ .slides { margin-left: -100%; }
+#t-3:checked ~ .slides { margin-left: -200%; }
+
+#t-1:checked ~ .dots label:nth-child(1),
+#t-2:checked ~ .dots label:nth-child(2),
+#t-3:checked ~ .dots label:nth-child(3) {
+  background: #00c4ff;
+  box-shadow: 0 0 10px #00c4ff;
+}
+
+/* --- Animación automática --- */
+@keyframes slide {
+  0%, 33% { margin-left: 0; }
+  38%, 66% { margin-left: -100%; }
+  71%, 100% { margin-left: -200%; }
+}
+
+.slides {
+  width: 900%; /* 100% por cada slide */
+}
+
+/* ================================
+   SECCIÓN TESTIMONIOS FIN
 
 /* ================================
    SECCIÓN ALIADOS
