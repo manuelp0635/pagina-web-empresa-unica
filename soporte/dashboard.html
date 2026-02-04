@@ -2,16 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Panel Admin | Tickets TI</title>
+  <title>Dashboard | Tickets TI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/admin.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+    .admin-header { background:#007bff; color:#fff; padding:15px; display:flex; justify-content:space-between; align-items:center; }
+    .admin-header button { padding:5px 10px; background:#fff; color:#007bff; border:none; border-radius:5px; cursor:pointer; }
+    .admin-container { padding:20px; max-width:1200px; margin:auto; }
+    .tabs { display:flex; gap:10px; margin-bottom:20px; }
+    .tab { padding:10px 20px; background:#ddd; cursor:pointer; border-radius:5px 5px 0 0; }
+    .tab.active { background:#fff; font-weight:bold; }
+    .tab-content { border:1px solid #ddd; padding:15px; display:none; border-radius:0 5px 5px 5px; background:#fff; margin-bottom:20px; }
+    .tab-content.active { display:block; }
+    .ticket { padding:8px; border:1px solid #ccc; margin-bottom:5px; border-radius:5px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .ticket .priority { padding:2px 6px; border-radius:3px; color:#fff; font-size:12px; }
+    .alta { background:red; }
+    .media { background:orange; }
+    .baja { background:green; }
+    .msg { padding:5px 10px; border-radius:5px; margin:5px 0; }
+    .msg.user { background:#e2e2e2; align-self:flex-start; }
+    .msg.admin { background:#007bff; color:#fff; align-self:flex-end; }
+    textarea { width:100%; padding:5px; margin:10px 0; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .user-info label { display:block; margin:5px 0 2px; }
+    .user-info input { width:100%; padding:5px; margin-bottom:10px; }
+    button { cursor:pointer; padding:5px 10px; border:none; border-radius:5px; background:#007bff; color:#fff; }
+    .hidden { display:none; }
+    .user-table, .ticket-table { width:100%; border-collapse:collapse; margin-top:10px; }
+    .user-table th, .user-table td, .ticket-table th, .ticket-table td { border:1px solid #ccc; padding:5px; text-align:left; }
+    .user-table th, .ticket-table th { background:#f0f0f0; }
+    /* --- Logs --- */
+    .log { padding:5px 10px; border-radius:5px; margin-bottom:5px; color:#fff; }
+    .log.eliminar { background:red; }
+    .log.editar { background:yellow; color:#000; }
+    .log.crear { background:orange; }
+    .log.actualizar { background:green; }
+    #logs { max-height:200px; overflow-y:auto; border:1px solid #ccc; padding:10px; border-radius:5px; background:#fff; }
+    /* --- Toast Notificaciones --- */
+    #toastContainer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    .toast {
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      color: #fff;
+      min-width: 200px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      opacity: 0.9;
+      font-weight: bold;
+    }
+    .toast.crear { background: orange; }
+    .toast.editar { background: yellow; color: #000; }
+    .toast.eliminar { background: red; }
+    .toast.actualizar { background: green; }
+  </style>
 </head>
 <body>
 
+<div id="toastContainer"></div>
+
 <script>
-if(!localStorage.getItem("adminAuth")){
-  window.location.href="login.html";
+if(!localStorage.getItem("adminAuth") && !localStorage.getItem("userAuth")){
+  const users = [
+    {id:1, name:"Admin", email:"admin@ti.com", password:"admin", role:"Administrador"},
+    {id:2, name:"Usuario1", email:"user1@ti.com", password:"user1", role:"Usuario"}
+  ];
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("tickets", JSON.stringify([
+    {id:1, title:"Error en PC", priority:"Alta", status:"Abierto", userId:2, messages:[{sender:"Usuario1", text:"Mi PC no enciende"}]},
+    {id:2, title:"Correo no funciona", priority:"Media", status:"Cerrado", userId:2, messages:[{sender:"Usuario1", text:"No puedo enviar correos"}]}  
+  ]));
+  localStorage.setItem("adminAuth", "true");
 }
+const currentRole = localStorage.getItem("adminAuth") ? "Administrador" : "Usuario";
+const currentUserId = localStorage.getItem("adminAuth") ? 1 : 2;
 </script>
 
 <header class="admin-header">
@@ -21,81 +89,167 @@ if(!localStorage.getItem("adminAuth")){
 
 <main class="admin-container">
 
-  <!-- LISTADO TICKETS -->
-  <section class="ticket-list">
-    <h3>Tickets recibidos</h3>
+  <div class="tabs">
+    <div class="tab active" onclick="openTab('tickets')">Tickets</div>
+    <div class="tab" onclick="openTab('usuario')">Usuario</div>
+    <div id="adminTab" class="tab hidden" onclick="openTab('admin')">Administración</div>
+  </div>
 
-    <div class="ticket" onclick="openTicket(1)">
-      <strong>#001</strong> – Error en PC  
-      <span class="priority alta">Alta</span>
-      <span class="sla">SLA: 4h</span>
-    </div>
-
-    <div class="ticket" onclick="openTicket(2)">
-      <strong>#002</strong> – Correo no funciona  
-      <span class="priority media">Media</span>
-      <span class="sla">SLA: 8h</span>
+  <!-- Tickets -->
+  <section id="tickets" class="tab-content active">
+    <h3>Tickets</h3>
+    <div id="ticketList"></div>
+    <div id="ticketChat" class="hidden">
+      <h4>Historial del Ticket</h4>
+      <div id="chat"></div>
+      <textarea id="reply" placeholder="Responder ticket..."></textarea>
+      <div class="actions">
+        <select id="priority">
+          <option value="">Prioridad</option>
+          <option>Alta</option>
+          <option>Media</option>
+          <option>Baja</option>
+        </select>
+        <select id="status">
+          <option value="">Estado</option>
+          <option>Abierto</option>
+          <option>En proceso</option>
+          <option>Cerrado</option>
+        </select>
+        <button onclick="sendReply()">Responder</button>
+      </div>
     </div>
   </section>
 
-  <!-- DETALLE / CHAT -->
-  <section class="ticket-chat">
-    <h3>Historial del Ticket</h3>
-
-    <div id="chat">
-      <div class="msg user">Hola, mi PC no enciende</div>
-      <div class="msg admin">Estamos revisando el caso</div>
+  <!-- Usuario -->
+  <section id="usuario" class="tab-content">
+    <h3>Perfil de Usuario</h3>
+    <div class="user-info">
+      <label>Nombre:</label><input type="text" id="userName" />
+      <label>Correo:</label><input type="email" id="userEmail" />
+      <label>Rol:</label><input type="text" id="userRole" disabled />
+      <label>Contraseña:</label><input type="password" id="userPassword" />
+      <button onclick="updateProfile()">Actualizar Perfil</button>
     </div>
+    <h3>Historial de Tickets</h3>
+    <div id="userTickets"></div>
+  </section>
 
-    <textarea id="reply" placeholder="Responder ticket..."></textarea>
+  <!-- Administración -->
+  <section id="admin" class="tab-content">
+    <h3>Administración de Usuarios</h3>
+    <button onclick="addUserPrompt()">Agregar Usuario</button>
+    <table class="user-table" id="userTable">
+      <thead><tr><th>ID</th><th>Nombre</th><th>Email</th><th>Rol</th><th>Acciones</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <h3>Administración de Tickets</h3>
+    <button onclick="addTicketPrompt()">Agregar Ticket</button>
+    <table class="ticket-table" id="ticketTable">
+      <thead><tr><th>ID</th><th>Título</th><th>Prioridad</th><th>Estado</th><th>Usuario</th><th>Acciones</th></tr></thead>
+      <tbody></tbody>
+    </table>
 
-    <div class="actions">
-      <select id="priority">
-        <option>Prioridad</option>
-        <option>Alta</option>
-        <option>Media</option>
-        <option>Baja</option>
-      </select>
-
-      <select id="status">
-        <option>Estado</option>
-        <option>Abierto</option>
-        <option>En proceso</option>
-        <option>Cerrado</option>
-      </select>
-
-      <button onclick="sendReply()">Responder</button>
-    </div>
-
+    <h3>Registro de Cambios</h3>
+    <div id="logs"></div>
   </section>
 
 </main>
 
 <script>
+if(currentRole==="Administrador") document.getElementById("adminTab").classList.remove("hidden");
+
+// --- Funciones de pestañas ---
+function openTab(tabName){
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
+  document.getElementById(tabName).classList.add('active');
+}
+
+// --- Logout con redirección ---
 function logout(){
   localStorage.removeItem("adminAuth");
-  window.location.href="login.html";
+  localStorage.removeItem("userAuth");
+  window.location.href="login.html"; // Redirige al login
 }
 
-function openTicket(id){
-  alert("Cargando ticket #" + id);
+// --- Datos ---
+let users = JSON.parse(localStorage.getItem("users"));
+let tickets = JSON.parse(localStorage.getItem("tickets"));
+let logs = JSON.parse(localStorage.getItem("logs") || "[]");
+
+// --- Logs ---
+function addLog(type,message){
+  const log = {type,message,time:new Date().toLocaleString()};
+  logs.unshift(log);
+  localStorage.setItem("logs",JSON.stringify(logs));
+  renderLogs();
+  showToast(type,message);
 }
 
-function sendReply(){
-  const msg = document.getElementById("reply").value;
-  if(!msg) return;
-
-  const chat = document.getElementById("chat");
-  const div = document.createElement("div");
-  div.className="msg admin";
-  div.innerText = msg;
-  chat.appendChild(div);
-
-  document.getElementById("reply").value="";
-
-  alert("📧 Notificación enviada al cliente (simulada)");
+function renderLogs(){
+  const container = document.getElementById("logs");
+  container.innerHTML="";
+  logs.forEach(l=>{
+    const div=document.createElement("div");
+    div.className="log "+l.type;
+    div.innerText=`[${l.time}] ${l.message}`;
+    container.appendChild(div);
+  });
 }
+
+// --- Toast ---
+function showToast(type,message){
+  const container=document.getElementById("toastContainer");
+  const div=document.createElement("div");
+  div.className="toast "+type;
+  div.innerText=message;
+  container.appendChild(div);
+  setTimeout(()=>{ div.remove(); }, 3000);
+}
+
+// --- Renderizar tickets ---
+function renderTickets(){
+  const list = document.getElementById("ticketList");
+  list.innerHTML="";
+  let filteredTickets = currentRole==="Administrador" ? tickets : tickets.filter(t=>t.userId===currentUserId);
+  filteredTickets.forEach(t=>{
+    const div=document.createElement("div");
+    div.className="ticket";
+    div.innerHTML=`<strong>#${t.id}</strong> – ${t.title} <span class="priority ${t.priority.toLowerCase()}">${t.priority}</span> <span>${t.status}</span>`;
+    div.onclick = ()=>openTicketChat(t.id);
+    list.appendChild(div);
+  });
+}
+
+// --- Renderizar perfil ---
+function renderProfile(){
+  const user = users.find(u=>u.id===currentUserId);
+  document.getElementById("userName").value=user.name;
+  document.getElementById("userEmail").value=user.email;
+  document.getElementById("userRole").value=user.role;
+  document.getElementById("userPassword").value=user.password;
+}
+
+// --- Renderizar tickets de usuario ---
+function renderUserTickets(){
+  const container=document.getElementById("userTickets");
+  container.innerHTML="";
+  const userTickets = tickets.filter(t=>t.userId===currentUserId);
+  userTickets.forEach(t=>{
+    const div=document.createElement("div");
+    div.className="ticket";
+    div.innerText=`#${t.id} – ${t.title} – Estado: ${t.status}`;
+    container.appendChild(div);
+  });
+}
+
+// --- Inicialización ---
+renderTickets();
+renderProfile();
+renderUserTickets();
+renderLogs();
 </script>
-
 </body>
 </html>
