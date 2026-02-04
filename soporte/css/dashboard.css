@@ -1,0 +1,42 @@
+body{
+  margin:0;
+  font-family:Poppins,Arial;
+  display:flex;
+  background:#f1f5f9;
+}
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  padding:20px;
+  height:100vh;
+}
+.sidebar button{
+  margin-top:20px;
+  padding:10px;
+  width:100%;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+main{
+  flex:1;
+  padding:30px;
+}
+form{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
+ul li{
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:10px;
+}

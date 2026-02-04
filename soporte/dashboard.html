@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Admin | Tickets TI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<script>
+if(!localStorage.getItem("adminAuth")){
+  window.location.href="login.html";
+}
+</script>
+
+<header class="admin-header">
+  <h2>🎛 Panel de Soporte TI</h2>
+  <button onclick="logout()">Cerrar sesión</button>
+</header>
+
+<main class="admin-container">
+
+  <!-- LISTADO TICKETS -->
+  <section class="ticket-list">
+    <h3>Tickets recibidos</h3>
+
+    <div class="ticket" onclick="openTicket(1)">
+      <strong>#001</strong> – Error en PC  
+      <span class="priority alta">Alta</span>
+      <span class="sla">SLA: 4h</span>
+    </div>
+
+    <div class="ticket" onclick="openTicket(2)">
+      <strong>#002</strong> – Correo no funciona  
+      <span class="priority media">Media</span>
+      <span class="sla">SLA: 8h</span>
+    </div>
+  </section>
+
+  <!-- DETALLE / CHAT -->
+  <section class="ticket-chat">
+    <h3>Historial del Ticket</h3>
+
+    <div id="chat">
+      <div class="msg user">Hola, mi PC no enciende</div>
+      <div class="msg admin">Estamos revisando el caso</div>
+    </div>
+
+    <textarea id="reply" placeholder="Responder ticket..."></textarea>
+
+    <div class="actions">
+      <select id="priority">
+        <option>Prioridad</option>
+        <option>Alta</option>
+        <option>Media</option>
+        <option>Baja</option>
+      </select>
+
+      <select id="status">
+        <option>Estado</option>
+        <option>Abierto</option>
+        <option>En proceso</option>
+        <option>Cerrado</option>
+      </select>
+
+      <button onclick="sendReply()">Responder</button>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+function logout(){
+  localStorage.removeItem("adminAuth");
+  window.location.href="login.html";
+}
+
+function openTicket(id){
+  alert("Cargando ticket #" + id);
+}
+
+function sendReply(){
+  const msg = document.getElementById("reply").value;
+  if(!msg) return;
+
+  const chat = document.getElementById("chat");
+  const div = document.createElement("div");
+  div.className="msg admin";
+  div.innerText = msg;
+  chat.appendChild(div);
+
+  document.getElementById("reply").value="";
+
+  alert("📧 Notificación enviada al cliente (simulada)");
+}
+</script>
+
+</body>
+</html>
