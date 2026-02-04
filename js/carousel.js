@@ -24,3 +24,6 @@
       });
 
       updateCarousel(); // inicializar
+
+/* Fin script seccion de testimonios */
+
