@@ -1,0 +1,98 @@
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:#f4f6f9;
+}
+
+.auth-body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.login-box{
+  background:#fff;
+  padding:30px;
+  width:320px;
+  border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.login-box input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+.login-box button{
+  width:100%;
+  padding:10px;
+  background:#111;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+.error{color:red;font-size:14px}
+
+.admin-header{
+  background:#111;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.admin-container{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:20px;
+  padding:20px;
+}
+
+.ticket{
+  background:#fff;
+  padding:12px;
+  margin-bottom:10px;
+  cursor:pointer;
+  border-left:5px solid #2196f3;
+}
+
+.priority.alta{color:red}
+.priority.media{color:orange}
+.priority.baja{color:green}
+
+.ticket-chat{
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+}
+
+#chat{
+  height:260px;
+  overflow-y:auto;
+  border:1px solid #ddd;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.msg{
+  margin:6px 0;
+  padding:8px;
+  border-radius:6px;
+}
+
+.msg.user{background:#e3f2fd}
+.msg.admin{background:#dcedc8;text-align:right}
+
+textarea{
+  width:100%;
+  height:60px;
+  margin-bottom:10px;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+}
