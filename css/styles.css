@@ -646,148 +646,181 @@ a:hover, .btn:hover {
 /* ================================
    TESTIMONIOS
 ================================ */
-
-/* --- SECCIÓN TESTIMONIOS (independiente del body) --- */
+/* === SECCIÓN TESTIMONIOS === */
 .testimonials {
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #0f172a, #020617);
   text-align: center;
-  width: 100%;
-  max-width: 1000px;
-  margin: 80px auto;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #001f33, #004080);
-  border-radius: 25px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-  color: #e6e6e6;
-  overflow: hidden;
+  color: #fff;
+}
+
+.testimonials .subtitle {
+  color: #38bdf8;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
 .testimonials h2 {
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
-  color: #00c4ff;
-  text-shadow: 0 0 10px rgba(0, 196, 255, 0.4);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 3rem;
 }
 
-/* --- Slider --- */
+/* === SLIDER === */
 .slider {
+  max-width: 1100px;
+  margin: auto;
   position: relative;
   overflow: hidden;
-  width: 100%;
 }
 
 .slides {
   display: flex;
-  width: 300%;
-  animation: slide 18s infinite;
+  transition: transform 0.8s ease;
 }
 
+/* === SLIDES === */
 .slide {
-  width: 100%;
+  min-width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-/* --- Tarjetas tipo glass --- */
-.card {
-  width: 80%;
-  max-width: 450px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #1a1a1a;
-  border-radius: 20px;
-  padding: 35px 25px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  transition: transform 0.5s, box-shadow 0.5s;
+/* === CARD GLASS === */
+.card.glass {
+  width: 100%;
+  max-width: 380px;
+  padding: 2.5rem 2rem;
+  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 40px rgba(0, 196, 255, 0.4);
+.card.glass:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 35px 70px rgba(56, 189, 248, 0.35);
 }
 
-/* --- Imagen y texto --- */
+/* === AVATAR === */
 .avatar {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  margin-bottom: 15px;
-  border: 3px solid #00c4ff;
-  box-shadow: 0 0 10px rgba(0, 196, 255, 0.4);
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.15);
 }
 
-h3 {
-  margin: 10px 0 5px;
-  font-size: 1.3rem;
-  color: #003366;
+/* === NOMBRE === */
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333;
-}
-
-/* --- Calificaciones animadas --- */
+/* === RATING === */
 .rating {
-  margin: 8px 0 15px;
+  margin: 0.7rem 0;
+  font-size: 1.2rem;
 }
 
 .rating span {
-  font-size: 1.3rem;
-  color: #ffc107;
-  animation: pulse 1.5s infinite alternate;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
+.card:hover .rating span {
+  transform: scale(1.15);
+}
+
+/* Estrella animada */
 .star-animate {
-  animation-delay: 0.3s;
+  animation: pulseStar 1.8s infinite;
 }
 
-@keyframes pulse {
-  from { transform: scale(1); opacity: 0.7; }
-  to { transform: scale(1.2); opacity: 1; }
+@keyframes pulseStar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
 }
 
-/* --- Dots --- */
+/* === TEXTO === */
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.card p strong {
+  color: #38bdf8;
+}
+
+/* === DOTS === */
 .dots {
-  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 12px;
 }
 
 .dots label {
-  cursor: pointer;
-  height: 12px;
-  width: 12px;
-  background: #999;
-  margin: 0 6px;
-  display: inline-block;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  transition: background 0.3s, box-shadow 0.3s;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-input[type="radio"] {
-  display: none;
+.dots label:hover {
+  transform: scale(1.3);
 }
 
-#t-1:checked ~ .slides { margin-left: 0%; }
-#t-2:checked ~ .slides { margin-left: -100%; }
-#t-3:checked ~ .slides { margin-left: -200%; }
-
-#t-1:checked ~ .dots label:nth-child(1),
-#t-2:checked ~ .dots label:nth-child(2),
-#t-3:checked ~ .dots label:nth-child(3) {
-  background: #00c4ff;
-  box-shadow: 0 0 10px #00c4ff;
+input#t-1:checked ~ .slides {
+  transform: translateX(0%);
 }
 
-/* --- Animación automática --- */
-@keyframes slide {
-  0%, 33% { margin-left: 0; }
-  38%, 66% { margin-left: -100%; }
-  71%, 100% { margin-left: -200%; }
+input#t-2:checked ~ .slides {
+  transform: translateX(-100%);
 }
 
-.slides {
-  width: 900%; /* 100% por cada slide */
+input#t-3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+
+input#t-1:checked ~ .dots label[for="t-1"],
+input#t-2:checked ~ .dots label[for="t-2"],
+input#t-3:checked ~ .dots label[for="t-3"] {
+  background: #38bdf8;
+  transform: scale(1.4);
+}
+
+/* === CTA IMPLÍCITO === */
+.testimonials::after {
+  content: "Únete a quienes ya confían en nosotros";
+  display: block;
+  margin-top: 3.5rem;
+  font-size: 1.1rem;
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .card.glass {
+    max-width: 90%;
+  }
+}
+
+.testimonial-tag {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  opacity: 0.85;
 }
 
 /* ================================
@@ -2608,4 +2641,5 @@ h3 {
   10%, 90% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(20px); }
 }
+
 
