@@ -41,6 +41,8 @@
   <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
   <link rel="stylesheet" href="css/styles-innovent.css" as="style" onload="this.rel='stylesheet'">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/contenedor.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <!-- Link iconos seccion planes mensuaales -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -84,13 +86,18 @@
 
   <!-- Navegación -->
   <nav class="nav-menu" id="navMenu" role="navigation">
-    <ul>
-      <li><a href="#animated-text-section" class="active" aria-current="page">Inicio</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+  <ul>
+    <li><a href="#animated-text-section" class="active">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li>
+      <a href="./soporte/login.html" class="btn-soporte">
+        ⚙️ Soporte TI
+      </a>
+    </li>
+  </ul>
+</nav>
 </header>
 
 <main>
@@ -117,31 +124,46 @@
 ================================ -->
 <section class="about-section" id="animated-text-section">
   <div class="about-container">
+
+    <!-- Imagen del equipo -->
     <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" alt="Equipo de Innovent Servicios TI">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" 
+           alt="Equipo de Innovent Servicios TI" loading="lazy">
     </div>
 
+    <!-- Texto principal y estadísticas -->
     <div class="about-text">
-      <h2>Asi <span>creamos </span> soluciones</h2>
-      <p>
-        <strong>Procesos claros, resultados reales. <br> </strong> innovamos con transparencia y precios definidos desde el primer dia.
+      <h2>Así <span class="highlight">creamos</span> soluciones</h2>
+      <p class="lead">
+        <strong>Procesos claros, resultados reales.</strong><br>
+        Innovamos con transparencia y precios definidos desde el primer día.
       </p>
 
+      <!-- Estadísticas / beneficios -->
       <div class="about-stats">
+
         <div class="stat">
-          <h3>Plazos claros, resultados puntuales.</h3>
+          <h3>Plazos claros, resultados puntuales</h3>
           <p>Tú apruebas, nosotros ejecutamos con precisión.</p>
         </div>
+
         <div class="stat">
-          <h3>Precios claro desde el primer día.</h3>
+          <h3>Precios claros desde el primer día</h3>
           <p>Transparencia total, sin sorpresas ni costos ocultos.</p>
         </div>
+
         <div class="stat">
-          <h3>Diseño inteligente que genera resultados.</h3>
+          <h3>Diseño inteligente que genera resultados</h3>
           <p>Cada detalle está pensado para atraer y convertir clientes reales.</p>
         </div>
+
       </div>
+
+      <!-- Botón opcional para interacción -->
+      <a href="#contact" class="btn-action">Conoce más</a>
+
     </div>
+
   </div>
 </section>
 
@@ -336,13 +358,10 @@
 <!-- Seccion Testimonios -->
 
 <section class="testimonials" aria-label="Testimonios de clientes">
-   <h2 class="subtitle">Testimonios</h2>
+  <h2 class="subtitle">Testimonios</h2>
   <h2>Lo que dicen nuestros clientes</h2>
 
   <div class="slider">
-    <input type="radio" name="t" id="t-1" checked>
-    <input type="radio" name="t" id="t-2">
-    <input type="radio" name="t" id="t-3">
 
     <div class="slides">
       <!-- Slide 1 -->
@@ -353,7 +372,10 @@
           <div class="rating">
             <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span class="star-animate">⭐</span>
           </div>
-          <p>“Ha sido una experiencia muy positiva con <strong>Innovent Servicios TI</strong>. Su atención personalizada y su eficiencia marcan la diferencia.”</p>
+          <p>
+            <strong>Resultados que superan expectativas.<br>
+            Un equipo profesional, comprometido y enfocado en entregar valor real.</strong>
+          </p>
         </div>
       </div>
 
@@ -362,10 +384,14 @@
         <div class="card glass">
           <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Laura Gómez" class="avatar">
           <h3>Laura Gómez</h3>
+          <small class="testimonial-tag">Cliente verificado</small>
           <div class="rating">
             <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span class="star-animate">⭐</span>
           </div>
-          <p>“El equipo fue muy profesional y entregó resultados que superaron mis expectativas. ¡Recomendado totalmente!”</p>
+          <p>
+            <strong>Atención personalizada que marca la diferencia.<br>
+            Acompañamiento real y soluciones eficientes desde el primer contacto.</strong>
+          </p>
         </div>
       </div>
 
@@ -375,91 +401,21 @@
           <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mejía" class="avatar">
           <h3>Carlos Mejía</h3>
           <div class="rating">
-            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span class="half-star">⭐</span>
+            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
           </div>
-          <p>“Excelente soporte técnico. Siempre con soluciones efectivas. Se nota que realmente se preocupan por sus clientes.”</p>
+          <p>
+            <strong>Soporte técnico confiable.<br>
+            Siempre atentos, rápidos y con soluciones efectivas cuando más se necesitan.</strong>
+          </p>
         </div>
       </div>
-
-      <!-- Slide 4 -->
-<div class="slide">
-  <div class="card glass">
-    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="María Rodríguez" class="avatar">
-    <h3>María Rodríguez</h3>
-    <div class="rating">
-      <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-    </div>
-    <p>“El servicio fue impecable. Me encantó la atención y la rapidez con la que resolvieron mis solicitudes. Definitivamente volveré a trabajar con ustedes.”</p>
-  </div>
-</div>
-
-<!-- Slide 5 -->
-<div class="slide">
-  <div class="card glass">
-    <img src="https://randomuser.me/api/portraits/men/64.jpg" alt="Andrés Castillo" class="avatar">
-    <h3>Andrés Castillo</h3>
-    <div class="rating">
-      <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-    </div>
-    <p>“Un equipo profesional y comprometido. Se nota que conocen lo que hacen. Los resultados hablan por sí mismos.”</p>
-  </div>
-</div>
-
-<!-- Slide 6 -->
-<div class="slide">
-  <div class="card glass">
-    <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Paula Gómez" class="avatar">
-    <h3>Paula Gómez</h3>
-    <div class="rating">
-      <span>⭐</span><span>⭐</span><span>⭐</span><span class="star-animate">⭐</span><span class="half-star">⭐</span>
-    </div>
-    <p>“Excelente comunicación durante todo el proceso. Me sentí acompañada desde el inicio hasta el final. ¡Muy recomendados!”</p>
-  </div>
-</div>
-
-<!-- Slide 7 -->
-<div class="slide">
-  <div class="card glass">
-    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Luis Hernández" class="avatar">
-    <h3>Luis Hernández</h3>
-    <div class="rating">
-      <span>⭐</span><span>⭐</span><span>⭐</span>
-    </div>
-    <p>“Tuve un pequeño inconveniente al principio, pero el equipo respondió rápido y solucionó todo. Me dejaron muy satisfecho.”</p>
-  </div>
-</div>
-
-<!-- Slide 8 -->
-<div class="slide">
-  <div class="card glass">
-    <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Camila Torres" class="avatar">
-    <h3>Camila Torres</h3>
-    <div class="rating">
-      <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-    </div>
-    <p>“Increíble experiencia. No solo cumplieron, sino que superaron mis expectativas. ¡La atención al detalle fue fantástica!”</p>
-  </div>
-</div>
-
-<!-- Slide 9 -->
-<div class="slide">
-  <div class="card glass">
-    <img src="https://randomuser.me/api/portraits/men/71.jpg" alt="Ricardo López" class="avatar">
-    <h3>Ricardo López</h3>
-    <div class="rating">
-      <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-    </div>
-    <p>“Gran experiencia en todos los aspectos. Me gustó mucho la transparencia y la calidad del servicio. ¡Los recomiendo sin dudarlo!”</p>
-  </div>
-</div>
-
     </div>
 
     <div class="dots">
-      <label for="t-1"></label>
-      <label for="t-2"></label>
-      <label for="t-3"></label>
-    </div>
+      <label for="t-1" aria-label="Testimonio 1"></label>
+      <label for="t-2" aria-label="Testimonio 2"></label>
+      <label for="t-3" aria-label="Testimonio 3"></label>
+    </div><br>
   </div>
 </section>
 <!-- Fin seccion testimonios -->
@@ -631,6 +587,7 @@
 <script src="js/header.js"></script>
 <script src="js/menu.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="js/autoSlider.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
 
@@ -772,12 +729,38 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.selectOption = function(option) {
+
+    // 🔐 Redirección directa a sistema de tickets
+if (option === 2) {
+  appendMessage("user", "⚙️ Soporte técnico");
+  typing.classList.remove("hidden");
+
+  setTimeout(() => {
+    typing.classList.add("hidden");
+    appendMessage("bot", "🔐 Accederás a nuestro sistema seguro de tickets para soporte TI.");
+
+    setTimeout(() => {
+      window.location.href = "/soporte/login.html";
+    }, 1500);
+  }, 800);
+
+  return; // ⛔ evita que siga la lógica normal
+
+  if (option === 2) {
+  setTimeout(() => {
+    window.location.href = "/soporte/login.html";
+  }, 1500);
+  return;
+}
+
+}
+
     const responses = {
-      1: "🚀 En *Desarrollo Web* creamos páginas modernas y optimizadas. ¿Quieres ver ejemplos o cotización?",
-      2: "⚙️ En *Soporte Técnico* ofrecemos mantenimiento, diagnóstico y asistencia remota o presencial. ¿Prefieres soporte inmediato o agendar una revisión?",
-      3: "🔐 En *Ciberseguridad* protegemos tus sistemas y datos. ¿Deseas una auditoría o asesoría gratuita?",
-      4: "🤝 En *Consultoría TI* analizamos tus procesos para implementar soluciones inteligentes. ¿Quieres que preparemos una propuesta sin costo?"
-    };
+  1: "🚀 En *Desarrollo Web* creamos páginas modernas y optimizadas. ¿Quieres ver ejemplos o cotización?",
+  2: "⚙️ Para soporte técnico usamos nuestro sistema de tickets. Te redirijo ahora 👇",
+  3: "🔐 En *Ciberseguridad* protegemos tus sistemas y datos. ¿Deseas una auditoría o asesoría gratuita?",
+  4: "🤝 En *Consultoría TI* analizamos tus procesos para implementar soluciones inteligentes. ¿Quieres que preparemos una propuesta sin costo?"
+};
 
     const objeciones = [
       "Entiendo que estés evaluando opciones, nuestra primera asesoría es gratuita 😉.",
