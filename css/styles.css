@@ -61,6 +61,18 @@ a:hover, .btn:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
+  /* Aumentar tamaño del logo */
+.logo {
+  width: 220px;   /* ajusta según necesidad */
+  height: auto;
+}
+
+/* Si el header lo está limitando */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 /* LOGO MÁS PEQUEÑO Y PROPORCIONAL */
 .logo-container {
   display: flex;
@@ -2642,4 +2654,316 @@ h3 {
   100% { opacity: 0; transform: translateY(20px); }
 }
 
+/* =============================== */
+/* SISTEMA COMERCIAL */
+/* =============================== */
+
+.sistema-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  padding: 80px 20px;
+  color: #fff;
+}
+
+.sistema-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.sistema-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sistema-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.sistema-subtitle {
+  color: #94a3b8;
+}
+
+.sistema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.sistema-card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+}
+
+.sistema-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.08);
+}
+
+.sistema-card h3 {
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+.sistema-card ul,
+.sistema-card ol {
+  padding-left: 20px;
+}
+
+.sistema-card li {
+  margin-bottom: 8px;
+}
+
+.sistema-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.micro-text {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+.sistema-section p,
+.sistema-section li,
+.sistema-section h2,
+.sistema-section h3 {
+  color: #ffffff;
+}
+
+.sistema-block {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .sistema-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .sistema-card {
+    padding: 20px;
+  }
+}
+
+.btn-action {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #38bdf8;
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-action:hover {
+  background: #0ea5e9;
+}
+
+/* ================================
+   MEJORA JERARQUÍA VISUAL
+================================ */
+
+section {
+  padding: 90px 20px;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Separación visual entre bloques */
+section:nth-child(even) {
+  background: #ffffff;
+}
+
+section:nth-child(odd) {
+  background: #f8f9fa;
+}
+
+/* ================================
+   UPGRADE TARJETAS
+================================ */
+
+.service-card,
+.plan-card,
+.proyecto-card,
+.benefit-item,
+.info-item {
+  border: 1px solid rgba(0,0,0,0.04);
+  backdrop-filter: blur(6px);
+  transition: all 0.35s ease;
+}
+
+.service-card:hover,
+.plan-card:hover,
+.proyecto-card:hover,
+.benefit-item:hover,
+.info-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* ================================
+   BOTONES MEJORADOS
+================================ */
+
+.btn,
+.btn-primary,
+.service-btn,
+.btn-ver-proyectos {
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 18px rgba(199,125,255,0.25);
+}
+
+.btn:hover,
+.btn-primary:hover,
+.service-btn:hover,
+.btn-ver-proyectos:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(199,125,255,0.35);
+}
+
+/* ================================
+   BOTONES MEJORADOS
+================================ */
+
+.btn,
+.btn-primary,
+.service-btn,
+.btn-ver-proyectos {
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 18px rgba(199,125,255,0.25);
+}
+
+.btn:hover,
+.btn-primary:hover,
+.service-btn:hover,
+.btn-ver-proyectos:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(199,125,255,0.35);
+}
+
+/* ================================
+   FORM UX PREMIUM
+================================ */
+
+.cta-form {
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.cta-form input,
+.cta-form textarea {
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  background: #fafafa;
+}
+
+.cta-form input:focus,
+.cta-form textarea:focus {
+  border-color: #c77dff;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(199,125,255,0.15);
+}
+
+.cta-form button {
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(121,0,243,0.25);
+}
+
+/* ================================
+   PLAN DESTACADO
+================================ */
+
+.plan-card.popular {
+  border: 2px solid #c77dff;
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(199,125,255,0.3);
+  position: relative;
+}
+
+.plan-card.popular::before {
+  content: "Más elegido";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c77dff;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+}
+
+/* ================================
+   DETALLES PROFESIONALES
+================================ */
+
+img {
+  border-radius: 10px;
+}
+
+::selection {
+  background: #c77dff;
+  color: #fff;
+}
+
+body {
+  scroll-padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .card,
+  .service-card,
+  .benefit-item {
+    transition: transform 0.2s ease;
+  }
+}
+
+
+#sistema-comercial {
+  color: #1a1a1a;
+}
+
+#sistema-comercial h2,
+#sistema-comercial h3 {
+  color: #111;
+}
+
+#sistema-comercial p,
+#sistema-comercial li {
+  color: #444;
+}
+
+#sistema-comercial {
+  position: relative;
+  z-index: 2;
+}
+
+#sistema-comercial {
+  background: #ffffff !important;
+  color: #000000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
