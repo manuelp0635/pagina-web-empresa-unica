@@ -61,6 +61,28 @@ a:hover, .btn:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
+
+  .logo {
+  width: 220px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 160px;
+  }
+}
+
+header {
+  padding: 15px 0;
+  height: auto;
+}
+
   /* Aumentar tamaño del logo */
 .logo {
   width: 220px;   /* ajusta según necesidad */
