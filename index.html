@@ -34,6 +34,8 @@
   <!-- Boxicons CDN -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" href="images/logo.png" type="image/png">
 
@@ -48,13 +50,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- AOS Animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
   <!-- Certificado SSL - Indicación visual -->
   <link rel="icon" href="images/SSL.png" type="image/png" title="Sitio seguro SSL"/>
 
   <!-- Google Analytics Básico (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -89,6 +99,7 @@
   <ul>
     <li><a href="#animated-text-section" class="active">Inicio</a></li>
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sistema-comercial">Sistema</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
     <li>
@@ -118,6 +129,7 @@
 </section>-->
 
   <!-- Seccion ¿nosotros - que hacemos? -->
+   
 
   <!-- ================================
      SECCIÓN NOSOTROS
@@ -237,6 +249,74 @@
   </div>
 </section>-->
 
+<!-- SISTEMA COMERCIAL AUTOMATIZADO -->
+<section class="sistema-section" id="sistema-comercial" data-aos="fade-up">
+  <div class="sistema-container">
+
+    <div class="sistema-header">
+      <h2>🚀 Sistema Comercial Automatizado</h2>
+      <p class="sistema-subtitle">
+        Convierte tu negocio en una máquina de generar clientes.
+      </p>
+    </div>
+
+    <div class="sistema-content">
+
+      <div class="sistema-block">
+        <p>
+          En <strong>Innovent Servicios TI</strong> no creamos páginas web.
+          Implementamos sistemas que captan, gestionan y convierten clientes automáticamente.
+        </p>
+
+        <p>
+          Si tu empresa depende solo de referidos o mensajes manuales por WhatsApp,
+          estás perdiendo oportunidades todos los días.
+        </p>
+      </div>
+
+      <div class="sistema-grid">
+
+        <div class="sistema-card">
+          <h3>🔥 ¿Qué incluye?</h3>
+          <ul>
+            <li>Landing optimizada</li>
+            <li>CRM integrado</li>
+            <li>Automatización WhatsApp</li>
+            <li>Seguimiento automático</li>
+            <li>Analytics + Pixel</li>
+            <li>Embudo estructurado</li>
+          </ul>
+        </div>
+
+        <div class="sistema-card">
+          <h3>⚙️ ¿Cómo funciona?</h3>
+          <ol>
+            <li>Cliente llega</li>
+            <li>Deja datos</li>
+            <li>Registro automático</li>
+            <li>Respuesta inmediata</li>
+            <li>Seguimiento activo</li>
+            <li>Tú solo cierras</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <div class="sistema-cta">
+        <h3>🎯 Solicita tu Diagnóstico Gratuito</h3>
+        <a href="https://wa.me/573012041255?text=Hola,%20vengo%20desde%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratuito" class="btn-action">
+          Agendar ahora
+        </a>
+        <p class="micro-text">
+          Sin compromiso • Respuesta en menos de 24h
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- ================================
      SECCIÓN PLANES DE SUSCRIPCIÓN
 ================================ -->
@@ -291,6 +371,7 @@
           <li><i class="fa-brands fa-instagram"></i> Integración de redes sociales</li>
           <li><i class="fa-solid fa-robot"></i> Automatización de contactos</li>
           <li><i class="fa-solid fa-laptop-code"></i> Desarrollo avanzado</li>
+          <li><i class="fa-solid fa-laptop-code"></i>Incluye Sistema Comercial Automatizado</li>
           <li><i class="fa-solid fa-chart-line"></i> SEO optimizado + Google Search Console</li>
           <li><i class="fa-solid fa-screwdriver-wrench"></i> 3 meses soporte técnico</li>
         </ul>
@@ -573,7 +654,7 @@
       </a>
     </div>
 
-    <p class="footer-copy">© 2025 Innovent Servicios TI. Todos los derechos reservados.</p>
+    <p class="footer-copy">© 2026 Innovent Servicios TI. Todos los derechos reservados.</p>
   </div>
 </footer>
 
@@ -843,6 +924,9 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
 
 </body>
 </html>
