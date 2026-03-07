@@ -1,20 +1,18 @@
-let sitioGenerado = "";
+let sitioGenerado="";
 
-function generarWeb(){
+async function generarDisenosIA(){
 
-const empresa = document.getElementById("empresa").value;
-const telefono = document.getElementById("telefono").value;
-const servicio1 = document.getElementById("servicio1").value;
-const servicio2 = document.getElementById("servicio2").value;
-const servicio3 = document.getElementById("servicio3").value;
-const descripcion = document.getElementById("descripcion").value;
+const negocio=document.getElementById("negocio").value;
+const objetivo=document.getElementById("objetivo").value;
+const publico=document.getElementById("publico").value;
+const descripcion=document.getElementById("descripcion").value;
 
-sitioGenerado = `
+const html=`
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>${empresa}</title>
+<title>${negocio}</title>
 
 <style>
 
@@ -30,17 +28,21 @@ padding:60px;
 text-align:center;
 }
 
-.servicios{
+section{
 padding:40px;
 }
 
 .servicios ul{
 list-style:none;
+padding:0;
+}
+
+.servicios li{
+padding:10px 0;
 }
 
 .cta{
 text-align:center;
-padding:40px;
 }
 
 .cta a{
@@ -57,8 +59,11 @@ text-decoration:none;
 <body>
 
 <header>
-<h1>${empresa}</h1>
+
+<h1>${negocio}</h1>
+
 <p>${descripcion}</p>
+
 </header>
 
 <section class="servicios">
@@ -66,9 +71,13 @@ text-decoration:none;
 <h2>Servicios</h2>
 
 <ul>
-<li>${servicio1}</li>
-<li>${servicio2}</li>
-<li>${servicio3}</li>
+
+<li>Servicio principal</li>
+
+<li>Soluciones profesionales</li>
+
+<li>Atención personalizada</li>
+
 </ul>
 
 </section>
@@ -77,9 +86,7 @@ text-decoration:none;
 
 <h2>Contáctanos</h2>
 
-<a href="https://wa.me/${telefono}">
-WhatsApp
-</a>
+<a href="#">Contactar</a>
 
 </section>
 
@@ -87,34 +94,57 @@ WhatsApp
 </html>
 `;
 
-document.getElementById("previewWeb").srcdoc = sitioGenerado;
+sitioGenerado=html;
+
+document.getElementById("preview1").srcdoc=html;
+document.getElementById("preview2").srcdoc=html;
+document.getElementById("preview3").srcdoc=html;
 
 }
 
-function descargarWeb(){
+function abrirPago(){
 
-const blob = new Blob([sitioGenerado], {type:"text/html"});
+document.getElementById("panelPagos").style.display="block";
 
-const link = document.createElement("a");
-
-link.href = URL.createObjectURL(blob);
-
-link.download = "index.html";
-
-link.click();
-
-}
-
-function mostrarPagos(){
-
-document.getElementById("pagos").style.display="block";
+window.scrollTo({
+top:document.getElementById("panelPagos").offsetTop,
+behavior:"smooth"
+});
 
 }
 
 function confirmarPagoNequi(){
 
-alert("Pago confirmado. Descarga habilitada.");
+alert("Pago confirmado");
 
 document.getElementById("descargarWebBtn").disabled=false;
+
+}
+
+function descargarBasico(){
+
+const blob=new Blob([sitioGenerado],{type:"text/html"});
+
+const link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+
+link.download="pagina-basica.html";
+
+link.click();
+
+}
+
+function descargarWeb(){
+
+const blob=new Blob([sitioGenerado],{type:"text/html"});
+
+const link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+
+link.download="pagina-profesional.html";
+
+link.click();
 
 }
