@@ -938,30 +938,140 @@ window.addEventListener("scroll", () => {
 </script>
 
 <script src="generator.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
 
-<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD">
+<script>
+
+let sitioGenerado = "";
+
+function generarWeb(){
+
+const empresa = document.getElementById("empresa").value;
+const telefono = document.getElementById("telefono").value;
+const servicio1 = document.getElementById("servicio1").value;
+const servicio2 = document.getElementById("servicio2").value;
+const servicio3 = document.getElementById("servicio3").value;
+const descripcion = document.getElementById("descripcion").value;
+
+sitioGenerado = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>${empresa}</title>
+
+<style>
+
+body{font-family:Arial;margin:0}
+
+header{
+background:#0a2540;
+color:white;
+padding:60px;
+text-align:center;
+}
+
+section{
+padding:40px;
+}
+
+.cta{
+text-align:center;
+}
+
+.cta a{
+background:#25D366;
+color:white;
+padding:15px 25px;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>${empresa}</h1>
+<p>${descripcion}</p>
+
+</header>
+
+<section>
+
+<h2>Servicios</h2>
+
+<ul>
+<li>${servicio1}</li>
+<li>${servicio2}</li>
+<li>${servicio3}</li>
+</ul>
+
+</section>
+
+<section class="cta">
+
+<h2>Contáctanos</h2>
+
+<a href="https://wa.me/${telefono}">
+Escribir por WhatsApp
+</a>
+
+</section>
+
+</body>
+</html>
+`;
+
+document.getElementById("previewWeb").srcdoc = sitioGenerado;
+
+}
+
+function mostrarPagos(){
+
+document.getElementById("pagos").style.display="block";
+
+}
+
+function confirmarPagoNequi(){
+
+document.getElementById("descargarWebBtn").disabled=false;
+
+}
+
+function descargarWeb(){
+
+const blob = new Blob([sitioGenerado], {type:"text/html"});
+
+const link = document.createElement("a");
+
+link.href = URL.createObjectURL(blob);
+
+link.download = "index.html";
+
+link.click();
+
+}
+
+/* Paypal */
 
 paypal.Buttons({
 
 createOrder: function(data, actions) {
 
 return actions.order.create({
-
 purchase_units: [{
-
 amount: { value: '49.00' }
-
 }]
-
 });
 
 },
 
 onApprove: function(data, actions) {
 
-return actions.order.capture().then(function(details) {
-
-alert("Pago completado");
+return actions.order.capture().then(function() {
 
 document.getElementById("descargarWebBtn").disabled=false;
 
@@ -970,7 +1080,6 @@ document.getElementById("descargarWebBtn").disabled=false;
 }
 
 }).render('#paypal-button-container');
-
 </script>
 
 </body>
