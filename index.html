@@ -934,7 +934,39 @@ window.addEventListener("scroll", () => {
 
 <script src="generator.js"></script>
 
-<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD">
+
+paypal.Buttons({
+
+createOrder: function(data, actions) {
+
+return actions.order.create({
+
+purchase_units: [{
+
+amount: { value: '49.00' }
+
+}]
+
+});
+
+},
+
+onApprove: function(data, actions) {
+
+return actions.order.capture().then(function(details) {
+
+alert("Pago completado");
+
+document.getElementById("descargarWebBtn").disabled=false;
+
+});
+
+}
+
+}).render('#paypal-button-container');
+
+</script>
 
 </body>
 </html>
