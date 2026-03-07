@@ -502,64 +502,68 @@
 <!-- Fin seccion testimonios -->
 
 <!-- Seccion CTA -->
-<section class="cta" id="cta">
-  <div class="cta-content">
-    <h2>TE AYUDAMOS A DAR EL PRIMER PASO</h2>
-      <p>
-      <!--<strong>A — Atención:</strong>--> Cada día, más empresas están ganando clientes en internet... ¿y la tuya?
-    </p>
-    <p>
-      <!--<strong>I — Interés:</strong>--> Mientras tu competencia ya atrae clientes en internet, tú también puedes destacar. 
-      Obtén un sitio web profesional que trabaje 24/7 para generar clientes y aumentar tus ventas.
-    </p>
-    <p>
-      <!--<strong>D — Deseo:</strong>--> Imagina recibir mensajes de nuevos clientes incluso mientras duermes. 
-      Con una presencia web optimizada, eso es posible.
-    </p>
-    <p>
-      <!--<strong>A — Acción:</strong>--> No esperes más para llevar tu negocio al siguiente nivel. 
-      Convierte tu presencia digital en resultados reales.
-    </p><br>
+<section id="generador-web" class="section">
 
-    <div class="cta-info">
-      <div class="info-item">
-        <h3>WhatsApp Directo</h3>
-        <p>+57 301 204 1255</p>
-        <p class="sub-info">Respuesta inmediata en horario laboral</p>
-      </div>
-      <div class="info-item">
-        <h3>Modalidad de trabajo</h3>
-        <p>100% remoto | presencial</p>
-        <p class="sub-info">Clientes en toda Colombia</p>
-      </div>
-      <div class="info-item">
-        <h3>Consulta gratuita</h3>
-        <p>Respuesta en menos de 24 horas</p>
-        <p class="sub-info">Sin compromiso</p>
-      </div>
-    </div>
+<h2>Crear tu página web empresarial</h2>
 
-    <form class="cta-form">
-      <h3>Platícame sobre tu proyecto</h3>
-      <label for="nombre">Nombre completo</label>
-      <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?">
+<p>Genera tu página web profesional en minutos.</p>
 
-      <label for="email">Email de contacto</label>
-      <input type="email" id="email" name="email" placeholder="tu@email.com">
+<div class="generador-form">
 
-      <label for="proyecto">Cuéntame sobre tu proyecto</label>
-      <textarea id="proyecto" name="proyecto" placeholder="Cuéntame: ¿Qué tipo de negocio tienes? ¿Para qué necesitas la página web? ¿Cuál es tu presupuesto aproximado?"></textarea>
+<input id="empresa" placeholder="Nombre de la empresa">
 
-      <a 
-          href="https://api.whatsapp.com/send?phone=573012041255&text=Hola%20quiero%20mi%20cotización%20gratuita" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="btn-whatsapp">
-          Obtener mi cotización gratuita
-      </a>
+<input id="telefono" placeholder="WhatsApp (573001234567)">
 
-    </form>
-  </div>
+<input id="servicio1" placeholder="Servicio principal">
+<input id="servicio2" placeholder="Servicio secundario">
+<input id="servicio3" placeholder="Servicio adicional">
+
+<textarea id="descripcion" placeholder="Describe tu negocio"></textarea>
+
+<button onclick="generarWeb()">Generar página</button>
+
+</div>
+
+<h3>Vista previa</h3>
+
+<iframe id="previewWeb"></iframe>
+
+<div class="compra-web">
+
+<h3>Página Web Express</h3>
+
+<p>$199.000 COP</p>
+
+<button onclick="mostrarPagos()">Comprar ahora</button>
+
+<div id="pagos" style="display:none">
+
+<h4>Pagar con PayPal</h4>
+
+<div id="paypal-button-container"></div>
+
+<h4>O pagar con Nequi</h4>
+
+<p>Envía el pago a:</p>
+
+<strong>3012041255</strong>
+
+<br><br>
+
+<button onclick="confirmarPagoNequi()">
+Ya pagué con Nequi
+</button>
+
+</div>
+
+</div>
+
+<br>
+
+<button id="descargarWebBtn" disabled onclick="descargarWeb()">
+Descargar mi página
+</button>
+
 </section>
 
 
