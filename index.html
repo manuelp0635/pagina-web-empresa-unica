@@ -396,6 +396,11 @@
         </ul>
         <div class="btn-container">
           <button class="btn-plan" data-plan="PREMIUM">Comenzar Gratis</button>
+
+Diseño optimizado para ventas
+SEO optimizado
+Animaciones modernas
+Soporte técnico incluido
         </div>
       </div>
 
@@ -968,7 +973,201 @@ window.addEventListener("scroll", () => {
 
 <script>
 
+function generarDisenosIA(){
+
+const negocio=document.getElementById("negocio").value;
+const objetivo=document.getElementById("objetivo").value;
+const publico=document.getElementById("publico").value;
+const descripcion=document.getElementById("descripcion").value;
+
+const layouts=[layout1,layout2,layout3];
+
+const html1=layouts[0](negocio,descripcion);
+const html2=layouts[1](negocio,descripcion);
+const html3=layouts[2](negocio,descripcion);
+
+sitioGenerado=html2;
+
+document.getElementById("preview1").srcdoc=html1;
+document.getElementById("preview2").srcdoc=html2;
+document.getElementById("preview3").srcdoc=html3;
+
+}
+
 let sitioGenerado = "";
+
+function layout1(negocio,descripcion){
+
+return `
+<html>
+<head>
+<style>
+
+body{font-family:Arial;margin:0}
+
+.hero{
+background:linear-gradient(135deg,#0a2540,#1f4fff);
+color:white;
+padding:80px;
+text-align:center
+}
+
+.servicios{
+padding:40px
+}
+
+.card{
+background:#f4f6fb;
+padding:20px;
+margin:10px;
+border-radius:8px
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>${negocio}</h1>
+
+<p>${descripcion}</p>
+
+</div>
+
+<div class="servicios">
+
+<h2>Servicios</h2>
+
+<div class="card">Servicio profesional</div>
+<div class="card">Soluciones personalizadas</div>
+<div class="card">Atención especializada</div>
+
+</div>
+
+</body>
+</html>
+`;
+}
+
+function layout2(negocio,descripcion){
+
+return `
+<html>
+<head>
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+text-align:center
+}
+
+header{
+padding:60px;
+background:#111;
+color:white
+}
+
+section{
+padding:40px
+}
+
+button{
+background:#25D366;
+color:white;
+padding:15px 25px;
+border:none
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>${negocio}</h1>
+
+<p>${descripcion}</p>
+
+</header>
+
+<section>
+
+<h2>Nuestros servicios</h2>
+
+<p>Soluciones profesionales para empresas</p>
+
+<button>Contactar</button>
+
+</section>
+
+</body>
+</html>
+`;
+}
+
+function layout3(negocio,descripcion){
+
+return `
+<html>
+<head>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0
+}
+
+.top{
+background:#0a2540;
+color:white;
+padding:50px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px
+}
+
+.box{
+background:#f2f2f2;
+padding:20px
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top">
+
+<h1>${negocio}</h1>
+
+<p>${descripcion}</p>
+
+</div>
+
+<div class="grid">
+
+<div class="box">Servicio especializado</div>
+
+<div class="box">Consultoría</div>
+
+<div class="box">Soporte profesional</div>
+
+</div>
+
+</body>
+</html>
+`;
+}
 
 function generarWeb(){
 
