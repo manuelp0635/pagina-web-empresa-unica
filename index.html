@@ -503,71 +503,97 @@
 
 <!-- Seccion CTA -->
 
-<section id="crear-web" class="section">
+<section id="crear-web">
 
-<div class="container">
+<h2>Crea tu página web con IA</h2>
 
-<h2>Genera tu página web en minutos</h2>
+<p>Describe tu negocio y genera diseños profesionales automáticamente.</p>
 
-<p>Crea una página profesional para tu negocio y descárgala al instante.</p>
+<div class="ai-form">
 
-<div class="grid-form">
+<input id="negocio" placeholder="Tipo de negocio">
 
-<input id="empresa" placeholder="Nombre de tu empresa">
+<input id="objetivo" placeholder="Objetivo del sitio">
 
-<input id="telefono" placeholder="WhatsApp">
-
-<input id="servicio1" placeholder="Servicio 1">
-
-<input id="servicio2" placeholder="Servicio 2">
-
-<input id="servicio3" placeholder="Servicio 3">
+<input id="publico" placeholder="Tipo de clientes">
 
 <textarea id="descripcion" placeholder="Describe tu negocio"></textarea>
 
-<button class="btn-primary" onclick="generarWeb()">
-Generar página
+<button onclick="generarDisenosIA()">
+Generar diseños
 </button>
 
 </div>
 
-<h3>Vista previa</h3>
+<h3>Diseños generados</h3>
 
-<iframe id="previewWeb"></iframe>
+<div class="disenos-grid">
 
-<div class="pago-box">
+<div class="diseno-card">
 
-<h3>Página Web Express</h3>
+<h4>Diseño básico</h4>
 
-<p class="precio">$199.000 COP</p>
+<iframe id="preview1"></iframe>
 
-<button class="btn-primary" onclick="mostrarPagos()">
-Comprar ahora
+<button onclick="descargarBasico()">
+Descargar básico
 </button>
 
-<div id="pagos" style="display:none">
+</div>
+
+<div class="diseno-card">
+
+<h4>Diseño profesional</h4>
+
+<iframe id="preview2"></iframe>
+
+<button onclick="abrirPago()">
+Comprar diseño
+</button>
+
+</div>
+
+<div class="diseno-card">
+
+<h4>Diseño premium</h4>
+
+<iframe id="preview3"></iframe>
+
+<button onclick="abrirPago()">
+Comprar premium
+</button>
+
+</div>
+
+</div>
+
+<div id="panelPagos" style="display:none">
+
+<h3>Completar pago</h3>
+
+<h4>PayPal</h4>
 
 <div id="paypal-button-container"></div>
 
-<p>O paga con Nequi</p>
+<h4>Nequi</h4>
+
+<p>Paga a este número:</p>
 
 <strong>3012041255</strong>
 
+<br><br>
+
+<button onclick="confirmarPagoNequi()">
+Confirmar pago Nequi
+</button>
+
+</div>
+
 <br>
 
-<button class="btn-secondary" onclick="confirmarPagoNequi()">
-Confirmar pago
+<button id="descargarWebBtn" disabled onclick="descargarWeb()">
+Descargar mi sitio
 </button>
-
-</div>
-
-</div>
-
-<button id="descargarWebBtn" disabled onclick="descargarWeb()" class="btn-primary">
-Descargar mi página
-</button>
-
-</div>
 
 </section>
 
