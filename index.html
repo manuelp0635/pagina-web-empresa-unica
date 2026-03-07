@@ -502,25 +502,32 @@
 <!-- Fin seccion testimonios -->
 
 <!-- Seccion CTA -->
-<section id="generador-web" class="section">
 
-<h2>Crear tu página web empresarial</h2>
+<section id="crear-web" class="section">
 
-<p>Genera tu página web profesional en minutos.</p>
+<div class="container">
 
-<div class="generador-form">
+<h2>Genera tu página web en minutos</h2>
 
-<input id="empresa" placeholder="Nombre de la empresa">
+<p>Crea una página profesional para tu negocio y descárgala al instante.</p>
 
-<input id="telefono" placeholder="WhatsApp (573001234567)">
+<div class="grid-form">
 
-<input id="servicio1" placeholder="Servicio principal">
-<input id="servicio2" placeholder="Servicio secundario">
-<input id="servicio3" placeholder="Servicio adicional">
+<input id="empresa" placeholder="Nombre de tu empresa">
+
+<input id="telefono" placeholder="WhatsApp">
+
+<input id="servicio1" placeholder="Servicio 1">
+
+<input id="servicio2" placeholder="Servicio 2">
+
+<input id="servicio3" placeholder="Servicio 3">
 
 <textarea id="descripcion" placeholder="Describe tu negocio"></textarea>
 
-<button onclick="generarWeb()">Generar página</button>
+<button class="btn-primary" onclick="generarWeb()">
+Generar página
+</button>
 
 </div>
 
@@ -528,41 +535,39 @@
 
 <iframe id="previewWeb"></iframe>
 
-<div class="compra-web">
+<div class="pago-box">
 
 <h3>Página Web Express</h3>
 
-<p>$199.000 COP</p>
+<p class="precio">$199.000 COP</p>
 
-<button onclick="mostrarPagos()">Comprar ahora</button>
+<button class="btn-primary" onclick="mostrarPagos()">
+Comprar ahora
+</button>
 
 <div id="pagos" style="display:none">
 
-<h4>Pagar con PayPal</h4>
-
 <div id="paypal-button-container"></div>
 
-<h4>O pagar con Nequi</h4>
-
-<p>Envía el pago a:</p>
+<p>O paga con Nequi</p>
 
 <strong>3012041255</strong>
 
-<br><br>
-
-<button onclick="confirmarPagoNequi()">
-Ya pagué con Nequi
-</button>
-
-</div>
-
-</div>
-
 <br>
 
-<button id="descargarWebBtn" disabled onclick="descargarWeb()">
+<button class="btn-secondary" onclick="confirmarPagoNequi()">
+Confirmar pago
+</button>
+
+</div>
+
+</div>
+
+<button id="descargarWebBtn" disabled onclick="descargarWeb()" class="btn-primary">
 Descargar mi página
 </button>
+
+</div>
 
 </section>
 
