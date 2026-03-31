@@ -177,10 +177,10 @@
 <section class="contacto" id="contacto">
   <h2>Contáctanos</h2>
 
-  <form>
-    <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo" required>
-    <textarea placeholder="¿Qué necesitas?" required></textarea>
+  <form id="contactForm">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="email" id="correo" placeholder="Correo" required>
+    <textarea id="mensaje" placeholder="¿Qué necesitas?" required></textarea>
     <button type="submit">Enviar</button>
   </form>
 </section>
@@ -292,6 +292,7 @@
 
 </div>
 
+<!-- ASESOR VIRTUAL-->
 <script>
 function toggleTaboti() {
   const chat = document.getElementById("tabotiChat");
@@ -349,6 +350,29 @@ function sendMessage() {
 
   input.value = "";
 }
+</script>
+
+<!-- FORMULARIO CONTACTO -->
+ <script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
+
+  if(!nombre || !correo || !mensaje){
+    alert("Por favor completa todos los campos");
+    return;
+  }
+
+  const texto = `Hola, soy ${nombre}%0ACorreo: ${correo}%0AConsulta: ${mensaje}`;
+  const numero = "573012041255";
+
+  const url = `https://wa.me/${numero}?text=${texto}`;
+
+  window.open(url, "_blank");
+});
 </script>
 
 </body>
