@@ -37,7 +37,6 @@ body {
 }
 
 /* HERO */
-/* HERO */
 .hero {
   position: relative;
   height: 100vh;
@@ -120,17 +119,6 @@ section {
 /* BENEFICIOS */
 .beneficios {
   background: #f5f5f5;
-}
-
-/* CTA */
-.cta {
-  background: #111;
-  color: #fff;
-}
-
-.cta .btn {
-  background: #fff;
-  color: #111;
 }
 
 /* FORM */
@@ -430,4 +418,289 @@ button {
   background: #eee;
   cursor: pointer;
   border-radius: 5px;
+}
+
+/* MEDIA QUERIES */
+
+/* =========================
+   📲 TABLET (≤ 1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .planes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+}
+
+
+/* =========================
+   📱 MOBILE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header nav {
+    margin-top: 10px;
+  }
+
+  .header a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* GRID */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* PLANES */
+  .planes {
+    padding: 60px 20px;
+  }
+
+  .plan {
+    padding: 20px;
+  }
+
+  .destacado {
+    transform: scale(1); /* evita zoom raro en móvil */
+  }
+
+  /* FOOTER */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  /* TABOTI */
+  .taboti-chat {
+    width: 90%;
+    left: 5%;
+    bottom: 80px;
+  }
+
+}
+
+
+/* =========================
+   📱 MOBILE PEQUEÑO (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+
+  .planes h2 {
+    font-size: 1.8rem;
+  }
+
+  .plan h4 {
+    font-size: 1.2rem;
+  }
+
+  /* FOOTER */
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  /* TABOTI */
+  .taboti-btn {
+    bottom: 15px;
+    left: 15px;
+    padding: 12px;
+  }
+
+}
+
+/* CARRUSEL */
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #979191, #504e4e);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* TÍTULO */
+.cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* CARRUSEL */
+.carousel {
+  position: relative;
+  max-width: 900px;
+  height: 400px;              /* 👈 controla el alto real */
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* SLIDES */
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+/* IMÁGENES */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* mantiene proporción */
+  object-position: center;    /* centra la imagen */
+  border-radius: 15px;
+}
+
+/* HOVER SUAVE */
+.slide:hover img {
+  filter: brightness(1);
+  transform: scale(1.03);
+}
+
+.slide img {
+  filter: brightness(0.95); /* antes 0.85 → ahora más limpio */
+}
+
+/* BOTONES */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+/* POSICIÓN */
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* HOVER */
+.prev:hover, .next:hover {
+  background: #7b2cff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* BOTÓN CTA */
+.cta .btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #7b2cff, #00c2ff);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* HOVER CTA */
+.cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(123,44,255,0.5);
+}
+
+@media (max-width: 768px) {
+
+  .cta {
+    padding: 70px 15px;
+  }
+
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide img {
+    height: 250px;
+  }
+
+  .prev, .next {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .carousel {
+    height: 250px;
+  }
+
 }
