@@ -96,3 +96,46 @@ textarea{
   display:flex;
   gap:10px;
 }
+
+/* Seccion volver atras */
+
+.volver-atras {
+  display: flex;
+  justify-content: center; /* 👈 centra horizontal */
+  margin: 20px 0;
+}
+
+.volver-atras a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #7b2cff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Flecha */
+.volver-atras a::before {
+  content: "←";
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+/* Hover */
+.volver-atras a:hover {
+  color: #000;
+  transform: translateX(-4px);
+}
+
+.volver-atras a:hover::before {
+  transform: translateX(-3px);
+}
+
+.volver-atras a {
+  background: rgba(123,44,255,0.1);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
