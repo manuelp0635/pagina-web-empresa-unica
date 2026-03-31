@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login | Innovent TI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="auth-body">
+
+  <div class="login-box">
+    <h2>Seccion Administrador</h2>
+    <p>Acceso solo para personal autorizado.</p>
+
+    <input type="email" id="email" placeholder="Correo">
+    <input type="password" id="password" placeholder="Contraseña">
+
+    <button onclick="login()">Ingresar</button>
+    <p id="error" class="error"></p>
+    <h2 class="volver-atras">
+      <a href="../index.html">Volver atrás</a>
+    </h2>
+  </div>
+
+<script>
+function login(){
+  const email = document.getElementById("email").value;
+  const pass  = document.getElementById("password").value;
+
+  if(email === "admin@innovent.com" && pass === "Admin123*"){
+    localStorage.setItem("adminAuth","true");
+    window.location.href = "dashboard.html";
+  }else{
+    document.getElementById("error").innerText = "Credenciales incorrectas";
+  }
+}
+</script>
+
+</body>
+</html>
