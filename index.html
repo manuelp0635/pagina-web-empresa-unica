@@ -1,1316 +1,353 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INNOVENT SERVICIOS TI</title>
 
-  <title>Innovent Servicios TI | Diseño Web + Soporte Técnico + Estrategia Digital</title>
-  <meta name="description" content="Creamos sitios web profesionales, brindamos soporte técnico, mantenimiento y seguridad informática. Innovent Software es tu aliado digital en Cartagena, Colombia.">
-  <meta name="keywords" content="Innovent Software, diseño web Cartagena, soporte técnico PC, mantenimiento, desarrollo web, seguridad informática, estrategia digital">
-  <meta name="author" content="Innovent Software">
-  <meta name="robots" content="index, follow">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.tusitio.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Innovent Software | Diseño Web y Soporte Técnico">
-  <meta property="og:description" content="Soluciones digitales que impulsan tu presencia online. Diseño, desarrollo y soporte desde Cartagena para el mundo.">
-  <meta property="og:image" content="https://www.tusitio.com/images/logo.png">
-  <meta property="og:url" content="https://www.tusitio.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_CO">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Innovent Software | Diseño Web y Soporte Técnico">
-  <meta name="twitter:description" content="Impulsamos tu negocio con tecnología y estrategia digital. Atención personalizada y resultados reales.">
-  <meta name="twitter:image" content="https://www.tusitio.com/images/logo.png">
-
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="TU_CODIGO_VERIFICACION_GOOGLE">
-
-  <!-- Boxicons CDN -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" href="images/logo.png" type="image/png">
-
-  <!-- Estilos -->
-  <link rel="preload" href="css/styles.css" as="style" onload="this.rel='stylesheet'">
-  <link rel="stylesheet" href="css/styles-innovent.css" as="style" onload="this.rel='stylesheet'">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="stylesheet" href="css/contenedor.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <!-- Link iconos seccion planes mensuaales -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-  <!-- Certificado SSL - Indicación visual -->
-  <link rel="icon" href="images/SSL.png" type="image/png" title="Sitio seguro SSL"/>
-
-  <!-- Google Analytics Básico (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XXXXXXXXXX'); // Reemplaza con tu ID de GA4
-  </script>
 </head>
 
-<!-- ======= HEADER INNOVENT ======= -->
-<header class="encabezado" role="banner">
-  <div class="logo-container">
-    <a href="#" aria-label="Innovent Servicios TI">
-      <img src="images/logo.webp" 
-           alt="Innovent Servicios TI" 
-           class="logo" 
-           id="logo" 
-           loading="lazy" 
-           decoding="async">
-    </a>
-  </div>
+<body>
 
-  <!-- Botón hamburguesa -->
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú principal" aria-expanded="false" aria-controls="navMenu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-
-  <!-- Navegación -->
-  <nav class="nav-menu" id="navMenu" role="navigation">
-  <ul>
-    <li><a href="#animated-text-section" class="active">Inicio</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#crear-web">Crear Web</a></li>
-    <li><a href="#contact">Contacto</a></li>
-    <li>
-      <a href="./soporte/login.html" class="btn-soporte">
-        ⚙️ Soporte TI
-      </a>
-    </li>
-  </ul>
-</nav>
+<!-- HEADER -->
+<header class="header">
+  <h2 class="logo-text">INNOVENT SERVICIOS TI</h2>
+  <nav id="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 </header>
 
-<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
 
-  <!-- ================================
-     TEXTO CON ANIMACIÓN
-================================ 
-<section class="animated-text-section" id="animated-text-section">
-  <div class="text-content">
-    <h2 class="fade-in-text">
-      <span class="dark-text">Soy Innovent, tu aliado digital</span>
-      <!--<span class="highlight-text">tecnología y diseño inteligente</span>
-    </h2>
-    <p class="subtext">
-      Transformamos ideas en soluciones tecnológicas que impulsan el crecimiento de tu negocio. Desde la creación de páginas web profesionales hasta estrategias digitales inteligentes, trabajamos contigo para optimizar procesos, fortalecer tu presencia online y alcanzar resultados reales. Juntos llevamos tu marca al siguiente nivel.
-    </p>
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="images/Marketing_video_v2_Pippit_20260302171208.mp4" type="video/mp4">
+    <source src="images/Marketing_video_v2_Pippit_20260226124458.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Tu empresa no puede detenerse</h1>
+    <p>Soluciones TI rápidas, seguras y confiables</p>
+    <a href="#contacto" class="btn">Solicitar diagnóstico gratis</a>
   </div>
-</section>-->
 
-  <!-- Seccion ¿nosotros - que hacemos? -->
-   
+</section>
 
-  <!-- ================================
-     SECCIÓN NOSOTROS
-================================ -->
-<section class="about-section" id="animated-text-section">
-  <div class="about-container">
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <h2>Servicios</h2>
 
-    <!-- Imagen del equipo -->
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" 
-           alt="Equipo de Innovent Servicios TI" loading="lazy">
+  <div class="grid">
+
+    <div class="card">
+      <h3>Soporte técnico</h3>
+      <p>Solución inmediata a fallas de hardware y software.</p>
     </div>
 
-    <!-- Texto principal y estadísticas -->
-    <div class="about-text">
-      <h2>Así <span class="highlight">creamos</span> soluciones</h2>
-      <p class="lead">
-        <strong>Procesos claros, resultados reales.</strong><br>
-        Innovamos con transparencia y precios definidos desde el primer día.
-      </p>
+    <div class="card">
+      <h3>Redes y servidores</h3>
+      <p>Infraestructura estable y optimizada.</p>
+    </div>
 
-      <!-- Estadísticas / beneficios -->
-      <div class="about-stats">
+    <div class="card">
+      <h3>Seguridad informática</h3>
+      <p>Protección total de tus datos.</p>
+    </div>
 
-        <div class="stat">
-          <h3>Plazos claros, resultados puntuales</h3>
-          <p>Tú apruebas, nosotros ejecutamos con precisión.</p>
-        </div>
-
-        <div class="stat">
-          <h3>Precios claros desde el primer día</h3>
-          <p>Transparencia total, sin sorpresas ni costos ocultos.</p>
-        </div>
-
-        <div class="stat">
-          <h3>Diseño inteligente que genera resultados</h3>
-          <p>Cada detalle está pensado para atraer y convertir clientes reales.</p>
-        </div>
-
-      </div>
-
-      <!-- Botón opcional para interacción -->
-      <a href="#contact" class="btn-action">Conoce más</a>
-
+    <div class="card">
+      <h3>Desarrollo de software</h3>
+      <p>Soluciones a medida para tu empresa.</p>
     </div>
 
   </div>
 </section>
 
+<!-- BENEFICIOS -->
+<section class="beneficios" id="beneficios">
+  <h2>¿Por qué Innovent?</h2>
 
-  <!-- Fin seccion ¿nosotros - que hacemos' -->
+  <div class="grid">
+    <div>✔ Respuesta rápida</div>
+    <div>✔ Planes mensuales</div>
+    <div>✔ Soporte continuo</div>
+    <div>✔ Atención personalizada</div>
+  </div>
+</section>
 
-<!-- ================================
-     SECCIÓN NUESTROS SERVICIOS (OPTIMIZADA)
-================================ -->
-<section class="services-section" id="servicios">
-  <div class="services-container">
-    <h2 class="services-title">Soluciones <span>Tecnológicas</span></h2>
-    <p class="services-subtitle">Esto hacemos para tu negocio</p>
+<section class="planes">
 
-    <div class="services-grid">
-      <!-- Servicio 1 -->
-      <article class="service-card">
-        <div class="service-image">
-          <img src="images/promociones/landing page profesional.jpg" alt="Diseño de sitio web corporativo" loading="lazy">
-        </div>
-        <div class="service-content">
-          <h3>Landing page profesional</h3>
-          <p>Landing Page profesional que convierte.
-              Diseño optimizado para atraer, impactar y transformar visitantes en clientes reales, disponible <b>24/7</b>.</p>
-          <a href="#contacto" class="service-btn">Más información</a>
-        </div>
-      </article>
+  <h2>Planes y Tarifas</h2>
+  <p class="sub">Elige el plan ideal para tu empresa</p>
 
-      <!-- Servicio 2 -->
-      <article class="service-card">
-        <div class="service-image">
-          <img src="images/promociones/cableado estructurado.webp" alt="Cableado estructurado" loading="lazy">
-        </div>
-        <div class="service-content">
-          <h3>Cableado Estructurado</h3>
-          <p>Cableado estructurado que impulsa tu red.
-            Diseñamos e instalamos infraestructura confiable, ordenada y preparada para el crecimiento de tu empresa.</p>
-          <a href="#contacto" class="service-btn">Ver detalles</a>
-        </div>
-      </article>
+  <div class="planes-grid">
 
-      <!-- Servicio 3 -->
-      <article class="service-card">
-        <div class="service-image">
-          <img src="images/promociones/Servicios empresariales.webp" alt="Soporte técnico empresarial" loading="lazy">
-        </div>
-        <div class="service-content">
-          <h3>Soporte Técnico Presencial y Remoto</h3>
-          <p>Soporte técnico donde lo necesites.
-              Solucionamos fallas en sitio o de forma remota con atención rápida, profesional y enfocada en la continuidad de tu negocio.</p>
-          <a href="#contacto" class="service-btn">Contáctanos</a>
-        </div>
-      </article>
+    <!-- BÁSICO -->
+    <div class="plan">
+      <h3>Básico</h3>
+      <h4>$400.000 COP</h4>
+      <ul>
+        <li>Página web sencilla</li>
+        <li>Diseño responsivo</li>
+        <li>Entrega rápida</li>
+        <li>Soporte básico</li>
+      </ul>
+      <a href="#" class="btn">Comenzar</a>
+    </div>
+
+    <!-- MARCA DIGITAL -->
+    <div class="plan">
+      <h3>Marca Digital</h3>
+      <h4>$800.000 COP</h4>
+      <ul>
+        <li>Web hasta 5 secciones</li>
+        <li>Diseño personalizado</li>
+        <li>SEO básico</li>
+        <li>Asesoría branding</li>
+      </ul>
+      <a href="#" class="btn">Comenzar</a>
+    </div>
+
+    <!-- INTELIGENTE (DESTACADO) -->
+    <div class="plan destacado">
+      <span class="badge">Más popular</span>
+      <h3>Inteligente</h3>
+      <h4>$1.500.000 COP</h4>
+      <ul>
+        <li>Sitio completo</li>
+        <li>Automatización</li>
+        <li>SEO avanzado</li>
+        <li>Soporte 3 meses</li>
+      </ul>
+      <a href="#" class="btn">Comenzar</a>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="plan">
+      <h3>Premium</h3>
+      <h4>$3.450.000 COP</h4>
+      <ul>
+        <li>Tienda virtual</li>
+        <li>Pagos integrados</li>
+        <li>Panel administrativo</li>
+        <li>Soporte prioritario</li>
+      </ul>
+      <a href="#" class="btn">Comenzar</a>
+    </div>
+
+  </div>
+
+  <a href="https://wa.me/573012041255" class="btn">Contratar</a>
+
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <h2>Clientes satisfechos</h2>
+
+  <div class="grid">
+    <div class="card">
+      <p>"Desde que trabajamos con INNOVENT, no hemos tenido caídas del sistema."</p>
+    </div>
+
+    <div class="card">
+      <p>"Excelente servicio, rápidos y confiables."</p>
     </div>
   </div>
 </section>
 
-<!--<section class="equipo">
-  <h2>Conoce a nuestros aliados</h2>
-  <div class="carrusel-container">
-    <div class="grid-equipo">
-      <div class="equipo-card"><img src="images/Aliados/1.webp" alt="Magnetismo virtual"><h3>Magnetismos Virtual</h3><!--<p>Desarrollador Web</p></div>
-      <div class="equipo-card"><img src="images/Aliados/2.webp" alt="Impacto total"><h3>Impacto total</h3><!--<p></p></div>
-      <div class="equipo-card"><img src="images/Aliados/3.webp" alt="Summer Trip Agency"><h3>Summer Trip Agency</h3><!--<p>Director General (CEO)</p></div>
-      <div class="equipo-card"><img src="images/Aliados/4.webp" alt="Plus laboratorio clinico"><h3>Plus laboratorio clinico</h3><!--<p>Directora Financiera (CFO)</p></div>
-      <div class="equipo-card"><img src="images/Aliados/5.webp" alt="Cap fruto de vida"><h3>Cap fruto de vida</h3><!--<p>Diseñador UI/UX</p></div>
-      <div class="equipo-card"><img src="images/Aliados/6.webp" alt="Robles cell"><h3>Robles cell</h3><!--<p>Ejecutiva de Ventas</p></div>
-      <!--<div class="equipo-card"><img src="images/1.4.webp" alt="Ana Gómez"><h3>Ana Gómez</h3><p>Especialista en Marketing Digital</p></div>
-      <div class="equipo-card"><img src="images/1.3.webp" alt="Camila Rodríguez"><h3>Camila Rodríguez</h3><p>Especialista en Atención al Usuario</p></div>
-    </div>
-  </div>
-</section>-->
-
-<!-- SISTEMA COMERCIAL AUTOMATIZADO -->
-<section class="sistema-section" id="sistema-comercial" data-aos="fade-up">
-  <div class="sistema-container">
-
-    <div class="sistema-header">
-      <h2>🚀 Sistema Comercial Automatizado</h2>
-      <p class="sistema-subtitle">
-        Convierte tu negocio en una máquina de generar clientes.
-      </p>
-    </div>
-
-    <div class="sistema-content">
-
-      <div class="sistema-block">
-        <p>
-          En <strong>Innovent Servicios TI</strong> no creamos páginas web.
-          Implementamos sistemas que captan, gestionan y convierten clientes automáticamente.
-        </p>
-
-        <p>
-          Si tu empresa depende solo de referidos o mensajes manuales por WhatsApp,
-          estás perdiendo oportunidades todos los días.
-        </p>
-      </div>
-
-      <div class="sistema-grid">
-
-        <div class="sistema-card">
-          <h3>🔥 ¿Qué incluye?</h3>
-          <ul>
-            <li>Landing optimizada</li>
-            <li>CRM integrado</li>
-            <li>Automatización WhatsApp</li>
-            <li>Seguimiento automático</li>
-            <li>Analytics + Pixel</li>
-            <li>Embudo estructurado</li>
-          </ul>
-        </div>
-
-        <div class="sistema-card">
-          <h3>⚙️ ¿Cómo funciona?</h3>
-          <ol>
-            <li>Cliente llega</li>
-            <li>Deja datos</li>
-            <li>Registro automático</li>
-            <li>Respuesta inmediata</li>
-            <li>Seguimiento activo</li>
-            <li>Tú solo cierras</li>
-          </ol>
-        </div>
-
-      </div>
-
-      <div class="sistema-cta">
-        <h3>🎯 Solicita tu Diagnóstico Gratuito</h3>
-        <a href="https://wa.me/573012041255?text=Hola,%20vengo%20desde%20la%20web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratuito" class="btn-action">
-          Agendar ahora
-        </a>
-        <p class="micro-text">
-          Sin compromiso • Respuesta en menos de 24h
-        </p>
-      </div>
-
-    </div>
-
-  </div>
+<!-- CTA -->
+<section class="cta">
+  <h2>Optimiza tu empresa hoy</h2>
+  <a href="https://wa.me/57XXXXXXXXXX" class="btn">Hablar por WhatsApp</a>
 </section>
 
-<!-- ================================
-     SECCIÓN PLANES DE SUSCRIPCIÓN
-================================ -->
-<section class="plans-section" id="planes">
-  <div class="container">
-    <h2 data-aos="fade-up"><i class="fa-solid fa-briefcase"></i> Planes y Tarifas</h2>
-    <p data-aos="fade-up" data-aos-delay="100">
-      Elige el plan que mejor se adapte a tu negocio y empieza a crecer digitalmente.
-    </p>
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <h2>Contáctanos</h2>
 
-    <div class="plans-grid">
-      
-      <!-- PLAN BÁSICO -->
-      <div class="plan-card" data-aos="fade-up" data-aos-delay="150">
-        <h3><i class="fa-solid fa-laptop-code"></i> BÁSICO</h3>
-        <p class="price">$400.000 COP</p>
-        <ul>
-          <li><i class="fa-solid fa-desktop"></i> Página web sencilla (1-3 secciones)</li>
-          <li><i class="fa-solid fa-mobile-screen"></i> Diseño responsive básico</li>
-          <li><i class="fa-regular fa-clock"></i> Entrega rápida (7 días)</li>
-          <li><i class="fa-solid fa-magnifying-glass"></i> Optimización básica SEO</li>
-          <li><i class="fa-solid fa-screwdriver-wrench"></i> 1 semana soporte técnico</li>
-        </ul>
-        <div class="btn-container">
-          <button class="btn-plan" data-plan="BÁSICO">Comenzar Gratis</button>
-        </div>
-      </div>
-
-      <!-- PLAN MARCA DIGITAL -->
-      <div class="plan-card" data-aos="fade-up" data-aos-delay="250">
-        <h3><i class="fa-solid fa-paintbrush"></i> MARCA DIGITAL</h3>
-        <p class="price">$800.000 COP</p>
-        <ul>
-          <li><i class="fa-solid fa-layer-group"></i> Página con hasta 5 secciones</li>
-          <li><i class="fa-solid fa-palette"></i> Diseño personalizado</li>
-          <li><i class="fa-brands fa-google"></i> Google Analytics básico</li>
-          <li><i class="fa-solid fa-headset"></i> 1 mes de soporte técnico</li>
-          <li><i class="fa-solid fa-briefcase"></i> Asesoría en branding</li>
-        </ul>
-        <div class="btn-container">
-          <button class="btn-plan" data-plan="MARCA DIGITAL">Comenzar Gratis</button>
-        </div>
-      </div>
-
-      <!-- PLAN INTELIGENTE -->
-      <div class="plan-card popular" data-aos="fade-up" data-aos-delay="350">
-        <span class="popular-badge"><i class="fa-solid fa-star"></i> MÁS POPULAR</span>
-        <h3><i class="fa-solid fa-brain"></i> INTELIGENTE</h3>
-        <p class="price">$1'500.000 COP</p>
-        <ul>
-          <li><i class="fa-solid fa-globe"></i> Sitio completo (hasta 8 secciones)</li>
-          <li><i class="fa-brands fa-instagram"></i> Integración de redes sociales</li>
-          <li><i class="fa-solid fa-robot"></i> Automatización de contactos</li>
-          <li><i class="fa-solid fa-laptop-code"></i> Desarrollo avanzado</li>
-          <li><i class="fa-solid fa-laptop-code"></i>Incluye Sistema Comercial Automatizado</li>
-          <li><i class="fa-solid fa-chart-line"></i> SEO optimizado + Google Search Console</li>
-          <li><i class="fa-solid fa-screwdriver-wrench"></i> 3 meses soporte técnico</li>
-        </ul>
-        <div class="btn-container">
-          <button class="btn-plan" data-plan="INTELIGENTE">Comenzar Gratis</button>
-        </div>
-      </div>
-
-      <!-- PLAN PREMIUM -->
-      <div class="plan-card" data-aos="fade-up" data-aos-delay="450">
-        <h3><i class="fa-solid fa-crown"></i> PREMIUM</h3>
-        <p class="price">$3'450.000 COP</p>
-        <ul>
-          <li><i class="fa-solid fa-store"></i> Tienda virtual completa</li>
-          <li><i class="fa-solid fa-chart-bar"></i> Reportes de ventas</li>
-          <li><i class="fa-solid fa-shield-halved"></i> Seguridad avanzada</li>
-          <li><i class="fa-solid fa-credit-card"></i> Múltiples pasarelas de pago</li>
-          <li><i class="fa-solid fa-boxes-stacked"></i> Gestión completa de inventario</li>
-          <li><i class="fa-solid fa-truck"></i> Sistema de envíos integrado</li>
-          <li><i class="fa-solid fa-chart-pie"></i> Panel de reportes y analytics</li>
-          <li><i class="fa-solid fa-headset"></i> 6 meses soporte prioritario</li>
-        </ul>
-        <div class="btn-container">
-          <button class="btn-plan" data-plan="PREMIUM">Comenzar Gratis</button>
-
-Diseño optimizado para ventas
-SEO optimizado
-Animaciones modernas
-Soporte técnico incluido
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ================================
-      SECCION NOTIFICACIONES
-================================== -->
-
-<!-- ================================
-     SECCIÓN PROYECTOS DESTACADOS
-================================ -->
-
-<section class="proyectos" id="proyectos">
-  <h2 class="titulo-proyectos">Nuestros Proyectos</h2>
-
-  <p>
-        Cada sitio web refleja la visión, estrategia y crecimiento de las marcas con las que colaboramos. <br>
-        💡 Descubre cómo podemos crear el próximo proyecto contigo — <strong>cupos limitados este mes.</strong>
-      </p>
-
-      <a href="./proyectos.html" class="btn-ver-proyectos">
-          Ver todos mis proyectos
-        </a>
+  <form>
+    <input type="text" placeholder="Nombre" required>
+    <input type="email" placeholder="Correo" required>
+    <textarea placeholder="¿Qué necesitas?" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
 </section>
 
-<!-- Seccion aliados estrategicos
-<section class="aliados" id="aliados">
-  <h2>Aliados Estratégicos</h2>
-  <div class="grid-aliados">
-    <div class="aliado-card"><img src="images/Aliados/1.webp" alt="Logo Aliado 1"></div>
-    <div class="aliado-card"><img src="images/Aliados/2.webp" alt="Logo Aliado 2"></div>
-    <div class="aliado-card"><img src="images/Aliados/3.webp" alt="Logo Aliado 3"></div>
-    <div class="aliado-card"><img src="images/Aliados/4.webp" alt="Logo Aliado 4"></div>
-    <div class="aliado-card"><img src="images/Aliados/5.webp" alt="Logo Aliado 5"></div>
-    <div class="aliado-card"><img src="images/Aliados/6.webp" alt="Logo Aliado 6"></div>
-  </div>
-</section>-->
+<!-- FOOTER -->
+<footer class="footer">
 
-<!-- Seccion Testimonios -->
+  <div class="footer-container">
 
-<section class="testimonials" aria-label="Testimonios de clientes">
-  <h2 class="subtitle">Testimonios</h2>
-  <h2>Lo que dicen nuestros clientes</h2>
-
-  <div class="slider">
-
-    <div class="slides">
-      <!-- Slide 1 -->
-      <div class="slide">
-        <div class="card glass">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Usuario Innovent" class="avatar">
-          <h3>Usuario Innovent</h3>
-          <div class="rating">
-            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span class="star-animate">⭐</span>
-          </div>
-          <p>
-            <strong>Resultados que superan expectativas.<br>
-            Un equipo profesional, comprometido y enfocado en entregar valor real.</strong>
-          </p>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="slide">
-        <div class="card glass">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Laura Gómez" class="avatar">
-          <h3>Laura Gómez</h3>
-          <small class="testimonial-tag">Cliente verificado</small>
-          <div class="rating">
-            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span class="star-animate">⭐</span>
-          </div>
-          <p>
-            <strong>Atención personalizada que marca la diferencia.<br>
-            Acompañamiento real y soluciones eficientes desde el primer contacto.</strong>
-          </p>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="slide">
-        <div class="card glass">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mejía" class="avatar">
-          <h3>Carlos Mejía</h3>
-          <div class="rating">
-            <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
-          </div>
-          <p>
-            <strong>Soporte técnico confiable.<br>
-            Siempre atentos, rápidos y con soluciones efectivas cuando más se necesitan.</strong>
-          </p>
-        </div>
-      </div>
+    <!-- MARCA -->
+    <div class="footer-col">
+      <h2 class="logo-text">INNOVENT SERVICIOS TI</h2>
+      <p>Soluciones tecnológicas para empresas que no pueden detenerse.</p>
     </div>
 
-    <div class="dots">
-      <label for="t-1" aria-label="Testimonio 1"></label>
-      <label for="t-2" aria-label="Testimonio 2"></label>
-      <label for="t-3" aria-label="Testimonio 3"></label>
-    </div><br>
-  </div>
-</section>
-<!-- Fin seccion testimonios -->
-
-<!-- Seccion CTA -->
-
-<section id="crear-web">
-
-<h2>Crea tu página web con IA</h2>
-
-<p>Describe tu negocio y genera diseños profesionales automáticamente.</p>
-
-<div class="ai-form">
-
-<input id="negocio" placeholder="Tipo de negocio">
-
-<input id="objetivo" placeholder="Objetivo del sitio">
-
-<input id="publico" placeholder="Tipo de clientes">
-
-<textarea id="descripcion" placeholder="Describe tu negocio"></textarea>
-
-<button onclick="generarDisenosIA()">
-Generar diseños
-</button>
-
-</div>
-
-<h3>Diseños generados</h3>
-
-<div class="disenos-grid">
-
-<div class="diseno-card">
-
-<h4>Diseño básico</h4>
-
-<iframe id="preview1"></iframe>
-
-<button onclick="descargarBasico()">
-Descargar básico
-</button>
-
-</div>
-
-<div class="diseno-card">
-
-<h4>Diseño profesional</h4>
-
-<iframe id="preview2"></iframe>
-
-<button onclick="abrirPago()">
-Comprar diseño
-</button>
-
-</div>
-
-<div class="diseno-card">
-
-<h4>Diseño premium</h4>
-
-<iframe id="preview3"></iframe>
-
-<button onclick="abrirPago()">
-Comprar premium
-</button>
-
-</div>
-
-</div>
-
-<div id="panelPagos" style="display:none">
-
-<h3>Completar pago</h3>
-
-<h4>PayPal</h4>
-
-<div id="paypal-button-container"></div>
-
-<h4>Nequi</h4>
-
-<p>Paga a este número:</p>
-
-<strong>3012041255</strong>
-
-<br><br>
-
-<button onclick="confirmarPagoNequi()">
-Confirmar pago Nequi
-</button>
-
-</div>
-
-<br>
-
-<button id="descargarWebBtn" disabled onclick="descargarWeb()">
-Descargar mi sitio
-</button>
-
-</section>
-
-
-<!-- ==========================
-     ASESOR VIRTUAL "TABOTI"
-     ========================== -->
-<div id="taboti-widget">
-  <!-- Botón flotante -->
-  <button id="taboti-icon" title="Habla con Taboti 🤖">
-    <span class="robot-face">🤖</span>
-  </button>
-
-  <!-- Ventana del chat -->
-  <div id="taboti-chat" class="hidden">
-    <div class="chat-header">
-      <img src="./images/ASESOR VIRTUAL.webp" alt="Logo" class="chat-logo" />
-      <div>
-        <h4>Taboti</h4>
-        <span class="status">En línea</span>
-      </div>
-      <button id="closeChat">✕</button>
-    </div>
-
-    <div id="chat-body">
-      <div class="taboti-msg">👋 ¡Hola! Soy <b>Taboti</b>, tu asesor virtual tecnológico.<br>
-      ¿En qué puedo ayudarte hoy?</div>
-      <ul class="options">
-        <li onclick="selectOption(1)">💻 Desarrollo web</li>
-        <li onclick="selectOption(2)">⚙️ Soporte técnico</li>
-        <li onclick="selectOption(3)">🔐 Ciberseguridad</li>
-        <li onclick="selectOption(4)">🤝 Consultoría TI</li>
+    <!-- SERVICIOS -->
+    <div class="footer-col">
+      <h3>Servicios</h3>
+      <ul>
+        <li>Soporte técnico</li>
+        <li>Redes y servidores</li>
+        <li>Seguridad informática</li>
+        <li>Desarrollo de software</li>
       </ul>
     </div>
 
-    <div id="typing" class="hidden">Taboti está escribiendo...</div>
+    <!-- REDES -->
+    <div class="footer-col">
+      <h3>Síguenos</h3>
+      <div class="socials">
 
-    <div class="chat-input">
-      <input id="userInput" type="text" placeholder="Escribe tu mensaje..." />
-      <button id="sendBtn">➤</button>
-    </div>
-  </div>
-</div>
+        <a href="https://wa.me/573012041255" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
 
-<!-- Fin asesor virtual Taboti --
+        <a href="https://www.instagram.com/innovent_servicios_ti/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-<section class="dashboard-stats-horizontal">
-  <h1 class="gradient-text">Nuestros resultados</h1>
+        <a href="https://youtube.com/@innovent_soporte_ti" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
 
-  <div class="stat-box">
-    <h2 class="counter" data-target="15">+0</h2>
-    <p>Proyectos entregados</p>
-  </div>
-  <div class="stat-box">
-    <h2 class="counter" data-target="8">+0</h2>
-    <p>Países alcanzados</p>
-  </div>
-  <div class="stat-box">
-    <h2 class="counter" data-target="12">+0</h2>
-    <p>Colaboradores</p>
-  </div>
-  <div class="stat-box">
-    <h2 class="counter" data-target="30">+0</h2>
-    <p>Desarrollos personalizados</p>
-  </div>
-</section>-->
+        <a href="https://www.facebook.com/profile.php?id=61588246957487" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
 
-</main>
-
-<!-- FOOTER CONTACTO -->
-<footer class="contact-footer" id="contacto">
-  <div class="footer-content">
-    <h3 class="footer-title">Contáctanos</h3>
-    <p class="footer-text">
-      Conectemos en nuestras redes y hablemos sobre tu próximo proyecto digital.
-    </p>
-
-    <div class="social-icons">
-      <a href="https://api.whatsapp.com/send?phone=573012041255&text=Hola%20Bienvenido%20a%20Innovent%20Servicios%20TI" target="_blank" aria-label="WhatsApp" class="social-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
-      </a>
-
-      <a href="https://www.linkedin.com/in/manuel-perez-511b91334/" target="_blank" aria-label="LinkedIn" class="social-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-      </a>
-
-      <a href="https://www.instagram.com/innovent_servicios_ti/" target="_blank" aria-label="Instagram" class="social-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-      </a>
-
-      <a href="https://github.com/manuelp0635" target="_blank" aria-label="GitHub" class="social-icon">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
-      </a>
+      </div>
     </div>
 
-    <p class="footer-copy">© 2026 Innovent Servicios TI. Todos los derechos reservados.</p>
   </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 INNOVENT SERVICIOS TI | Todos los derechos reservados</p>
+  </div>
+
 </footer>
 
-<!-- ================================ SCRIPTS ================================ -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="js/questions.js"></script>
-<script src="js/slider.js"></script>
-<script src="js/carousel.js"></script>
-<script src="js/scrolBtn.js"></script>
-<script src="js/imagenes.js"></script>
-<script src="js/header.js"></script>
-<script src="js/menu.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="js/autoSlider.js"></script>
+
+<!-- ASESOR VIRTUAL -->
+
+<div class="taboti-container">
+
+  <!-- BOTÓN -->
+  <button class="taboti-btn" onclick="toggleTaboti()">
+    💬
+  </button>
+
+  <!-- CHAT -->
+  <div class="taboti-chat" id="tabotiChat">
+
+    <!-- HEADER -->
+    <div class="taboti-header">
+      <div class="taboti-title">
+        <strong>TABOTI</strong>
+        <span>Asistente virtual</span>
+      </div>
+      <button class="close-btn" onclick="toggleTaboti()">✖</button>
+    </div>
+
+    <!-- MENSAJES -->
+    <div class="taboti-messages" id="tabotiMessages">
+      <div class="bot">
+        Hola 👋 soy <strong>TABOTI</strong><br>
+        Puedo ayudarte con:
+        <ul>
+          <li>Servicios</li>
+          <li>Precios</li>
+          <li>Soporte</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INPUT (NUEVO) -->
+    <div class="taboti-input">
+      <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
+      <button onclick="sendMessage()">➤</button>
+    </div>
+
+    <!-- OPCIONES -->
+    <div class="taboti-options">
+      <button onclick="sendOption('servicios')">Servicios</button>
+      <button onclick="sendOption('precios')">Precios</button>
+      <button onclick="sendOption('soporte')">Soporte</button>
+      <button onclick="sendOption('contacto')">Contacto</button>
+    </div>
+
+  </div>
+
+</div>
+
 <script>
-  AOS.init({ duration: 800, once: true });
+function toggleTaboti() {
+  const chat = document.getElementById("tabotiChat");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+}
 
-  // Menú hamburguesa
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-  });
-</script>
+function addMessage(text, type="bot") {
+  const messages = document.getElementById("tabotiMessages");
+  const msg = document.createElement("div");
+  msg.className = type;
+  msg.innerHTML = text;
+  messages.appendChild(msg);
+  messages.scrollTop = messages.scrollHeight;
+}
 
-<!-- Js de scroll reveal + delay escalonado + contador -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const boxes = document.querySelectorAll(".stat-box");
+function sendOption(option) {
+  let response = "";
 
-  // Configuración del Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const box = entry.target;
-        box.classList.add("show");
-
-        // Animar contador dentro de cada stat-box
-        const counter = box.querySelector(".counter");
-        if (counter) animateCounter(counter);
-
-        observer.unobserve(box); // Solo animar una vez
-      }
-    });
-  }, { threshold: 0.2 });
-
-  boxes.forEach(box => observer.observe(box));
-
-  // Función contador animado
-  function animateCounter(counter) {
-    const target = +counter.getAttribute("data-target");
-    let count = 0;
-    const increment = Math.ceil(target / 100); // velocidad ajustable
-
-    const updateCounter = () => {
-      count += increment;
-      if (count > target) count = target;
-      counter.textContent = "+" + count;
-
-      if (count < target) {
-        requestAnimationFrame(updateCounter);
-      }
-    };
-    updateCounter();
-  }
-});
-</script>
-
-<!-- Animaciones planes y tarifas -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true,
-    easing: "ease-in-out"
-  });
-</script>
-
-<!-- SCRIPT ANIMACION DE ASESOR VIRTUAL + 🧩 LÓGICA DEL CHAT -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const planButtons = document.querySelectorAll(".btn-plan");
-  const chat = document.getElementById("taboti-chat");
-  const chatBody = document.getElementById("chat-body");
-  const typing = document.getElementById("typing");
-  const icon = document.getElementById("taboti-icon");
-  const closeChat = document.getElementById("closeChat");
-
-  const whatsappURL = "https://wa.me/573012041255?text=Hola%20Taboti,%20quiero%20más%20información%20sobre%20sus%20servicios.";
-
-  /* 🔹 ABRIR / CERRAR CHAT CON ANIMACIÓN */
-  icon.addEventListener("click", () => {
-    chat.classList.toggle("active");   // ✅ Cambia el estado del chat
-  });
-
-  closeChat.addEventListener("click", () => {
-    chat.classList.remove("active");   // ✅ Lo cierra sin conflicto
-  });
-
-  /* --- RESTO DE TU CÓDIGO --- */
-
-  function initChat() {
-    chatBody.innerHTML = `
-      <div class="taboti-msg">👋 ¡Hola! Soy <b>Taboti</b>, tu asesor virtual tecnológico.<br>
-      ¿En qué puedo ayudarte hoy?</div>
-      <ul class="options">
-        <li onclick="selectOption(1)">💻 Desarrollo web</li>
-        <li onclick="selectOption(2)">⚙️ Soporte técnico</li>
-        <li onclick="selectOption(3)">🔐 Ciberseguridad</li>
-        <li onclick="selectOption(4)">🤝 Consultoría TI</li>
-      </ul>`;
-  }
-
-  initChat();
-
-  /* 💬 Lógica de interacción */
-  planButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const planName = button.dataset.plan;
-      chat.classList.add("active"); // ✅ Muestra el chat al seleccionar un plan
-
-      appendMessage("user", `👤 Me interesa el plan *${planName}*`);
-      typing.classList.remove("hidden");
-
+  switch(option) {
+    case "servicios":
+      response = "Ofrecemos soporte técnico, redes, seguridad y desarrollo de software.";
+      break;
+    case "precios":
+      response = "Nuestros planes van desde $400.000 COP. ¿Quieres recomendación?";
+      break;
+    case "soporte":
+      response = "Nuestro soporte es rápido y continuo. Estamos listos para ayudarte.";
+      break;
+    case "contacto":
+      response = "Te redirijo a WhatsApp 👇";
       setTimeout(() => {
-        typing.classList.add("hidden");
-        appendMessage("bot", `🚀 ¡Excelente elección! Nuestro plan *${planName}* está diseñado para impulsar tu negocio digital. ¿Quieres que te envíe más información o una cotización por WhatsApp?`);
-
-        const btn = document.createElement("button");
-        btn.textContent = "Contactar por WhatsApp 💬";
-        btn.className = "whatsapp-btn";
-        btn.onclick = () => {
-          window.open(whatsappURL, "_blank");
-          resetChat();
-        };
-        chatBody.appendChild(btn);
-        chatBody.scrollTop = chatBody.scrollHeight;
+        window.open("https://wa.me/573012041255", "_blank");
       }, 1000);
-    });
-  });
-
-  function appendMessage(sender, text) {
-    const msg = document.createElement("div");
-    msg.className = sender === "bot" ? "taboti-msg" : "user-msg";
-    msg.innerHTML = text;
-    chatBody.appendChild(msg);
-    chatBody.scrollTop = chatBody.scrollHeight;
+      break;
   }
 
-  function resetChat() {
-    setTimeout(() => initChat(), 2500);
-  }
-
-  window.selectOption = function(option) {
-
-    // 🔐 Redirección directa a sistema de tickets
-if (option === 2) {
-  appendMessage("user", "⚙️ Soporte técnico");
-  typing.classList.remove("hidden");
-
-  setTimeout(() => {
-    typing.classList.add("hidden");
-    appendMessage("bot", "🔐 Accederás a nuestro sistema seguro de tickets para soporte TI.");
-
-    setTimeout(() => {
-      window.location.href = "/soporte/login.html";
-    }, 1500);
-  }, 800);
-
-  return; // ⛔ evita que siga la lógica normal
-
-  if (option === 2) {
-  setTimeout(() => {
-    window.location.href = "/soporte/login.html";
-  }, 1500);
-  return;
+  addMessage(response);
 }
 
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const text = input.value.toLowerCase();
+
+  if (!text) return;
+
+  addMessage(text, "user");
+
+  let response = "No entendí eso, pero puedo ayudarte con servicios, precios o soporte.";
+
+  if (text.includes("precio")) response = "Nuestros planes empiezan en $400.000 COP.";
+  if (text.includes("servicio")) response = "Ofrecemos soporte, redes, seguridad y desarrollo.";
+  if (text.includes("soporte")) response = "Soporte rápido y continuo para tu empresa.";
+
+  setTimeout(() => addMessage(response), 500);
+
+  input.value = "";
 }
-
-    const responses = {
-  1: "🚀 En *Desarrollo Web* creamos páginas modernas y optimizadas. ¿Quieres ver ejemplos o cotización?",
-  2: "⚙️ Para soporte técnico usamos nuestro sistema de tickets. Te redirijo ahora 👇",
-  3: "🔐 En *Ciberseguridad* protegemos tus sistemas y datos. ¿Deseas una auditoría o asesoría gratuita?",
-  4: "🤝 En *Consultoría TI* analizamos tus procesos para implementar soluciones inteligentes. ¿Quieres que preparemos una propuesta sin costo?"
-};
-
-    const objeciones = [
-      "Entiendo que estés evaluando opciones, nuestra primera asesoría es gratuita 😉.",
-      "Si quieres, podemos enviarte la info por WhatsApp y resolver todas tus dudas sin compromiso.",
-      "Nuestro equipo está listo para mejorar tu presencia digital y seguridad tecnológica 💪."
-    ];
-
-    const userText = document.querySelectorAll(".options li")[option - 1].textContent;
-    appendMessage("user", userText);
-
-    typing.classList.remove("hidden");
-    setTimeout(() => {
-      typing.classList.add("hidden");
-      appendMessage("bot", responses[option]);
-
-      setTimeout(() => {
-        appendMessage("bot", objeciones[Math.floor(Math.random() * objeciones.length)]);
-        const btn = document.createElement("button");
-        btn.textContent = "Contactar por WhatsApp 💬";
-        btn.className = "whatsapp-btn";
-        btn.onclick = () => {
-          window.open(whatsappURL, "_blank");
-          resetChat();
-        };
-        chatBody.appendChild(btn);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }, 1200);
-    }, 1000);
-  }
-});
-</script>
-
-<!-- ✅ JAVASCRIPT DEL CARRUSEL -->
-<script>
-  const testimonials = document.querySelectorAll('.testimonial');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let index = 0;
-
-  function showTestimonial(i) {
-    testimonials.forEach(t => t.classList.remove('active'));
-    testimonials[i].classList.add('active');
-  }
-
-  function nextTestimonial() {
-    index = (index + 1) % testimonials.length;
-    showTestimonial(index);
-  }
-
-  function prevTestimonial() {
-    index = (index - 1 + testimonials.length) % testimonials.length;
-    showTestimonial(index);
-  }
-
-  nextBtn.addEventListener('click', nextTestimonial);
-  prevBtn.addEventListener('click', prevTestimonial);
-
-  // Auto-play
-  setInterval(nextTestimonial, 7000);
-</script>
-
-
-<!-- ======= Header Interactivo con Menú Responsive ======= -->
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
-
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  navMenu.classList.toggle("active");
-
-  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-  menuToggle.setAttribute("aria-expanded", !expanded);
-});
-
-// Cambiar fondo del header al hacer scroll
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".encabezado");
-  header.classList.toggle("scrolled", window.scrollY > 10);
-});
-</script>
-
-<script>
-  AOS.init({ duration: 800, once: true });
-</script>
-
-<script src="generator.js"></script>
-<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
-
-<script>
-
-function generarDisenosIA(){
-
-const negocio=document.getElementById("negocio").value;
-const objetivo=document.getElementById("objetivo").value;
-const publico=document.getElementById("publico").value;
-const descripcion=document.getElementById("descripcion").value;
-
-const layouts=[layout1,layout2,layout3];
-
-const html1=layouts[0](negocio,descripcion);
-const html2=layouts[1](negocio,descripcion);
-const html3=layouts[2](negocio,descripcion);
-
-sitioGenerado=html2;
-
-document.getElementById("preview1").srcdoc=html1;
-document.getElementById("preview2").srcdoc=html2;
-document.getElementById("preview3").srcdoc=html3;
-
-}
-
-let sitioGenerado = "";
-
-function layout1(negocio,descripcion){
-
-return `
-<html>
-<head>
-<style>
-
-body{font-family:Arial;margin:0}
-
-.hero{
-background:linear-gradient(135deg,#0a2540,#1f4fff);
-color:white;
-padding:80px;
-text-align:center
-}
-
-.servicios{
-padding:40px
-}
-
-.card{
-background:#f4f6fb;
-padding:20px;
-margin:10px;
-border-radius:8px
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="hero">
-
-<h1>${negocio}</h1>
-
-<p>${descripcion}</p>
-
-</div>
-
-<div class="servicios">
-
-<h2>Servicios</h2>
-
-<div class="card">Servicio profesional</div>
-<div class="card">Soluciones personalizadas</div>
-<div class="card">Atención especializada</div>
-
-</div>
-
-</body>
-</html>
-`;
-}
-
-function layout2(negocio,descripcion){
-
-return `
-<html>
-<head>
-<style>
-
-body{
-font-family:Arial;
-margin:0;
-text-align:center
-}
-
-header{
-padding:60px;
-background:#111;
-color:white
-}
-
-section{
-padding:40px
-}
-
-button{
-background:#25D366;
-color:white;
-padding:15px 25px;
-border:none
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-<h1>${negocio}</h1>
-
-<p>${descripcion}</p>
-
-</header>
-
-<section>
-
-<h2>Nuestros servicios</h2>
-
-<p>Soluciones profesionales para empresas</p>
-
-<button>Contactar</button>
-
-</section>
-
-</body>
-</html>
-`;
-}
-
-function layout3(negocio,descripcion){
-
-return `
-<html>
-<head>
-
-<style>
-
-body{
-font-family:Arial;
-margin:0
-}
-
-.top{
-background:#0a2540;
-color:white;
-padding:50px
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:40px
-}
-
-.box{
-background:#f2f2f2;
-padding:20px
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="top">
-
-<h1>${negocio}</h1>
-
-<p>${descripcion}</p>
-
-</div>
-
-<div class="grid">
-
-<div class="box">Servicio especializado</div>
-
-<div class="box">Consultoría</div>
-
-<div class="box">Soporte profesional</div>
-
-</div>
-
-</body>
-</html>
-`;
-}
-
-function generarWeb(){
-
-const empresa = document.getElementById("empresa").value;
-const telefono = document.getElementById("telefono").value;
-const servicio1 = document.getElementById("servicio1").value;
-const servicio2 = document.getElementById("servicio2").value;
-const servicio3 = document.getElementById("servicio3").value;
-const descripcion = document.getElementById("descripcion").value;
-
-sitioGenerado = `
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>${empresa}</title>
-
-<style>
-
-body{font-family:Arial;margin:0}
-
-header{
-background:#0a2540;
-color:white;
-padding:60px;
-text-align:center;
-}
-
-section{
-padding:40px;
-}
-
-.cta{
-text-align:center;
-}
-
-.cta a{
-background:#25D366;
-color:white;
-padding:15px 25px;
-text-decoration:none;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<h1>${empresa}</h1>
-<p>${descripcion}</p>
-
-</header>
-
-<section>
-
-<h2>Servicios</h2>
-
-<ul>
-<li>${servicio1}</li>
-<li>${servicio2}</li>
-<li>${servicio3}</li>
-</ul>
-
-</section>
-
-<section class="cta">
-
-<h2>Contáctanos</h2>
-
-<a href="https://wa.me/${telefono}">
-Escribir por WhatsApp
-</a>
-
-</section>
-
-</body>
-</html>
-`;
-
-document.getElementById("previewWeb").srcdoc = sitioGenerado;
-
-}
-
-function mostrarPagos(){
-
-document.getElementById("pagos").style.display="block";
-
-}
-
-function confirmarPagoNequi(){
-
-document.getElementById("descargarWebBtn").disabled=false;
-
-}
-
-function descargarWeb(){
-
-const blob = new Blob([sitioGenerado], {type:"text/html"});
-
-const link = document.createElement("a");
-
-link.href = URL.createObjectURL(blob);
-
-link.download = "index.html";
-
-link.click();
-
-}
-
-/* Paypal */
-
-paypal.Buttons({
-
-createOrder:function(data,actions){
-
-return actions.order.create({
-
-purchase_units:[{
-
-amount:{value:"49.00"}
-
-}]
-
-});
-
-},
-
-onApprove:function(data,actions){
-
-return actions.order.capture().then(function(){
-
-alert("Pago completado");
-
-document.getElementById("descargarWebBtn").disabled=false;
-
-});
-
-}
-
-}).render('#paypal-button-container');
 </script>
 
 </body>
