@@ -13,23 +13,23 @@ html{
 
 body{
   font-family:'Poppins',sans-serif;
-  background:#000814;
+  /*background:#000814;*/
   overflow-x:hidden;
 }
 
 /* =========================
-   HEADER
+   HEADER COMPACTO
 ========================= */
 .header{
   width:100%;
-  max-width:1400px;
+  max-width:1200px;
   margin:auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:18px 60px;
+  padding:12px 25px;
   background:#000814;
-  gap:30px;
+  gap:20px;
   position:relative;
   z-index:1000;
 }
@@ -49,7 +49,7 @@ body{
 }
 
 .logo img{
-  width:220px;
+  width:170px;
   height:auto;
   display:block;
   object-fit:contain;
@@ -62,7 +62,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  gap:32px;
+  gap:18px;
   flex-wrap:wrap;
   width:100%;
 }
@@ -70,7 +70,7 @@ body{
 .nav a{
   color:#ffffff;
   text-decoration:none;
-  font-size:16px;
+  font-size:14px;
   font-weight:600;
   transition:.3s ease;
   position:relative;
@@ -85,7 +85,7 @@ body{
   content:'';
   position:absolute;
   left:0;
-  bottom:-6px;
+  bottom:-4px;
   width:0%;
   height:2px;
   background:#00bfff;
@@ -102,15 +102,15 @@ body{
 }
 
 /* =========================
-   ADMIN BUTTON
+   BOTÓN ADMIN
 ========================= */
 .admin-link{
-  padding:12px 22px;
-  border-radius:12px;
+  padding:8px 16px;
+  border-radius:8px;
   background:linear-gradient(90deg,#007bff,#8a2be2);
   color:#fff !important;
+  font-size:13px;
   transition:.3s ease;
-  box-shadow:0 4px 15px rgba(0,123,255,.25);
 }
 
 .admin-link::after{
@@ -119,7 +119,7 @@ body{
 
 .admin-link:hover{
   transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(138,43,226,.45);
+  box-shadow:0 5px 15px rgba(138,43,226,.35);
 }
 
 /* =========================
@@ -128,19 +128,15 @@ body{
 @media screen and (max-width:1200px){
 
   .header{
-    padding:18px 40px;
+    padding:12px 20px;
   }
 
   .logo img{
-    width:200px;
+    width:160px;
   }
 
   .nav{
-    gap:24px;
-  }
-
-  .nav a{
-    font-size:15px;
+    gap:16px;
   }
 
 }
@@ -154,30 +150,23 @@ body{
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    padding:15px 20px;
+    gap:18px;
     text-align:center;
-    gap:25px;
-    padding:20px 30px;
   }
 
   .logo{
-    width:100%;
-    display:flex;
     justify-content:center;
+    width:100%;
   }
 
   .logo img{
-    width:180px;
+    width:150px;
   }
 
   .nav{
-    width:100%;
     justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-  }
-
-  .nav a{
-    font-size:15px;
+    gap:15px;
   }
 
 }
@@ -188,28 +177,25 @@ body{
 @media screen and (max-width:768px){
 
   .header{
-    padding:20px;
-    gap:22px;
+    padding:14px 18px;
+    gap:16px;
   }
 
   .logo img{
-    width:160px;
+    width:140px;
   }
 
   .nav{
-    width:100%;
     justify-content:center;
-    align-items:center;
-    gap:16px;
-    flex-wrap:wrap;
+    gap:14px;
   }
 
   .nav a{
-    font-size:14px;
+    font-size:13px;
   }
 
   .admin-link{
-    padding:10px 18px;
+    padding:8px 14px;
   }
 
 }
@@ -220,35 +206,31 @@ body{
 @media screen and (max-width:576px){
 
   .header{
-    gap:20px;
-    padding:18px 15px;
+    padding:14px 15px;
   }
 
   .logo img{
-    width:140px;
+    width:130px;
   }
 
   .nav{
-    width:100%;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
+    gap:12px;
+    width:100%;
   }
 
   .nav a{
     width:100%;
-    max-width:250px;
+    max-width:220px;
     text-align:center;
-    font-size:14px;
-    padding:10px 0;
+    font-size:13px;
+    padding:8px 0;
   }
 
   .admin-link{
     width:100%;
-    max-width:250px;
-    padding:10px 16px;
-    border-radius:10px;
+    max-width:220px;
+    text-align:center;
   }
 
 }
@@ -259,26 +241,69 @@ body{
 @media screen and (max-width:400px){
 
   .header{
-    padding:15px 12px;
+    padding:12px 10px;
   }
 
   .logo img{
-    width:120px;
+    width:115px;
   }
 
   .nav{
-    gap:12px;
+    gap:10px;
   }
 
   .nav a{
-    font-size:13px;
+    font-size:12px;
   }
 
   .admin-link{
+    font-size:12px;
+    padding:8px 12px;
+  }
+
+}
+
+/* =========================
+   MENU TOGGLE
+========================= */
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+@media screen and (max-width:768px){
+
+  .header{
+    position:relative;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav{
+    position:absolute;
+    top:100%;
+    left:0;
     width:100%;
-    text-align:center;
-    padding:10px 14px;
-    font-size:13px;
+    background:#000814;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding:20px 0;
+    display:none;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+
+  .nav.active{
+    display:flex;
   }
 
 }
@@ -948,6 +973,396 @@ button {
 
   .carousel {
     height: 250px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE GLOBAL OPTIMIZADO
+   Compatible:
+   ✔ Android
+   ✔ iPhone
+   ✔ Tablets
+   ✔ Pantallas pequeñas
+   ✔ Pantallas ultra wide
+========================================================= */
+
+/* =========================
+   PANTALLAS GRANDES
+========================= */
+@media screen and (max-width:1400px){
+
+  .header,
+  .footer-container,
+  .carousel{
+    width:95%;
+  }
+
+}
+
+/* =========================
+   LAPTOPS
+========================= */
+@media screen and (max-width:1200px){
+
+  .header{
+    padding:15px 20px;
+  }
+
+  section{
+    padding:70px 25px;
+  }
+
+  .hero h1{
+    font-size:2.8rem;
+  }
+
+  .planes-grid,
+  .grid{
+    gap:20px;
+  }
+
+  .carousel{
+    height:350px;
+  }
+
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media screen and (max-width:992px){
+
+  /* HEADER */
+  .header{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:20px;
+    padding:15px 20px;
+  }
+
+  .logo img{
+    width:150px;
+  }
+
+  .nav{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+  }
+
+  /* HERO */
+  .hero{
+    padding:100px 20px;
+    height:auto;
+    min-height:100vh;
+  }
+
+  .hero h1{
+    font-size:2.4rem;
+    line-height:1.2;
+  }
+
+  .hero p{
+    font-size:1rem;
+  }
+
+  /* GRID */
+  .grid,
+  .planes-grid{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  }
+
+  /* CTA */
+  .carousel{
+    height:320px;
+  }
+
+  /* FOOTER */
+  .footer-container{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+  }
+
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+@media screen and (max-width:768px){
+
+  /* MENU */
+  .menu-toggle{
+    display:block;
+    position:absolute;
+    top:18px;
+    right:20px;
+    z-index:2000;
+  }
+
+  .nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#000814;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    padding:20px 0;
+    display:none;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+
+  .nav.active{
+    display:flex;
+  }
+
+  .nav a{
+    width:100%;
+    text-align:center;
+    padding:10px 0;
+  }
+
+  .admin-link{
+    width:220px;
+  }
+
+  /* HERO */
+  .hero{
+    min-height:90vh;
+    padding:120px 15px 80px;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .hero p{
+    font-size:.95rem;
+  }
+
+  .btn{
+    width:100%;
+    max-width:320px;
+    font-size:.9rem;
+  }
+
+  /* SECTION */
+  section{
+    padding:60px 18px;
+  }
+
+  h2{
+    font-size:2rem;
+  }
+
+  /* GRID */
+  .grid,
+  .planes-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card,
+  .plan{
+    padding:25px 20px;
+  }
+
+  /* PLAN DESTACADO */
+  .destacado{
+    transform:scale(1);
+  }
+
+  /* CTA */
+  .cta{
+    padding:70px 15px;
+  }
+
+  .cta h2{
+    font-size:1.8rem;
+  }
+
+  .carousel{
+    height:260px;
+    border-radius:12px;
+  }
+
+  .slide img{
+    height:260px;
+    object-fit:cover;
+  }
+
+  .prev,
+  .next{
+    padding:8px;
+    font-size:1rem;
+  }
+
+  /* FORM */
+  form{
+    width:100%;
+  }
+
+  input,
+  textarea{
+    font-size:16px;
+  }
+
+  /* FOOTER */
+  .footer{
+    text-align:center;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .socials{
+    justify-content:center;
+  }
+
+  /* TABOTI */
+  .taboti-chat{
+    width:90%;
+    left:5%;
+    bottom:80px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media screen and (max-width:576px){
+
+  .header{
+    padding:14px 15px;
+  }
+
+  .logo img{
+    width:130px;
+  }
+
+  .hero{
+    padding:110px 15px 70px;
+  }
+
+  .hero h1{
+    font-size:1.7rem;
+  }
+
+  .hero p{
+    font-size:.9rem;
+  }
+
+  section{
+    padding:55px 15px;
+  }
+
+  h2{
+    font-size:1.7rem;
+  }
+
+  .btn{
+    padding:12px 18px;
+  }
+
+  .carousel{
+    height:220px;
+  }
+
+  .slide img{
+    height:220px;
+  }
+
+  .prev,
+  .next{
+    font-size:.9rem;
+    padding:6px;
+  }
+
+  .taboti-btn{
+    bottom:15px;
+    left:15px;
+    padding:12px;
+    font-size:18px;
+  }
+
+  .taboti-chat{
+    width:95%;
+    left:2.5%;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media screen and (max-width:400px){
+
+  .hero h1{
+    font-size:1.4rem;
+  }
+
+  .hero p{
+    font-size:.8rem;
+  }
+
+  .logo img{
+    width:110px;
+  }
+
+  .nav a{
+    font-size:12px;
+  }
+
+  h2{
+    font-size:1.5rem;
+  }
+
+  .card,
+  .plan{
+    padding:20px 15px;
+  }
+
+  .carousel{
+    height:180px;
+  }
+
+  .slide img{
+    height:180px;
+  }
+
+  .btn{
+    font-size:.85rem;
+  }
+
+  .footer-bottom{
+    font-size:.75rem;
+  }
+
+}
+
+/* =========================
+   LANDSCAPE MOBILE
+========================= */
+@media screen and (max-height:500px) and (orientation:landscape){
+
+  .hero{
+    min-height:140vh;
+  }
+
+  .nav{
+    gap:12px;
+  }
+
+  .carousel{
+    height:200px;
   }
 
 }
