@@ -17,8 +17,19 @@
 
 <!-- HEADER -->
 <header class="header">
-  <h2 class="logo-text">INNOVENT SERVICIOS TI</h2>
-  <nav id="nav">
+  <div class="logo">
+    <a href="#inicio" aria-label="Inicio">
+      <img 
+        src="images/logo.webp" 
+        alt="Innovent Servicios TI" 
+        width="350" 
+        height="70"
+        loading="eager"
+      >
+    </a>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Menú principal">
     <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
     <a href="#beneficios">Beneficios</a>
@@ -268,19 +279,19 @@
 </footer>
 
 
-<!-- ASESOR VIRTUAL -->
+<!-- ASESOR VIRTUAL -
 
 <div class="taboti-container">
 
-  <!-- BOTÓN -->
+  <!-- BOTÓN -
   <button class="taboti-btn" onclick="toggleTaboti()">
     💬
   </button>
 
-  <!-- CHAT -->
+  <!-- CHAT -
   <div class="taboti-chat" id="tabotiChat">
 
-    <!-- HEADER -->
+    <!-- HEADER -
     <div class="taboti-header">
       <div class="taboti-title">
         <strong>TABOTI</strong>
@@ -289,7 +300,7 @@
       <button class="close-btn" onclick="toggleTaboti()">✖</button>
     </div>
 
-    <!-- MENSAJES -->
+    <!-- MENSAJES -
     <div class="taboti-messages" id="tabotiMessages">
       <div class="bot">
         Hola 👋 soy <strong>TABOTI</strong><br>
@@ -302,13 +313,13 @@
       </div>
     </div>
 
-    <!-- INPUT (NUEVO) -->
+    <!-- INPUT (NUEVO) -
     <div class="taboti-input">
       <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
       <button onclick="sendMessage()">➤</button>
     </div>
 
-    <!-- OPCIONES -->
+    <!-- OPCIONES -
     <div class="taboti-options">
       <button onclick="sendOption('servicios')">Servicios</button>
       <button onclick="sendOption('precios')">Precios</button>
