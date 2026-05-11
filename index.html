@@ -17,25 +17,31 @@
 
 <!-- HEADER -->
 <header class="header">
+
+  <!-- LOGO -->
   <div class="logo">
     <a href="#inicio" aria-label="Inicio">
       <img 
         src="images/logo.webp" 
-        alt="Innovent Servicios TI" 
-        width="350" 
-        height="70"
-        loading="eager"
+        alt="Innovent Servicios TI"
       >
     </a>
   </div>
 
-  <nav class="nav" id="nav" aria-label="Menú principal">
+  <!-- BOTÓN HAMBURGUESA -->
+  <button class="menu-toggle" id="menu-toggle">
+    ☰
+  </button>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
     <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
     <a href="#beneficios">Beneficios</a>
     <a href="#contacto">Contacto</a>
     <a href="soporte/login.html" class="admin-link">Admin</a>
   </nav>
+
 </header>
 
 <!-- HERO -->
@@ -438,6 +444,27 @@ function moveSlide(direction) {
 setInterval(() => {
   moveSlide(1);
 }, 4000);
+</script>
+
+<!-- Script menu type hamburguesa -->
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+const navLinks = document.querySelectorAll('#nav a');
+
+/* ABRIR / CERRAR MENÚ */
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+/* OCULTAR MENÚ AL HACER CLICK */
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
+
 </script>
 
 </body>
